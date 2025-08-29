@@ -3,68 +3,253 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vuelve a Ti · Rosita Ávila</title>
-  <meta name="description" content="Vuelve a Ti · Oráculo y recursos de Rosita Ávila" />
+  <title>Vuelve a Ti · Oráculo</title>
+  <meta name="description" content="Oráculo Vuelve a Ti: una guía suave para tu día." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --lavanda:#CBAACB;
-      --beige:#EFE3D6;
-      --rosa:#E6B7C2;
       --tinta:#3E2833;
       --bg:#EFE7DE;
-      --shadow:0 12px 40px rgba(62,40,51,.10);
-      --radius:24px;
+      --shadow:0 10px 38px rgba(62,40,51,.08);
+      --radius:28px;
     }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;background:var(--bg);color:var(--tinta);}
-    body{display:flex;align-items:center;justify-content:center;padding:28px;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;}
-    .wrap{width:min(820px,100%)}
-    header{text-align:center;margin:4px 0 24px}
-    h1{font-family:Marcellus,serif;font-weight:400;margin:0;font-size:clamp(24px,4vw,38px)}
-    .sub{opacity:.85;margin-top:8px}
+    body{display:flex;align-items:center;justify-content:center;padding:24px;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;}
+    .app{width:min(940px,100%);}
+    header{text-align:center;margin:16px 0 34px}
+    header h1{font-family:Marcellus,serif;font-weight:400;font-size:clamp(22px,4vw,36px);margin:0}
+    header p{margin:8px 0 0;opacity:.85}
+    .screen{display:none}
+    .screen.active{display:block;animation:fade .35s ease-out}
+    /* INICIO */
+    .welcome{display:grid;gap:22px;justify-items:center;margin-top:18px}
+    .lead{font-weight:800}
+    .choices{display:grid;gap:14px;max-width:640px;width:100%;margin-top:6px}
+    .btn{
+      border:1px solid #e7d8cc;background:white;color:var(--tinta);
+      padding:16px 20px;border-radius:20px;font-weight:800;cursor:pointer;
+      box-shadow: var(--shadow); font-size:clamp(15px,2.5vw,18px);
+    }
+    .btn.big{padding:18px 22px;border-radius:24px}
+    .btn.ghost{background:transparent;border-color:#e0d2c7;box-shadow:none}
+    /* CARTA */
     .card{
       background:linear-gradient(180deg,#FFFFFF 0%, #FFF9F7 100%);
-      border:1px solid #eadfd6;border-radius:28px;box-shadow:var(--shadow);
-      padding:20px; animation:fade .4s ease-out;
+      border:1px solid #eadfd6;
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow: var(--shadow);
+      display:grid;gap:14px;min-height:320px;
+      animation:rise .35s ease-out;
     }
-    .links{display:grid;gap:14px;margin:6px auto 6px;max-width:560px}
-    .btn{
-      display:flex;gap:10px;align-items:center;justify-content:center;
-      text-decoration:none;color:var(--tinta); background:#fff;border:1px solid #eadfd6;
-      padding:16px 18px; border-radius:var(--radius); box-shadow:var(--shadow);
-      font-weight:800; font-size:clamp(15px,2.5vw,18px);
-      transition:transform .15s ease, box-shadow .15s ease;
-    }
-    .btn:hover{transform:translateY(-1px); box-shadow:0 12px 44px rgba(62,40,51,.12)}
-    .btn.lav{background:var(--lavanda);border-color:var(--lavanda)}
-    .btn.rose{background:var(--rosa);border-color:var(--rosa)}
-    .btn.beige{background:var(--beige);border-color:var(--beige)}
-    .hint{margin:10px 0 0; text-align:center; font-size:12px; opacity:.7}
-    footer{margin-top:18px;text-align:center;opacity:.7;font-size:12px}
+    .title{font-family:Marcellus,serif;font-size:clamp(24px,3.6vw,34px);margin:2px 0 4px;text-align:center}
+    .phrase{font-size:clamp(16px,2.4vw,20px);font-weight:800;text-align:center}
+    .msg{font-size:clamp(15px,2.2vw,18px);line-height:1.65;text-align:center}
+    .meta{margin-top:10px;text-align:center;opacity:.7;font-size:13px}
+    .actions{display:flex;justify-content:space-between;gap:12px;margin-top:18px}
+    .actions .btn{min-width:44%;}
+    footer{margin-top:18px;font-size:12px;opacity:.7;text-align:center}
+    /* Ocultar cabecera y bienvenida cuando se está en modo carta */
+    body.mode-reading header, body.mode-reading #welcome{display:none !important;}
     @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    @keyframes rise{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="app">
     <header>
-      <h1>✨ Vuelve a Ti · Rosita Ávila ✨</h1>
-      <div class="sub">Aquí sanas lo invisible y vuelves a ti</div>
+      <h1>✨ Vuelve a Ti · Oráculo ✨</h1>
+      <p>Una guía suave para tu día</p>
     </header>
 
-    <div class="card">
-      <div class="links">
-        <a class="btn lav" href="./suavidad.html">🌸 Oráculo · De la Autoexigencia a la Suavidad</a>
-        <a class="btn rose" href="./encontradora.html">🌙 Oráculo · De Buscadora a Encontradora</a>
-        <a class="btn beige" href="https://instagram.com/rosita.vuelveati" target="_blank" rel="noopener">📲 Instagram · @rosita.vuelveati</a>
-        <a class="btn" href="https://beacons.ai/rosita.vuelveati" target="_blank" rel="noopener">✨ Beacons (links y novedades)</a>
+    <!-- Pantalla inicial -->
+    <section id="welcome" class="screen welcome active">
+      <div class="lead"><strong>Elige el oráculo que te iluminará hoy</strong></div>
+      <div class="choices">
+        <button class="btn big" data-deck="auto">🌸 De la Autoexigencia a la Suavidad</button>
+        <button class="btn big" data-deck="busca">🌙 De Buscadora a Encontradora</button>
       </div>
-      <div class="hint">Consejo: añade esta página a tus favoritos para volver cuando quieras.</div>
-    </div>
+    </section>
+
+    <!-- Pantalla de carta -->
+    <section id="reading" class="screen">
+      <article class="card" id="card">
+        <div class="title" id="title">Nombre de la Carta</div>
+        <div class="phrase" id="phrase">“Frase de poder…”</div>
+        <div class="msg" id="msg">“Mensaje guía…”</div>
+      </article>
+      <div class="meta" id="meta">Mazo · Carta X</div>
+      <div class="actions">
+        <button id="backBtn" class="btn ghost">← Elegir otro oráculo</button>
+        <button id="againBtn" class="btn">Otra carta ✨</button>
+      </div>
+    </section>
 
     <footer>© Vuelve a Ti · Rosita Ávila</footer>
   </div>
+
+<script>
+// === MAZO 1: De la autoexigencia a la suavidad (40 cartas) ===
+const deckAuto = [
+["Carga Pesada","Reconozco que he llevado más de lo que me corresponde.","No eres débil por admitir tu cansancio. Ver la carga es el primer paso para soltarla. Hoy, date el permiso de sentir y soltar lo que pesa."],
+["La Voz Dura","Observo la dureza con la que me hablo.","Tus palabras pueden ser cuchillos o caricias. Al reconocer la exigencia de tu voz interna, se abre el espacio para suavizarla. Escucha con compasión."],
+["Siempre Más","Acepto que no necesito demostrarme todo el tiempo.","Esa carrera interminable hacia el ‘más’ te aleja de ti misma. Reconocer que nunca fue suficiente es honrar tu alma cansada. Hoy, basta con ser."],
+["Reloj Implacable","Veo cómo me presiono con el tiempo.","Tu valor no se mide en segundos. La prisa constante es una ilusión que te roba la paz. Hoy, observa con ternura tu forma de correr."],
+["Perfección Fría","Reconozco la dureza de querer hacerlo perfecto.","La perfección nunca fue hogar, solo una cárcel invisible. Ver esta exigencia es el inicio de tu libertad. Hoy, permite que algo quede incompleto."],
+["Armadura de Hierro","Acepto que me he protegido con rigidez.","La dureza nació como defensa, no como esencia. Agradece a tu armadura, pero recuerda que ya no necesitas tanto peso. Tu suavidad también te protege."],
+["La Comparación","Me doy cuenta de cuánto me comparo.","Mirarte desde el espejo de otros solo trae dureza. Reconocer este hábito abre camino a mirarte con amor propio. Hoy, vuelve tu mirada hacia ti."],
+["No Es Suficiente","Observo mi sensación de no ser bastante.","Este pensamiento es el origen de tu autoexigencia. Nombrarlo es sanar. Tú ya eres suficiente en tu esencia, no en lo que haces."],
+["Peso en los Hombros","Acepto que me he exigido hasta el agotamiento.","Tus hombros han cargado más de lo justo. Al reconocerlo, comienzan a descansar. Hoy, no necesitas demostrar fuerza, solo respirar."],
+["La Mirada Crítica","Reconozco mi dureza al mirarme.","La forma en que te observas puede herir o sanar. Admitir esa mirada crítica es un acto de conciencia. Hoy, mírate como mirarías a alguien amado."],
+["Rendirse al Fluir","Confío en que la vida sabe más que mi control.","La rigidez nace del miedo. Cada vez que sueltas, algo más grande puede sostenerte. Hoy, entrégate al fluir."],
+["Manos Abiertas","Suelto lo que no depende de mí.","Cerrar los puños te cansa. Abre tus manos y descubre que la vida trae regalos cuando no fuerzas. Hoy, recibe."],
+["Soltar la Meta","Me libero de la obsesión por el resultado.","El camino es más sabio que tu expectativa. Cada paso vale por sí mismo. Hoy, camina sin buscar llegar rápido."],
+["Dejar de Empujar","Elijo dejar de forzar lo que no fluye.","Forzar desgasta el alma. Lo que es para ti no necesita empuje. Hoy, descansa en la confianza de lo inevitable."],
+["El Suspiro Suave","Un suspiro me basta para soltar el control.","Cada respiración profunda te recuerda que no necesitas dominarlo todo. Hoy, suspira y siente alivio."],
+["Puente de Confianza","Camino confiando aunque no vea el final.","El control te exige certezas, pero la confianza te regala paz. Hoy, da un paso con fe, aunque no tengas todas las respuestas."],
+["El Río Claro","Me dejo llevar como el agua, sin resistirme.","El agua nunca discute con las piedras, las rodea. Inspírate en su sabiduría y fluye sin rigidez. Hoy, sé río."],
+["Hojas en el Viento","Acepto no tener el control de todo.","Como las hojas al viento, aprende a moverte con lo que llega. La flexibilidad es tu aliada. Hoy, entrégate al movimiento natural."],
+["Soltar el Deber","Ya no me aferro al ‘tengo que’.","El deber sin alma es una carga muerta. Suelta lo que no vibra contigo. Hoy, solo elige lo que nutre tu corazón."],
+["Entrega Serena","Me entrego con serenidad al misterio de la vida.","No necesitas saberlo todo para estar segura. La serenidad nace de confiar. Hoy, descansa en esa entrega amorosa."],
+["Abrazo Interno","Me abrazo con ternura en cada paso.","El cuidado comienza dentro. La ternura es la medicina que transforma dureza en suavidad. Hoy, regálate un gesto amoroso."],
+["Mirada Suave","Elijo mirarme con ojos de amor.","Tus ojos pueden ser refugio o castigo. Suaviza tu mirada hacia ti y verás florecer la paz. Hoy, mírate con cariño."],
+["Caricia Invisible","Me acaricio con pensamientos suaves.","Cada pensamiento puede ser caricia o espina. Elige palabras dulces hacia ti. Hoy, construye suavidad con tu mente."],
+["Madre Interior","Soy mi propia madre amorosa.","Dentro de ti habita una presencia que sabe cuidar. Déjala hablar más fuerte que la exigencia. Hoy, abrázate como nunca lo hicieron."],
+["Dulzura Cotidiana","Llevo ternura a los gestos pequeños de mi día.","No necesitas grandes rituales para habitar suavidad. Basta un té caliente, un respiro lento o una sonrisa al espejo. Hoy, honra lo pequeño."],
+["Permiso de Sentir","Me permito sentir sin juzgarme.","La ternura también es aceptar lo incómodo sin crítica. Cada emoción merece un lugar en tu corazón. Hoy, abre espacio al sentir."],
+["Cuerpo Refugio","Escucho a mi cuerpo con amor y respeto.","Tu cuerpo habla con sabiduría, no con exigencia. Trátalo como a una amiga. Hoy, atiende una necesidad simple y real."],
+["Suavidad Encendida","Dejo que mi ternura ilumine mis pasos.","La ternura no es debilidad, es una fuerza luminosa. Cada gesto suave crea mundos nuevos. Hoy, deja brillar tu suavidad."],
+["Palabras Mansas","Elijo hablarme con calma y dulzura.","Tus palabras construyen realidades. Haz de tu voz un río sereno. Hoy, conversa contigo como con tu mejor amiga."],
+["Refugio Interior","Mi interior es un espacio de ternura y calma.","Dentro de ti existe un hogar suave al que siempre puedes volver. Hoy, recuerda que no estás perdida: la ternura vive en ti."],
+["Ritmo Propio","Honro mi propio ritmo sin compararme.","La suavidad florece cuando caminas a tu paso. El mundo no necesita prisa, necesita autenticidad. Hoy, respeta tu compás."],
+["Corazón Ligero","Elijo soltar cargas y vivir ligera.","La vida es más amable cuando no llevas peso extra. Hoy, entrega una carga innecesaria y siente tu ligereza."],
+["Juego Inocente","Me permito jugar sin propósito.","El juego es un puente hacia la suavidad. No todo necesita utilidad. Hoy, juega por el simple gozo de existir."],
+["Tiempo Suave","Vivo mis días sin apuro, en calma.","El tiempo se vuelve aliado cuando lo habitas suavemente. Hoy, regálate un instante lento, como si fuera eterno."],
+["Cosecha Serena","Recibo lo bueno con gratitud y calma.","No necesitas correr detrás de lo que ya florece. La serenidad es fruto de confiar en tu siembra. Hoy, agradece lo recibido."],
+["Sonrisa Serena","Mi sonrisa abre caminos de suavidad.","Una sonrisa sincera cambia tu mundo y el de otros. Hoy, deja que la suavidad se exprese en tu rostro."],
+["Presencia Dulce","Habito mi presente con dulzura.","El ahora es un jardín que pide suavidad. Cada instante se vuelve más bello cuando lo abrazas sin dureza. Hoy, quédate aquí."],
+["Alma Ligera","Elijo caminar libre de exigencia.","La suavidad es un estado del alma. No necesitas probar nada, solo estar. Hoy, camina ligera y plena."],
+["Danza Serena","Me muevo con gracia y calma.","Tu vida puede ser danza y no carrera. Baila con lo que llega, deja que el ritmo sea tu maestro. Hoy, muévete suavemente."],
+["Vida Suave","Construyo mi vida desde la calma y el amor.","Vivir en suavidad es una elección diaria. No es renuncia, es liberación. Hoy, haz de tu vida un refugio amoroso."]
+];
+
+// === MAZO 2: De buscadora a encontradora (40 cartas) ===
+const deckBusca = [
+["Camino Inquieto","Reconozco mi anhelo de encontrar afuera lo que ya soy.","La búsqueda comenzó con movimiento externo. Corrías tras respuestas en otros lugares, sin saber que tu hogar estaba dentro. Hoy, observa ese impulso con ternura."],
+["Espejos Ajenos","Me doy cuenta de cuánto me pierdo en los demás.","Los espejos de afuera pueden inspirar, pero no definirte. Cuando buscas demasiado en otros, olvidas tu luz propia. Hoy, recuerda que tu reflejo más fiel está en tu interior."],
+["Senderos Múltiples","Reconozco cuántos caminos externos he seguido.","El alma buscadora probó mil rutas. Todas te enseñaron algo, pero ninguna podía completarte. Hoy, agradece los caminos y vuelve a tu centro."],
+["Sed de Más","Acepto que siempre creí que faltaba algo.","Esa sensación de vacío te llevó a buscar sin descanso. Reconocerlo es el inicio de tu hallazgo verdadero. Hoy, no falta nada."],
+["Tierra Lejana","He buscado lejos lo que estaba cerca.","Tus ojos miraban a la distancia, creyendo que allí estaba la respuesta. Pero lo cercano, lo simple, también guarda tesoros. Hoy, abre los ojos a lo inmediato."],
+["La Maestra Fuera","He creído que otros tenían mis respuestas.","Escuchar es valioso, pero tu verdad no vive en voces ajenas. Hoy, reconoce que tú también eres maestra de ti."],
+["Sed Espiritual","Acepto que busqué en prácticas externas mi plenitud.","La búsqueda espiritual puede volverse exigencia disfrazada. Todo lo que anhelas está en tu respiración presente. Hoy, vuelve a lo simple."],
+["Comparación Constante","Me he perdido midiendo mi camino con otros.","Ningún viaje es igual. Tu búsqueda no se valida en comparación. Hoy, honra tu trayecto único."],
+["Voces Externas","Reconozco cuánto me confundieron tantas voces.","Demasiadas respuestas externas pueden silenciar tu verdad. Hoy, apaga el ruido y escucha tu corazón."],
+["Sombra de Escasez","Acepto que creí que algo me faltaba.","La búsqueda exterior nace del espejismo de la carencia. Pero ya eres completa. Hoy, mírate con plenitud."],
+["Camino Cansado","Acepto mi cansancio de buscar sin fin.","La fatiga es señal de que no necesitas seguir corriendo. Hoy, permite que tu cuerpo y tu alma descansen."],
+["Vacío Interior","Reconozco el vacío que siento tras tantas búsquedas.","Ese vacío no es fracaso, es invitación. El silencio que deja la búsqueda externa abre espacio para algo más profundo."],
+["Desencanto Dulce","Acepto que no encontré lo que esperaba.","El desencanto es un portal. Dejar caer ilusiones también es necesario para despertar. Hoy, recibe este desencanto como maestro."],
+["Peso de Expectativas","Suelto la carga de todo lo que debía encontrar.","Las expectativas no cumplidas te pesan. Libérate de ese deber. Hoy, el no haber encontrado afuera es tu regalo para mirar adentro."],
+["Laberinto Estéril","Acepto que algunos caminos me llevaron a la nada.","No todos los recorridos dan fruto. Y está bien. Aprendiste incluso en la aparente esterilidad. Hoy, agradece el laberinto."],
+["Desilusión Clara","Reconozco mi desilusión como un despertar.","No encontraste afuera lo que buscabas. Esa claridad es el inicio de tu verdad. Hoy, permite que la desilusión te limpie de ilusiones."],
+["Rendida al Cansancio","Me permito parar y soltar la carrera.","No siempre avanzar es sabio. A veces detenerse es la mayor evolución. Hoy, honra tu cansancio como señal de sabiduría."],
+["Hambre Eterna","Acepto que ningún logro llenó mi hambre.","Esa hambre de más, nunca se sacia afuera. Reconocerlo abre espacio para nutrirte dentro. Hoy, escucha esa necesidad real."],
+["Silencio Forzado","Descubro que el silencio llega cuando ya no puedo más.","El cuerpo y el alma paran cuando la mente no quiere. Ese silencio es medicina. Hoy, descansa en él sin resistencia."],
+["Fin de la Carrera","Acepto que ya no quiero correr.","Tu alma anhela calma, no maratones. Reconocer el fin de la carrera es abrir paso a la paz. Hoy, suelta la prisa."],
+["Puerta Interior","La entrada a mi verdad está dentro de mí.","Dejas de mirar afuera y descubres la puerta interna. Allí siempre estuvo tu tesoro. Hoy, cruza ese umbral."],
+["Corazón Vivo","Escucho la voz suave de mi corazón.","Dentro late una sabiduría que no miente. El corazón no exige, susurra. Hoy, atiéndelo."],
+["Luz Íntima","Mi luz propia me guía en la oscuridad.","No necesitas faros externos. Tu luz interna basta para iluminar tu camino. Hoy, confía en ella."],
+["Sagrado Silencio","Encuentro en el silencio mi verdad más profunda.","El ruido externo se apaga para que escuches tu voz. El silencio no es vacío, es plenitud. Hoy, sumérgete en él."],
+["Cueva Sagrada","Mi interior es un refugio seguro.","Como quien entra a una cueva cálida, en tu interior encuentras abrigo. Hoy, habita ese espacio íntimo."],
+["Raíz Profunda","Me enraizo en mi verdad interior.","La fortaleza no viene de lo externo, sino de tu raíz. Hoy, recuerda que tu raíz está dentro."],
+["Escucha Suave","Elijo escucharme con atención amorosa.","Tu alma siempre habló, pero estabas distraída. Hoy, abre tus oídos internos a esa voz sabia."],
+["Agua Interior","Bebo del manantial que nace en mí.","No necesitas correr a buscar agua afuera. Dentro de ti fluye un manantial eterno. Hoy, bebe de él."],
+["Guía Interior","Confío en que mi guía interna nunca me abandona.","La vida entera te habla desde dentro. Esa guía está contigo siempre. Hoy, escúchala y confía."],
+["Tesoro Escondido","Lo que busqué afuera, siempre vivió en mí.","El giro hacia adentro revela el tesoro oculto. No lo perdiste, solo lo habías olvidado. Hoy, recuérdalo."],
+["Presencia Plena","Habito este instante como totalidad.","La verdadera encontradora no busca, vive. Cada respiración es plenitud. Hoy, sé presencia."],
+["Encarnada Luz","Honro mi cuerpo como la casa de mi alma.","No hay separación entre espíritu y cuerpo. Al encarnarte plenamente, encuentras paz. Hoy, honra tu cuerpo."],
+["Gozo Simple","Encuentro alegría en lo sencillo.","La plenitud no es complicada, es simple. Una taza de té, una risa, un amanecer. Hoy, celebra lo pequeño."],
+["Aquí Soy","Encuentro en el presente todo lo que necesito.","El encuentro ocurre aquí, no mañana. Hoy, habita este momento y verás que ya basta."],
+["Raíz Viva","Me sostengo en mis raíces y florezco aquí.","Eres árbol completo: raíz, tronco y fruto. Hoy, enraíza en tu verdad y florece."],
+["Ser Completa","Me reconozco plena sin buscar nada más.","No te falta nada. Estás entera. Hoy, abrázate como totalidad."],
+["Encuentro Real","Soy la respuesta que buscaba.","No hay nada más que encontrar. Tú eres la respuesta. Hoy, mírate y confía."],
+["Alma Serena","Encuentro calma en mi propio ser.","La serenidad no se compra ni se busca, se encarna. Hoy, descansa en ti."],
+["Luz Expandida","Comparto mi luz desde la plenitud interior.","Al encontrarte, irradias. No desde la carencia, sino desde la abundancia. Hoy, brilla sin esfuerzo."],
+["Encuentro Encarnado","Soy hogar, soy raíz, soy totalidad.","La búsqueda terminó: estás en ti. El encuentro no es futuro, es ahora. Hoy, vive tu plenitud encarnada."]
+];
+
+const decks = {
+  auto: { name: "De la autoexigencia a la suavidad", list: deckAuto },
+  busca: { name: "De buscadora a encontradora", list: deckBusca }
+};
+
+// --- Estado y utilidades ---
+const state = { deckKey: null, lastIndex: null };
+
+function drawRandom(deckKey){
+  const d = decks[deckKey];
+  const pool = d.list;
+  if(!pool || pool.length === 0) return;
+
+  let idx = Math.floor(Math.random()*pool.length);
+  if (state.lastIndex === idx && pool.length > 1){
+    idx = (idx + 1 + Math.floor(Math.random()*(pool.length-1))) % pool.length;
+  }
+  state.lastIndex = idx;
+  renderCard(d.name, idx+1, pool[idx]);
+
+  const url = new URL(location);
+  url.searchParams.set("deck", deckKey);
+  history.replaceState(null,"",url);
+}
+
+function renderCard(deckName, number, arr){
+  const [title, phrase, msg] = arr;
+  document.getElementById("title").textContent = title;
+  document.getElementById("phrase").textContent = `“${phrase}”`;
+  document.getElementById("msg").textContent = `“${msg}”`;
+  document.getElementById("meta").textContent = `${deckName} · Carta ${number}`;
+  const el = document.getElementById("card");
+  el.style.animation = "none";
+  requestAnimationFrame(()=>{ el.style.animation = ""; });
+}
+
+// --- Navegación ---
+const welcome = document.getElementById("welcome");
+const reading = document.getElementById("reading");
+document.querySelectorAll("[data-deck]").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    state.deckKey = b.dataset.deck;
+    document.body.classList.add("mode-reading");
+    welcome.classList.remove("active"); reading.classList.add("active");
+    drawRandom(state.deckKey);
+    window.scrollTo({top:0,behavior:"smooth"});
+  });
+});
+document.getElementById("againBtn").addEventListener("click", ()=>{
+  if(state.deckKey){ drawRandom(state.deckKey); }
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+document.getElementById("backBtn").addEventListener("click", ()=>{
+  reading.classList.remove("active"); welcome.classList.add("active");
+  document.body.classList.remove("mode-reading");
+  const url = new URL(location); url.searchParams.delete("deck"); history.replaceState(null,"",url);
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+
+// Cargar directo si viene con ?deck=
+(function init(){
+  const url = new URL(location);
+  const dk = url.searchParams.get("deck");
+  if (dk && decks[dk]){
+    state.deckKey = dk;
+    document.body.classList.add("mode-reading");
+    welcome.classList.remove("active"); reading.classList.add("active");
+    drawRandom(state.deckKey);
+  }
+})();
+</script>
 </body>
 </html>
