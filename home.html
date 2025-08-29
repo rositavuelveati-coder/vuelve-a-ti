@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vuelve a Ti · Rosita Ávila</title>
-  <meta name="description" content="Portada de Vuelve a Ti: oráculos y recursos de Rosita Ávila" />
+  <meta name="description" content="Portada oficial de Vuelve a Ti: oráculos y recursos de Rosita Ávila" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
@@ -26,12 +26,8 @@
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
     }
     .wrap{width:min(820px,100%)}
-    header{text-align:center;margin:0}
-    h1{
-      font-family:Marcellus,serif;font-weight:400;
-      font-size:clamp(24px,4vw,38px);
-      margin:34px 0 0; /* MÁS ESPACIO ARRIBA DEL TÍTULO */
-    }
+    header{text-align:center;margin:6px 0 10px}
+    h1{font-family:Marcellus,serif;font-weight:400;margin:0;font-size:clamp(24px,4vw,38px)}
     .sub{opacity:.85;margin-top:8px}
     .desc{
       max-width:680px;margin:18px auto 26px; line-height:1.6; text-align:center;
@@ -43,18 +39,14 @@
       padding:26px; animation:fade .4s ease-out;
     }
 
-    /* Botones contenedor + botones más angostos */
-    .links{
-      display:grid;gap:14px;margin:10px auto 8px;
-      justify-items:center; /* centra los botones */
-    }
+    /* Botones */
+    .links{display:grid;gap:14px;margin:10px auto 8px;max-width:520px} /* más angosto */
     .btn{
       display:flex;gap:10px;align-items:center;justify-content:center;
       text-decoration:none;color:var(--tinta); background:#fff;border:1px solid #eadfd6;
       padding:16px 18px; border-radius:var(--radius); box-shadow:var(--shadow);
       font-weight:800; font-size:clamp(16px,2.5vw,19px);
       transition:transform .15s ease, box-shadow .15s ease;
-      width:100%; max-width:320px; /* MÁS ANGOSTOS Y CENTRADOS */
     }
     .btn:hover{transform:translateY(-1px); box-shadow:0 12px 44px rgba(62,40,51,.12)}
     .btn.lav{background:var(--lavanda);border-color:var(--lavanda);}
@@ -82,7 +74,7 @@
       <div class="sub">Aquí sanas lo invisible y vuelves a ti</div>
     </header>
 
-    <!-- DESCRIPCIÓN -->
+    <!-- NUEVA DESCRIPCIÓN -->
     <p class="desc">
       Un espacio creado para mujeres sensibles y buscadoras que desean descansar de la exigencia y volver a su hogar interior.
       Aquí encuentras suavidad, claridad y guía para sanar lo invisible y reconectar contigo.
@@ -109,7 +101,7 @@
         </a>
       </div>
 
-      <!-- Íconos sociales dorados -->
+      <!-- Íconos sociales en dorado -->
       <div class="social">
         <!-- Instagram -->
         <a class="icon" href="https://instagram.com/rosita.vuelveati" target="_blank" rel="noopener" aria-label="Instagram">
@@ -119,15 +111,18 @@
             <circle cx="17.5" cy="6.5" r="1.2" class="fill"></circle>
           </svg>
         </a>
-        <!-- Threads (SVG más nítido) -->
+        <!-- Threads (más nítido: trazo grueso + relleno) -->
         <a class="icon" href="https://www.threads.net/@rosita.vuelveati" target="_blank" rel="noopener" aria-label="Threads">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" aria-hidden="true">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
             <!-- aro exterior -->
-            <circle cx="25" cy="25" r="20" fill="none" stroke="var(--gold)" stroke-width="2.1"/>
-            <!-- trazo interno estilizado -->
-            <path d="M30 20c-2-3-5-5-9-5-6 0-10 4-10 10s4 10 10 10c5 0 8-3 9-7
-                     M25 18c3 0 6 2 6 5s-2 5-6 5"
-                  fill="none" stroke="var(--gold)" stroke-width="2.1" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="9" fill="none" stroke="var(--gold)" stroke-width="2.1"></circle>
+            <!-- gesto caligráfico interno (marca Threads estilizada) -->
+            <path d="M8.4 12c0-2.2 1.7-4 3.8-4 1.7 0 3.1 1 3.5 2.6
+                     M12.2 9c2 .1 3.2 1.2 3.5 3.1 .2 1.6-.1 2.7-1.1 3.6
+                     -.9.9-2 1.3-3.2 1.3 -2 0-3.4-1.1-3.4-2.6
+                     0-1.5 1.1-2.3 2.6-2.3 1.5 0 2.5.8 2.5 2.3
+                     0 1.5-1 2.3-2.5 2.3"
+                  fill="none" stroke="var(--gold)" stroke-width="2.1" stroke-linecap="round"></path>
           </svg>
         </a>
         <!-- Correo -->
