@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vuelve a Ti · Rosita Ávila</title>
-  <meta name="description" content="Portada oficial de Vuelve a Ti: oráculos y recursos de Rosita Ávila" />
+  <meta name="description" content="Portada de Vuelve a Ti: oráculos y recursos de Rosita Ávila" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
@@ -26,8 +26,12 @@
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
     }
     .wrap{width:min(820px,100%)}
-    header{text-align:center;margin:6px 0 10px}
-    h1{font-family:Marcellus,serif;font-weight:400;margin:0;font-size:clamp(24px,4vw,38px)}
+    header{text-align:center;margin:0}
+    h1{
+      font-family:Marcellus,serif;font-weight:400;
+      font-size:clamp(24px,4vw,38px);
+      margin:34px 0 0; /* MÁS ESPACIO ARRIBA DEL TÍTULO */
+    }
     .sub{opacity:.85;margin-top:8px}
     .desc{
       max-width:680px;margin:18px auto 26px; line-height:1.6; text-align:center;
@@ -36,106 +40,4 @@
     .card{
       background:linear-gradient(180deg,#FFFFFF 0%, #FFF9F7 100%);
       border:1px solid #eadfd6;border-radius:28px;box-shadow:var(--shadow);
-      padding:26px; animation:fade .4s ease-out;
-    }
-
-    /* Botones */
-    .links{display:grid;gap:14px;margin:10px auto 8px;max-width:520px} /* más angosto */
-    .btn{
-      display:flex;gap:10px;align-items:center;justify-content:center;
-      text-decoration:none;color:var(--tinta); background:#fff;border:1px solid #eadfd6;
-      padding:16px 18px; border-radius:var(--radius); box-shadow:var(--shadow);
-      font-weight:800; font-size:clamp(16px,2.5vw,19px);
-      transition:transform .15s ease, box-shadow .15s ease;
-    }
-    .btn:hover{transform:translateY(-1px); box-shadow:0 12px 44px rgba(62,40,51,.12)}
-    .btn.lav{background:var(--lavanda);border-color:var(--lavanda);}
-
-    /* Íconos sociales */
-    .social{display:flex;gap:14px;justify-content:center;margin-top:18px}
-    .icon{
-      width:46px;height:46px;border-radius:999px;background:#fff;border:1px solid #eadfd6;
-      display:inline-grid;place-items:center;box-shadow:var(--shadow);
-      transition:transform .15s ease, box-shadow .15s ease;
-      color:var(--gold);
-    }
-    .icon:hover{transform:translateY(-1px); box-shadow:0 12px 44px rgba(62,40,51,.12)}
-    .icon svg{width:24px;height:24px;fill:none;stroke:var(--gold);stroke-width:2.1}
-    .icon .fill{fill:var(--gold);stroke:none}
-
-    footer{margin-top:20px;text-align:center;opacity:.7;font-size:12px}
-    @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <h1>✨ Vuelve a Ti · Rosita Ávila ✨</h1>
-      <div class="sub">Aquí sanas lo invisible y vuelves a ti</div>
-    </header>
-
-    <!-- NUEVA DESCRIPCIÓN -->
-    <p class="desc">
-      Un espacio creado para mujeres sensibles y buscadoras que desean descansar de la exigencia y volver a su hogar interior.
-      Aquí encuentras suavidad, claridad y guía para sanar lo invisible y reconectar contigo.
-    </p>
-
-    <div class="card">
-      <!-- Botón principal a tus oráculos (index.html) -->
-      <div class="links" style="margin-bottom:10px">
-        <a class="btn lav" href="./index.html">🌟 Oráculos que iluminan</a>
-      </div>
-
-      <!-- Botones secundarios -->
-      <div class="links">
-        <a class="btn" href="#" aria-label="Ficha para reconectar contigo">
-          📄 Ficha para reconectar contigo
-        </a>
-
-        <a class="btn" href="#" aria-label="Pronto sesiones Vuelve a Ti">
-          ✨ Pronto │ Sesiones Vuelve a Ti
-        </a>
-
-        <a class="btn" href="#" aria-label="Mi camino, conóceme más">
-          🌱 Mi camino │ Conóceme más
-        </a>
-      </div>
-
-      <!-- Íconos sociales en dorado -->
-      <div class="social">
-        <!-- Instagram -->
-        <a class="icon" href="https://instagram.com/rosita.vuelveati" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-            <circle cx="12" cy="12" r="4.2"></circle>
-            <circle cx="17.5" cy="6.5" r="1.2" class="fill"></circle>
-          </svg>
-        </a>
-        <!-- Threads (más nítido: trazo grueso + relleno) -->
-        <a class="icon" href="https://www.threads.net/@rosita.vuelveati" target="_blank" rel="noopener" aria-label="Threads">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <!-- aro exterior -->
-            <circle cx="12" cy="12" r="9" fill="none" stroke="var(--gold)" stroke-width="2.1"></circle>
-            <!-- gesto caligráfico interno (marca Threads estilizada) -->
-            <path d="M8.4 12c0-2.2 1.7-4 3.8-4 1.7 0 3.1 1 3.5 2.6
-                     M12.2 9c2 .1 3.2 1.2 3.5 3.1 .2 1.6-.1 2.7-1.1 3.6
-                     -.9.9-2 1.3-3.2 1.3 -2 0-3.4-1.1-3.4-2.6
-                     0-1.5 1.1-2.3 2.6-2.3 1.5 0 2.5.8 2.5 2.3
-                     0 1.5-1 2.3-2.5 2.3"
-                  fill="none" stroke="var(--gold)" stroke-width="2.1" stroke-linecap="round"></path>
-          </svg>
-        </a>
-        <!-- Correo -->
-        <a class="icon" href="mailto:rosita.vuelveat@gmail.com" aria-label="Correo electrónico">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3" y="5.5" width="18" height="13" rx="2"></rect>
-            <path d="M4 7l8 6 8-6" fill="none"></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-
-    <footer>© Vuelve a Ti · Rosita Ávila</footer>
-  </div>
-</body>
-</html>
+      padding:26px
