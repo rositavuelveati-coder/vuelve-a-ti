@@ -3,99 +3,115 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vuelve a Ti – Cartas Oráculo</title>
-  <meta name="description" content="Cartas oráculo transformacionales: de la autoexigencia a la suavidad, y de buscadora a encontradora." />
+  <title>Vuelve a Ti · Oráculo</title>
+  <meta name="description" content="Oráculo Vuelve a Ti: una guía suave para tu día." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root{
       --lavanda:#CBAACB;
-      --beige:#F0E6DA;
+      --beige:#EFE3D6;
       --rosa:#E6B7C2;
       --dorado:#D4AF37;
-      --tinta:#4A2E3B;
-      --bg:#FBF8F5;
+      --tinta:#3E2833;
+      --bg:#F6EFE9;
+      --card:#FFFFFF;
+      --shadow:0 10px 40px rgba(203,170,203,.25);
     }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;background:var(--bg);color:var(--tinta);}
-    body{display:flex;align-items:center;justify-content:center;padding:20px;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;}
-    .app{width:min(920px,100%);}
-    header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
-    .brand{display:flex;align-items:center;gap:10px}
-    .dot{width:12px;height:12px;border-radius:50%;background:var(--lavanda);box-shadow:16px 0 0 var(--rosa),32px 0 0 var(--beige),48px 0 0 var(--dorado);}
-    h1{font-family:Marcellus,serif;font-weight:400;font-size:clamp(22px,3.2vw,32px);margin:0;}
-    .controls{display:flex;flex-wrap:wrap;gap:8px}
-    button,select{border:1px solid #e7dcd1;background:white;color:var(--tinta);padding:10px 14px;border-radius:12px;font-weight:600;cursor:pointer}
-    button.primary{background:var(--lavanda);border-color:var(--lavanda);color:#2d1b26}
-    button.ghost{background:transparent}
-    .card{
-      background:linear-gradient(180deg, #FFFFFF 0%, #FFF9F7 100%);
-      border:1px solid #eadfd6;
-      border-radius:24px;
-      padding:28px;
-      box-shadow:0 8px 30px rgba(203,170,203,.25);
-      display:grid;gap:14px;
-      min-height:320px;
-      animation:fade .28s ease-out;
+    body{display:flex;align-items:center;justify-content:center;padding:24px;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;}
+    .app{width:min(940px,100%);position:relative}
+    .leaf{
+      position:absolute; inset:auto -40px -40px auto;
+      width:min(180px,35vw); height:auto; opacity:.12; pointer-events:none;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,.05));
+      transform: rotate(-8deg);
     }
-    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--beige);border:1px solid #e7dcd1;font-size:12px;font-weight:600;letter-spacing:.02em}
-    .title{font-family:Marcellus,serif;font-size:clamp(22px,3vw,28px);margin:2px 0 6px}
-    .phrase{font-size:clamp(16px,2.4vw,18px);font-weight:600}
-    .msg{font-size:clamp(15px,2.2vw,17px);line-height:1.6}
-    .bar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px}
+    header{text-align:center;margin-bottom:18px}
+    header h1{font-family:Marcellus,serif;font-weight:400;font-size:clamp(22px,4vw,36px);margin:0}
+    header p{margin:6px 0 0;opacity:.8}
+    .screen{display:none}
+    .screen.active{display:block;animation:fade .35s ease-out}
+    .welcome{display:grid;gap:16px;justify-items:center}
+    .lead{font-weight:700}
+    .choices{display:grid;gap:12px;grid-template-columns:1fr;max-width:640px;width:100%;margin-top:6px}
+    .btn{
+      border:1px solid #eadfd6;background:white;color:var(--tinta);
+      padding:14px 18px;border-radius:16px;font-weight:700;cursor:pointer;
+      box-shadow: var(--shadow); font-size:clamp(15px,2.5vw,18px);
+    }
+    .btn.primary{background:var(--lavanda);border-color:var(--lavanda);}
+    .btn.big{padding:18px 22px;border-radius:20px}
+    .btn.ghost{background:transparent;border-color:#e5d8cc}
+    .card{
+      background:linear-gradient(180deg,#FFFFFF 0%, #FFF9F7 100%);
+      border:1px solid #eadfd6;
+      border-radius:28px;
+      padding:28px;
+      box-shadow: var(--shadow);
+      display:grid;gap:14px;min-height:320px;
+      animation:rise .35s ease-out;
+    }
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--beige);border:1px solid #e7dcd1;font-size:12px;font-weight:700;letter-spacing:.02em}
+    .title{font-family:Marcellus,serif;font-size:clamp(24px,3.6vw,34px);margin:8px 0 2px}
+    .phrase{font-size:clamp(16px,2.4vw,20px);font-weight:800}
+    .msg{font-size:clamp(15px,2.2vw,18px);line-height:1.65}
+    .bar{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
     .muted{opacity:.7;font-size:13px}
-    .actions{display:flex;gap:8px;flex-wrap:wrap}
-    footer{margin-top:18px;font-size:12px;opacity:.65;text-align:center}
-    a.link{color:inherit}
-    @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-    .logo{width:42px;height:42px;border-radius:12px;background:radial-gradient(60% 60% at 40% 40%, var(--lavanda), var(--rosa) 60%, var(--beige) 100%);border:1px solid #e7dcd1;position:relative}
-    .logo:after{content:"";position:absolute;inset:8px;border-radius:10px;border:1.5px dashed rgba(74,46,59,.25)}
-    .hidden{display:none}
+    .center{display:grid;justify-items:center}
+    footer{margin-top:16px;font-size:12px;opacity:.65;text-align:center}
+    @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    @keyframes rise{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+    .spacer{height:10px}
   </style>
 </head>
 <body>
   <div class="app">
+    <svg class="leaf" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M30 150 C60 110, 110 120, 160 40" stroke="#8f6a8f" stroke-width="6" stroke-linecap="round"/>
+      <path d="M160 40 C120 70, 100 90, 90 120" stroke="#8f6a8f" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="160" cy="40" r="10" fill="#CBAACB"/>
+    </svg>
+
     <header>
-      <div class="brand">
-        <div class="logo"></div>
-        <div>
-          <h1>Vuelve a Ti · Cartas</h1>
-          <div class="muted" style="margin-top:2px">Un clic, una guía suave ✨</div>
-        </div>
-      </div>
-      <div class="controls">
-        <select id="deckSelect" title="Selecciona un mazo">
-          <option value="auto">Mazo 1 · Autoexigencia → Suavidad</option>
-          <option value="busca">Mazo 2 · Buscadora → Encontradora</option>
-        </select>
-        <select id="categorySelect" title="Filtrar por categoría">
-          <option value="all">Todas las categorías</option>
-        </select>
-        <button class="primary" id="drawBtn">Nueva carta</button>
-        <button id="copyBtn" class="ghost" title="Copiar carta">Copiar</button>
-        <button id="shareBtn" class="ghost" title="Compartir carta">Compartir</button>
-      </div>
+      <h1>✨ Vuelve a Ti · Oráculo ✨</h1>
+      <p>Una guía suave para tu día</p>
     </header>
 
-    <article class="card" id="card">
-      <div><span class="pill" id="pill">Categoría</span></div>
-      <div class="title" id="title">Nombre de la Carta</div>
-      <div class="phrase" id="phrase">Frase de poder…</div>
-      <div class="msg" id="msg">Mensaje guía…</div>
-      <div class="bar">
-        <div class="muted" id="meta">Mazo · Nº</div>
-        <div class="actions">
-          <button id="againBtn">Otra vez</button>
-        </div>
+    <section id="welcome" class="screen welcome active">
+      <div class="lead"><strong>Elige el oráculo que te iluminará hoy</strong></div>
+      <div class="choices">
+        <button class="btn big" data-deck="auto">🌸 De la Autoexigencia a la Suavidad</button>
+        <button class="btn big" data-deck="busca">🌙 De Buscadora a Encontradora</button>
       </div>
-    </article>
+    </section>
+
+    <section id="reading" class="screen">
+      <div class="center">
+        <div class="spacer"></div>
+        <article class="card" id="card">
+          <div><span class="pill" id="pill">Categoría</span></div>
+          <div class="title" id="title">Nombre de la Carta</div>
+          <div class="phrase" id="phrase">“Frase de poder…”</div>
+          <div class="msg" id="msg">“Mensaje guía…”</div>
+          <div class="bar">
+            <div class="muted" id="meta">Mazo · Nº</div>
+            <button id="againBtn" class="btn">Otra carta ✨</button>
+          </div>
+        </article>
+        <div style="margin-top:14px">
+          <button id="backBtn" class="btn ghost">← Elegir otro oráculo</button>
+        </div>
+        <div class="spacer"></div>
+      </div>
+    </section>
 
     <footer>© Vuelve a Ti · Rosita — paleta: lavanda, beige, rosa palo y dorado tenue.</footer>
   </div>
 
 <script>
-// --- Datos: dos mazos con 4 categorías cada uno ---
 const decks = {
   auto: {
     name: "De la autoexigencia a la suavidad",
@@ -205,117 +221,57 @@ const decks = {
   }
 };
 
-const state = { deckKey: "auto", categoryKey: "all", lastId: "" };
+const state = { deckKey: null };
 
-const deckSelect = document.getElementById("deckSelect");
-const categorySelect = document.getElementById("categorySelect");
-const drawBtn = document.getElementById("drawBtn");
-const againBtn = document.getElementById("againBtn");
-const copyBtn = document.getElementById("copyBtn");
-const shareBtn = document.getElementById("shareBtn");
-
-function uid(){ return Math.random().toString(36).slice(2,8) }
-
-function populateCategories() {
-  const d = decks[state.deckKey];
-  categorySelect.innerHTML = '<option value="all">Todas las categorías</option>' +
-    Object.keys(d.categories).map(c => `<option value="${c}">${c}</option>`).join("");
-}
-
-function drawRandom() {
-  const d = decks[state.deckKey];
+function drawRandom(deckKey){
+  const d = decks[deckKey];
   const cats = Object.entries(d.categories);
   let pool = [];
-  for (const [cat, list] of cats) {
-    if (state.categoryKey === "all" || state.categoryKey === cat) {
-      pool = pool.concat(list.map((c,i) => ({cat, idx:i, data:c})));
-    }
+  for (const [cat, list] of cats){
+    pool = pool.concat(list.map((c,i)=>({cat, idx:i, data:c})));
   }
-  if (!pool.length) return;
-  const pick = pool[Math.floor(Math.random() * pool.length)];
+  const pick = pool[Math.floor(Math.random()*pool.length)];
   renderCard(d.name, pick.cat, pick.idx+1, pick.data);
-  // Update URL for shareability
-  const id = uid();
-  state.lastId = id;
   const url = new URL(location);
-  url.searchParams.set("deck", state.deckKey);
-  url.searchParams.set("cat", pick.cat);
-  url.searchParams.set("n", pick.idx+1);
-  url.searchParams.set("id", id);
-  history.replaceState(null, "", url);
+  url.searchParams.set("deck", deckKey);
+  history.replaceState(null,"",url);
 }
 
-function renderCard(deckName, category, number, arr) {
+function renderCard(deckName, category, number, arr){
   const [title, phrase, msg] = arr;
   document.getElementById("pill").textContent = category;
   document.getElementById("title").textContent = title;
   document.getElementById("phrase").textContent = `“${phrase}”`;
   document.getElementById("msg").textContent = `“${msg}”`;
   document.getElementById("meta").textContent = `${deckName} · Carta ${number}`;
-  document.getElementById("card").style.animation = "none";
-  setTimeout(()=>document.getElementById("card").style.animation="", 10);
+  const el = document.getElementById("card");
+  el.style.animation = "none";
+  requestAnimationFrame(()=>{ el.style.animation = ""; });
 }
 
-function copyCard(){
-  const t = document.getElementById("title").textContent;
-  const p = document.getElementById("phrase").textContent;
-  const m = document.getElementById("msg").textContent;
-  const content = `${t}\n${p}\n${m}\n— Vuelve a Ti`;
-  navigator.clipboard.writeText(content).then(()=>{
-    copyBtn.textContent = "Copiado ✓";
-    setTimeout(()=>copyBtn.textContent="Copiar", 1200);
+const welcome = document.getElementById("welcome");
+const reading = document.getElementById("reading");
+document.querySelectorAll("[data-deck]").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    state.deckKey = b.dataset.deck;
+    welcome.classList.remove("active"); reading.classList.add("active");
+    drawRandom(state.deckKey);
   });
-}
-
-async function shareCard(){
-  const url = location.href;
-  const t = document.getElementById("title").textContent;
-  const text = `Carta “${t}” · Vuelve a Ti`;
-  if (navigator.share){
-    try{ await navigator.share({title:"Vuelve a Ti – Cartas", text, url}); }catch(e){}
-  }else{
-    await navigator.clipboard.writeText(url);
-    shareBtn.textContent = "Enlace copiado ✓";
-    setTimeout(()=>shareBtn.textContent="Compartir", 1200);
-  }
-}
-
-deckSelect.addEventListener("change", () => {
-  state.deckKey = deckSelect.value;
-  populateCategories();
-  state.categoryKey = "all";
-  categorySelect.value = "all";
-  drawRandom();
 });
-categorySelect.addEventListener("change", () => {
-  state.categoryKey = categorySelect.value;
-  drawRandom();
+document.getElementById("againBtn").addEventListener("click", ()=>drawRandom(state.deckKey));
+document.getElementById("backBtn").addEventListener("click", ()=>{
+  reading.classList.remove("active"); welcome.classList.add("active");
+  const url = new URL(location); url.searchParams.delete("deck"); history.replaceState(null,"",url);
 });
-drawBtn.addEventListener("click", drawRandom);
-againBtn.addEventListener("click", drawRandom);
-copyBtn.addEventListener("click", copyCard);
-shareBtn.addEventListener("click", shareCard);
 
-// Restore from URL if present
 (function init(){
-  populateCategories();
   const url = new URL(location);
   const dk = url.searchParams.get("deck");
-  const cat = url.searchParams.get("cat");
-  const n = parseInt(url.searchParams.get("n"),10);
   if (dk && decks[dk]){
     state.deckKey = dk;
-    deckSelect.value = dk;
-    populateCategories();
+    welcome.classList.remove("active"); reading.classList.add("active");
+    drawRandom(state.deckKey);
   }
-  if (cat && decks[state.deckKey].categories[cat]){
-    state.categoryKey = cat;
-    categorySelect.value = cat;
-  }
-  if (!isNaN(n)){
-    const data = decks[state.deckKey].categories[state.categoryKey || "all"];
-  }
-  drawRandom();
 })();
 </script>
 </body>
