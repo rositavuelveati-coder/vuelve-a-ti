@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vuelve a Ti · Rosita Ávila</title>
-  <meta name="description" content="Portada oficial de Vuelve a Ti: oráculos y redes de Rosita Ávila" />
+  <meta name="description" content="Portada oficial de Vuelve a Ti: oráculos y recursos de Rosita Ávila" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
@@ -17,10 +17,14 @@
       --bg:#EFE7DE;
       --shadow:0 12px 40px rgba(62,40,51,.10);
       --radius:24px;
+      --gold:#D4AF37; /* Dorado tenue para íconos */
     }
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;background:var(--bg);color:var(--tinta);}
-    body{display:flex;align-items:center;justify-content:center;padding:28px;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;}
+    body{
+      display:flex;align-items:center;justify-content:center;padding:28px;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+    }
     .wrap{width:min(820px,100%)}
     header{text-align:center;margin:4px 0 26px}
     h1{font-family:Marcellus,serif;font-weight:400;margin:0;font-size:clamp(24px,4vw,38px)}
@@ -30,6 +34,8 @@
       border:1px solid #eadfd6;border-radius:28px;box-shadow:var(--shadow);
       padding:22px; animation:fade .4s ease-out;
     }
+
+    /* Botones */
     .links{display:grid;gap:14px;margin:8px auto;max-width:560px}
     .btn{
       display:flex;gap:10px;align-items:center;justify-content:center;
@@ -39,17 +45,20 @@
       transition:transform .15s ease, box-shadow .15s ease;
     }
     .btn:hover{transform:translateY(-1px); box-shadow:0 12px 44px rgba(62,40,51,.12)}
-    .btn.lav{background:var(--lavanda);border-color:var(--lavanda)}
-    .social{display:flex;gap:14px;justify-content:center;margin-top:14px}
+    .btn.lav{background:var(--lavanda);border-color:var(--lavanda);}
+
+    /* Íconos sociales */
+    .social{display:flex;gap:14px;justify-content:center;margin-top:16px}
     .icon{
       width:46px;height:46px;border-radius:999px;background:#fff;border:1px solid #eadfd6;
       display:inline-grid;place-items:center;box-shadow:var(--shadow);
       transition:transform .15s ease, box-shadow .15s ease;
-      color:var(--tinta);
+      color:var(--gold);
     }
     .icon:hover{transform:translateY(-1px); box-shadow:0 12px 44px rgba(62,40,51,.12)}
-    .icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8}
-    .icon .fill{fill:currentColor;stroke:none}
+    .icon svg{width:24px;height:24px;fill:none;stroke:var(--gold);stroke-width:1.9}
+    .icon .fill{fill:var(--gold);stroke:none}
+
     footer{margin-top:18px;text-align:center;opacity:.7;font-size:12px}
     @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
   </style>
@@ -62,12 +71,30 @@
     </header>
 
     <div class="card">
-      <div class="links">
-        <!-- ÚNICO BOTÓN a la página de oráculos (index.html existente) -->
+      <!-- Botón principal a tus oráculos (index.html) -->
+      <div class="links" style="margin-bottom:6px">
         <a class="btn lav" href="./index.html">🌟 Oráculos que iluminan</a>
       </div>
 
-      <!-- Íconos sociales -->
+      <!-- NUEVOS BOTONES -->
+      <div class="links">
+        <!-- 1) Ficha -->
+        <a class="btn" href="#" aria-label="Ficha para reconectar contigo">
+          📄 Ficha para reconectar contigo
+        </a>
+
+        <!-- 2) Pronto │ Sesiones Vuelve a Ti -->
+        <a class="btn" href="#" aria-label="Pronto sesiones Vuelve a Ti">
+          ✨ Pronto │ Sesiones Vuelve a Ti
+        </a>
+
+        <!-- 3) Mi camino │ Conóceme más (va al final) -->
+        <a class="btn" href="#" aria-label="Mi camino, conóceme más">
+          🌱 Mi camino │ Conóceme más
+        </a>
+      </div>
+
+      <!-- Íconos sociales en dorado -->
       <div class="social">
         <!-- Instagram -->
         <a class="icon" href="https://instagram.com/rosita.vuelveati" target="_blank" rel="noopener" aria-label="Instagram">
@@ -77,11 +104,11 @@
             <circle cx="17.5" cy="6.5" r="1.2" class="fill"></circle>
           </svg>
         </a>
-        <!-- Threads -->
+        <!-- Threads (ícono oficial estilizado) -->
         <a class="icon" href="https://www.threads.net/@rosita.vuelveati" target="_blank" rel="noopener" aria-label="Threads">
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 3.5c5.2 0 8.5 3.3 8.5 8.5S17.2 20.5 12 20.5 3.5 17.2 3.5 12 6.8 3.5 12 3.5Z"></path>
-            <path d="M8.8 12c0-2.1 1.6-3.8 3.7-3.8 1.7 0 3.1 1 3.4 2.6M12.1 8.7c2 .1 3.2 1.1 3.5 3 .2 1.5-.1 2.6-1 3.5-.8.8-1.8 1.2-3 1.2-1.9 0-3.3-1-3.3-2.5 0-1.4 1.1-2.2 2.6-2.2 1.5 0 2.5.8 2.5 2.2 0 1.4-1 2.2-2.5 2.2" fill="none"></path>
+            <path d="M12 2.5c5.5 0 9 3.5 9 9s-3.5 9-9 9-9-3.5-9-9 3.5-9 9-9Z"></path>
+            <path d="M8.5 12c0-2.2 1.7-4 3.8-4 1.8 0 3.2 1.1 3.6 2.8M12.3 8.8c2.1.1 3.4 1.2 3.7 3.2.2 1.6-.1 2.8-1.1 3.7-.9.9-2 1.3-3.3 1.3-2 0-3.5-1.1-3.5-2.7s1.1-2.3 2.7-2.3 2.6.8 2.6 2.3-1.1 2.3-2.6 2.3" fill="none"></path>
           </svg>
         </a>
         <!-- Correo -->
