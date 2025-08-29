@@ -15,7 +15,7 @@
       --rosa:#E6B7C2;
       --dorado:#D4AF37;
       --tinta:#3E2833;
-      --bg:#EFE7DE;
+      --bg:#EFE7DE;           /* fondo más nítido */
       --card:#FFFFFF;
       --shadow:0 10px 38px rgba(62,40,51,.08);
       --radius:28px;
@@ -52,11 +52,13 @@
     }
     .title{font-family:Marcellus,serif;font-size:clamp(24px,3.6vw,34px);margin:2px 0 4px;text-align:center}
     .phrase{font-size:clamp(16px,2.4vw,20px);font-weight:800;text-align:center}
-    .msg{font-size:clamp(15px,2.2vw,18px);line-height:1.65;text-align:left}
+    .msg{font-size:clamp(15px,2.2vw,18px);line-height:1.65;text-align:center} /* centrado */
     .meta{margin-top:10px;text-align:center;opacity:.7;font-size:13px}
     .actions{display:flex;justify-content:space-between;gap:12px;margin-top:18px}
     .actions .btn{min-width:44%;}
     footer{margin-top:18px;font-size:12px;opacity:.7;text-align:center}
+    /* Ocultar cabecera y bienvenida cuando se está en modo carta */
+    body.mode-reading header, body.mode-reading #welcome{display:none !important;}
     @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
     @keyframes rise{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
   </style>
@@ -95,29 +97,60 @@
   </div>
 
 <script>
-// Simplificado: se mantienen los mazos como en la versión previa
+// --- Datos: 12 cartas por mazo para que "Otra carta" siempre cambie ---
 const decks = {
   auto: {
     name: "De la autoexigencia a la suavidad",
-    categories: { "demo":[ ["Carga Pesada","Reconozco que he llevado más de lo que me corresponde.","No eres débil por admitir tu cansancio. Ver la carga es el primer paso para soltarla. Hoy, date el permiso de sentir lo que pesa."] ] }
+    list: [
+      ["Carga Pesada","Reconozco que he llevado más de lo que me corresponde.","No eres débil por admitir tu cansancio. Ver la carga es el primer paso para soltarla. Hoy, date el permiso de sentir lo que pesa."],
+      ["La Voz Dura","Observo la dureza con la que me hablo.","Tus palabras pueden ser cuchillos o caricias. Al reconocer la exigencia, se abre espacio para suavizarla. Hoy, háblate con amor."],
+      ["Siempre Más","Acepto que no necesito demostrarme todo el tiempo.","La carrera del 'más' te aleja de ti. Hoy, basta con ser."],
+      ["Reloj Implacable","Veo cómo me presiono con el tiempo.","Tu valor no se mide en segundos. Hoy, baja el ritmo."],
+      ["Perfección Fría","Reconozco la dureza de querer hacerlo perfecto.","La perfección es cárcel invisible. Hoy, permite que algo quede incompleto."],
+      ["Rendirse al Fluir","Confío en que la vida sabe más que mi control.","La rigidez nace del miedo. Hoy, entrégate al fluir."],
+      ["Manos Abiertas","Suelto lo que no depende de mí.","Lo que es para ti llega sin forzar. Hoy, recibe."],
+      ["Puente de Confianza","Camino confiando aunque no vea el final.","No necesitas todas las respuestas para dar el paso. Hoy, confía."],
+      ["Mirada Suave","Elijo mirarme con ojos de amor.","La ternura es medicina. Hoy, mírate con cariño."],
+      ["Dulzura Cotidiana","Llevo ternura a los gestos pequeños de mi día.","Un té, un suspiro, una pausa. Hoy, honra lo pequeño."],
+      ["Presencia Dulce","Habito mi presente con dulzura.","El ahora es un jardín que pide suavidad. Hoy, quédate aquí."],
+      ["Alma Ligera","Elijo caminar libre de exigencia.","No necesitas probar nada, solo estar. Hoy, camina ligera."]
+    ]
   },
   busca: {
     name: "De buscadora a encontradora",
-    categories: { "demo":[ ["Camino Inquieto","Reconozco mi anhelo de encontrar afuera lo que ya soy.","La búsqueda comenzó con movimiento externo. Corrías tras respuestas en otros lugares, sin saber que tu hogar estaba dentro. Hoy, observa ese impulso con ternura."] ] }
+    list: [
+      ["Camino Inquieto","Reconozco mi anhelo de encontrar afuera lo que ya soy.","Corrías tras respuestas; tu hogar estaba dentro. Hoy, observa ese impulso con ternura."],
+      ["Espejos Ajenos","Me doy cuenta de cuánto me pierdo en los demás.","Los espejos inspiran, no te definen. Hoy, vuelve a tu centro."],
+      ["Sed de Más","Acepto que siempre creí que faltaba algo.","Nombrar la carencia abre la puerta a la plenitud. Hoy, no falta nada."],
+      ["Camino Cansado","Acepto mi cansancio de buscar sin fin.","Detenerse también es sabio. Hoy, descansa."],
+      ["Desencanto Dulce","Acepto que no encontré lo que esperaba.","El desencanto es un portal. Hoy, deja caer la ilusión y respira."],
+      ["Puerta Interior","La entrada a mi verdad está dentro de mí.","Cruza el umbral: tu tesoro vive adentro."],
+      ["Corazón Vivo","Escucho la voz suave de mi corazón.","No exige, susurra. Hoy, atiéndelo."],
+      ["Sagrado Silencio","Encuentro en el silencio mi verdad más profunda.","El silencio es plenitud. Hoy, habítalo."],
+      ["Presencia Plena","Habito este instante como totalidad.","La encontradora no busca, vive. Hoy, sé presencia."],
+      ["Gozo Simple","Encuentro alegría en lo sencillo.","Una taza de té, una risa. Hoy, celebra lo pequeño."],
+      ["Ser Completa","Me reconozco plena sin buscar nada más.","No te falta nada. Hoy, abrázate como totalidad."],
+      ["Luz Expandida","Comparto mi luz desde la plenitud interior.","Al encontrarte, irradias sin esfuerzo. Hoy, brilla suave."]
+    ]
   }
 };
 
-const state = { deckKey: null };
+// --- Estado y utilidades ---
+const state = { deckKey: null, lastIndex: null };
 
 function drawRandom(deckKey){
   const d = decks[deckKey];
-  const cats = Object.entries(d.categories);
-  let pool = [];
-  for (const [cat, list] of cats){
-    pool = pool.concat(list.map((c,i)=>({idx:i, data:c})));
+  const pool = d.list;
+  if(!pool || pool.length === 0) return;
+
+  let idx = Math.floor(Math.random()*pool.length);
+  if (state.lastIndex === idx && pool.length > 1){
+    // evita repetir inmediata
+    idx = (idx + 1 + Math.floor(Math.random()*(pool.length-1))) % pool.length;
   }
-  const pick = pool[Math.floor(Math.random()*pool.length)];
-  renderCard(d.name, pick.idx+1, pick.data);
+  state.lastIndex = idx;
+  renderCard(d.name, idx+1, pool[idx]);
+
   const url = new URL(location);
   url.searchParams.set("deck", deckKey);
   history.replaceState(null,"",url);
@@ -134,31 +167,36 @@ function renderCard(deckName, number, arr){
   requestAnimationFrame(()=>{ el.style.animation = ""; });
 }
 
+// --- Navegación simple ---
 const welcome = document.getElementById("welcome");
 const reading = document.getElementById("reading");
 document.querySelectorAll("[data-deck]").forEach(b=>{
   b.addEventListener("click", ()=>{
     state.deckKey = b.dataset.deck;
+    document.body.classList.add("mode-reading");  // oculta cabecera y bienvenida
     welcome.classList.remove("active"); reading.classList.add("active");
     drawRandom(state.deckKey);
     window.scrollTo({top:0,behavior:"smooth"});
   });
 });
 document.getElementById("againBtn").addEventListener("click", ()=>{
-  drawRandom(state.deckKey);
+  if(state.deckKey){ drawRandom(state.deckKey); }
   window.scrollTo({top:0,behavior:"smooth"});
 });
 document.getElementById("backBtn").addEventListener("click", ()=>{
   reading.classList.remove("active"); welcome.classList.add("active");
+  document.body.classList.remove("mode-reading");
   const url = new URL(location); url.searchParams.delete("deck"); history.replaceState(null,"",url);
   window.scrollTo({top:0,behavior:"smooth"});
 });
 
+// Cargar directo si viene con ?deck=
 (function init(){
   const url = new URL(location);
   const dk = url.searchParams.get("deck");
   if (dk && decks[dk]){
     state.deckKey = dk;
+    document.body.classList.add("mode-reading");
     welcome.classList.remove("active"); reading.classList.add("active");
     drawRandom(state.deckKey);
   }
