@@ -51,4 +51,81 @@
     transition:transform .06s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
   }
   .btn:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.06)}
-  .btn-primary{background:var(--lavanda); color:white;
+  .btn-primary{background:var(--lavanda); color:white; border-color:transparent}
+  .btn .emoji{font-size:1.1em; line-height:1}
+
+  /* ====== ICONOS SOCIALES ====== */
+  .social{display:flex; justify-content:center; gap:18px; margin:18px 0 4px}
+  .social a{
+    width:48px; height:48px; display:grid; place-items:center;
+    background:var(--card); border-radius:999px; box-shadow:var(--shadow);
+    border:1px solid var(--borde); transition:transform .06s ease, box-shadow .2s ease;
+  }
+  .social a:hover{transform:translateY(-1px); box-shadow:0 8px 22px rgba(0,0,0,.08)}
+  .ico{width:24px; height:24px; color:var(--dorado)}
+
+  /* Pequeño ajuste óptico: alinear verticalmente el SVG de Threads */
+  .ico.threads{transform:translateY(1px)}
+
+  /* ====== FOOTER ====== */
+  .foot{font-size:14px; text-align:center; opacity:.75; margin:18px 0 28px}
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <!-- ELIGE UNA: pon class="title-serif" o class="title-script" -->
+    <h1 class="title-serif">✨ Vuelve a Ti ✨</h1>
+    <div class="hero-sub">Aquí sanas lo invisible y vuelves a ti</div>
+    <p class="hero-desc">
+      Un espacio creado para mujeres sensibles y buscadoras que desean descansar
+      de la exigencia y volver a su hogar interior. Aquí encuentras suavidad, claridad
+      y guía para sanar lo invisible y reconectar contigo.
+    </p>
+  </header>
+
+  <main class="shell">
+    <section class="card">
+      <a class="btn btn-primary" href="index.html"><span class="emoji">⭐</span> Oráculos que iluminan</a>
+
+      <a class="btn" href="https://forms.gle/" target="_blank" rel="noopener">
+        <span class="emoji">🗒️</span> Ficha para reconectar contigo
+      </a>
+
+      <a class="btn" href="#" onclick="alert('Pronto 💫'); return false;">
+        <span class="emoji">✨</span> Pronto | Sesiones Vuelve a Ti
+      </a>
+
+      <a class="btn" href="https://beacons.ai/rosita.vuelveati" target="_blank" rel="noopener">
+        <span class="emoji">🌿</span> Mi camino | Conóceme más
+      </a>
+
+      <div class="social">
+        <!-- Instagram -->
+        <a aria-label="Instagram" href="https://instagram.com/rosita.vuelveati" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+          </svg>
+        </a>
+
+        <!-- Threads (SVG externo dorado) -->
+        <a aria-label="Threads" href="https://www.threads.net/@rosita.vuelveati" target="_blank" rel="noopener">
+          <img class="ico threads" src="threads.svg" alt="Threads" />
+        </a>
+
+        <!-- Email -->
+        <a aria-label="Email" href="mailto:rosita.vuelveati@gmail.com">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/>
+            <path d="m22 8-10 6L2 8"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">© Vuelve a Ti · Rosita Ávila</footer>
+</body>
+</html>
