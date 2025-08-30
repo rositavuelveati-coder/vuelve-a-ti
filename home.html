@@ -1,102 +1,134 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Vuelve a Ti</title>
-
-<!-- Tipografía elegante -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --bg:#E9DCCF; --card:#FFFFFF; --borde:#EEDFE0;
-    --texto:#4A3D3F; --dorado:#C7A041; --lav:#B897C6;
-    --shadow:0 10px 30px rgba(0,0,0,.08);
-  }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--texto)}
-  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial,sans-serif;line-height:1.5}
-  header{padding:44px 20px 8px;text-align:center}
-  h1{margin:0;font-family:"Playfair Display",serif;font-weight:600;font-size:clamp(28px,5.6vw,44px);letter-spacing:.3px}
-  .sub{opacity:.85;margin-top:8px}
-  .desc{max-width:760px;margin:18px auto 28px;padding:0 16px;opacity:.95}
-  .shell{max-width:760px;margin:0 auto 54px;padding:0 16px}
-  .card{background:var(--card);border-radius:22px;box-shadow:var(--shadow);padding:24px 18px}
-  .btn{
-    display:flex;align-items:center;justify-content:center;gap:10px;
-    background:var(--card);border:1px solid var(--borde);
-    border-radius:16px;padding:14px 16px;margin:12px auto;
-    font-weight:700;text-decoration:none;color:var(--texto);
-    transition:transform .06s ease,box-shadow .2s ease,background .2s ease;
-    width:min(560px,100%);
-  }
-  .btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.06)}
-  .btn-primary{background:var(--lav);color:#fff;border-color:transparent}
-  .social{display:flex;justify-content:center;gap:18px;margin:18px 0 4px}
-  .social a{
-    width:48px;height:48px;display:grid;place-items:center;
-    background:#fff;border-radius:999px;box-shadow:var(--shadow);
-    border:1px solid var(--borde);transition:transform .06s ease,box-shadow .2s ease
-  }
-  .social a:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(0,0,0,.08)}
-  .ico{width:24px;height:24px;color:var(--dorado)}
-  footer{font-size:14px;text-align:center;opacity:.75;margin:18px 0 28px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✨ Vuelve a Ti ✨</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0e6da;
+      color: #3e2f2f;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      padding: 2rem 1rem 1rem;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      margin: 0.5rem 0;
+    }
+    header p {
+      margin: 0.3rem 0;
+    }
+    .container {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: 2rem auto;
+      padding: 1rem 1.5rem 2rem;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 0.9rem;
+      margin: 0.7rem 0;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      color: #3e2f2f;
+      background: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: background 0.3s;
+    }
+    .btn.highlight {
+      background: #cbaacb;
+      color: #fff;
+    }
+    .social {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      color: #d4af37;
+      text-decoration: none;
+    }
+    .social svg {
+      width: 22px;
+      height: 22px;
+      stroke: #d4af37;
+      fill: none;
+      stroke-width: 2;
+    }
+    footer {
+      font-size: 0.85rem;
+      color: #6b5c5c;
+      margin: 2rem 0 1rem;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>✨ Vuelve a Ti ✨</h1>
-    <div class="sub">Aquí sanas lo invisible y reconectas con tu esencia</div>
-    <p class="desc">Un espacio creado para mujeres sensibles y buscadoras que desean descansar de la autoexigencia y volver a su hogar interior. Aquí hallarás suavidad, claridad y guía amorosa para sanar lo invisible y reconectar contigo.</p>
-      
+    <p>Aquí sanas lo invisible y reconectas con tu esencia</p>
+    <p style="max-width:600px;margin:0.8rem auto;">
+      Un espacio creado para mujeres sensibles y buscadoras que desean descansar de la autoexigencia 
+      y volver a su hogar interior. Aquí hallarás suavidad, claridad y guía amorosa para sanar lo invisible y reconectar contigo.
+    </p>
   </header>
 
-  <main class="shell">
-    <section class="card">
-      <a class="btn btn-primary" href="index.html">⭐ Oráculos que iluminan</a>
-      <a class="btn" href="https://forms.gle/" target="_blank" rel="noopener">🗒️ Ficha para reconectar contigo</a>
-      <a class="btn" href="#" onclick="alert('Pronto 💫'); return false;">✨ Pronto | Sesiones Vuelve a Ti</a>
-      <a class="btn" href="https://beacons.ai/rosita.vuelveati" target="_blank" rel="noopener">🌿 Mi camino | Conóceme más</a>
+  <div class="container">
+    <a href="index.html" class="btn highlight">⭐ Oráculos que iluminan</a>
+    <a href="#" class="btn">📄 Ficha para reconectar contigo</a>
+    <a href="#" class="btn">✨ Pronto | Sesiones Vuelve a Ti</a>
+    <a href="#" class="btn">🌿 Mi camino | Conóceme más</a>
 
-<div class="social">
-  <!-- Instagram (SVG inline, sin rectángulo) -->
-  <a aria-label="Instagram" href="https://instagram.com/rosita.vuelveati" target="_blank" rel="noopener">
-    <svg class="ico" viewBox="0 0 24 24" fill="none"
-         stroke="currentColor" stroke-width="1.8"
-         stroke-linecap="round" stroke-linejoin="round">
-      <!-- Lente -->
-      <path d="M16 11.37a4 4 0 1 1-7.99 0 4 4 0 0 1 7.99 0Z" />
-      <!-- Punto (flash) -->
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-    </svg>
-  </a>
+    <div class="social">
+      <!-- Instagram -->
+      <a aria-label="Instagram" href="https://instagram.com/rosita.vuelveati" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <path d="M16 11.37a4 4 0 1 1-4.63-4 4 4 0 0 1 4.63 4z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+      </a>
 
-  <!-- WhatsApp (SVG inline correcto + link clickeable) -->
-  <a aria-label="WhatsApp" href="https://wa.me/56997337913" target="_blank" rel="noopener">
-    <svg class="ico" viewBox="0 0 24 24" fill="none"
-         stroke="currentColor" stroke-width="1.8"
-         stroke-linecap="round" stroke-linejoin="round">
-      <!-- Contorno tipo chat + símbolo interno WhatsApp estilizado -->
-      <path d="M20.52 3.48A11.92 11.92 0 0 0 3.48 20.52L2 22l2.52-.67A11.92 11.92 0 1 0 20.52 3.48Z" />
-      <path d="M8.6 9.2c0-.7.37-1.06.5-1.19.12-.12.26-.15.35-.15h.28c.1 0 .22-.03.36.28s.51 1.24.55 1.32c.04.08.06.18 0 .3-.06.12-.09.18-.17.29-.08.1-.17.23-.24.31-.08.1-.16.2-.08.37.08.17.34.54.76.89.52.45.96.6 1.14.68.18.08.29.07.4-.04.12-.11.46-.45.58-.6.12-.16.25-.12.4-.07.15.05 1 .47 1.17.55.18.08.29.12.33.19.04.07.04.42-.09.8-.13.38-.76.74-1.05.79-.28.05-.61.08-.98-.06-.23-.09-.52-.19-.89-.35-1.58-.69-2.61-2.27-2.69-2.38-.08-.11-.66-.87-.66-1.66Z" />
-    </svg>
-  </a>
+      <!-- WhatsApp -->
+      <a aria-label="WhatsApp" href="https://wa.me/56997337913" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24">
+          <path d="M20.5 3.5A11.8 11.8 0 0 0 3.5 20.5L2 22l1.5-5A11.8 11.8 0 0 0 20.5 3.5z"/>
+          <path d="M8 10c1 4 5 7 9 8"/>
+        </svg>
+      </a>
 
-  <!-- Email (SVG inline) -->
-  <a aria-label="Email" href="mailto:rosita.vuelveati@gmail.com">
-    <svg class="ico" viewBox="0 0 24 24" fill="none"
-         stroke="currentColor" stroke-width="1.8"
-         stroke-linecap="round" stroke-linejoin="round">
-      <path d="M3 7h18v10H3z" />
-      <path d="M3 7l9 6 9-6" />
-    </svg>
-  </a>
-</div>
-      
-    </section>
-  </main>
+      <!-- Email -->
+      <a aria-label="Email" href="mailto:rosita.vuelveati@gmail.com">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="6" width="18" height="12" rx="2"/>
+          <path d="M3 7l9 6 9-6"/>
+        </svg>
+      </a>
+    </div>
+  </div>
 
-  <footer>© Vuelve a Ti · Rosita Ávila</footer>
+  <footer>
+    © Vuelve a Ti · Rosita Ávila
+  </footer>
 </body>
 </html>
