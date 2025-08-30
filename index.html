@@ -74,13 +74,18 @@
   </a>
 </div>
     <header>
-      <h1>✨ Vuelve a Ti · Oráculo ✨</h1>
+      <h1>✨ Oráculo ✨</h1>
       <p>Una guía suave para tu día</p>
     </header>
 
     <!-- Pantalla inicial -->
     <section id="welcome" class="screen welcome active">
       <div class="lead"><strong>Elige el oráculo que te iluminará hoy</strong></div>
+
+      .subtitle {
+  margin-bottom: 2rem; /* puedes aumentar a 3rem si lo quieres aún más aireado */
+}
+      
       <div class="choices">
         <button class="btn big" data-deck="auto">🌸 De la Autoexigencia a la Suavidad</button>
         <button class="btn big" data-deck="busca">🌙 De Buscadora a Encontradora</button>
@@ -96,7 +101,7 @@
       </article>
       <div class="meta" id="meta">Mazo · Carta X</div>
       <div class="actions">
-        <a href="./home.html" class="btn ghost" aria-label="Volver al inicio">🏠 Inicio</a>
+        
         <button id="backBtn" class="btn ghost">← Elegir otro oráculo</button>
         <button id="againBtn" class="btn">Otra carta ✨</button>
       </div>
