@@ -3,132 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>✨ Vuelve a Ti ✨</title>
+  <title>Vuelve a Ti</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0e6da;
-      color: #3e2f2f;
-      text-align: center;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #F0E6DA;
+      color: #4B2E2E;
+      text-align: center;
     }
     header {
-      padding: 2rem 1rem 1rem;
+      margin-top: 40px;
     }
-    header h1 {
-      font-size: 2.2rem;
-      margin: 0.5rem 0;
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2em;
+      margin: 0;
+      color: #3E2D2D;
     }
-    header p {
-      margin: 0.3rem 0;
+    p.subtitle {
+      margin: 5px 0 15px 0;
+      font-size: 1.1em;
+      color: #5A4A4A;
     }
-    .container {
-      background: #fff;
-      border-radius: 20px;
+    p.description {
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+      font-size: 1em;
+      line-height: 1.6;
+      color: #4B2E2E;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      max-width: 400px;
-      margin: 2rem auto;
-      padding: 1rem 1.5rem 2rem;
+      display: inline-block;
+      padding: 20px;
     }
-    .btn {
+    .button {
       display: block;
-      width: 100%;
-      padding: 0.9rem;
-      margin: 0.7rem 0;
-      border: none;
+      width: 260px;
+      margin: 12px auto;
+      padding: 14px;
+      font-size: 1em;
       border-radius: 12px;
-      font-size: 1rem;
-      font-weight: bold;
+      border: none;
       cursor: pointer;
       text-decoration: none;
-      color: #3e2f2f;
-      background: #ffffff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      transition: background 0.3s;
+      color: #4B2E2E;
+      font-weight: bold;
+      transition: transform 0.2s;
     }
-    .btn.highlight {
-      background: #cbaacb;
-      color: #fff;
+    .button:hover {
+      transform: scale(1.03);
     }
-    .social {
-      margin-top: 1.5rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
+    .oraculo { background: #CBAACB; color: white; }
+    .ficha   { background: #fff; border: 2px solid #CBAACB; }
+    .pronto  { background: #fff; border: 2px solid #E6B7C2; }
+    .camino  { background: #fff; border: 2px solid #D4AF37; }
+    .socials {
+      margin-top: 25px;
     }
-    .social a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-      color: #d4af37;
-      text-decoration: none;
-    }
-    .social svg {
-      width: 22px;
-      height: 22px;
-      stroke: #d4af37;
-      fill: none;
-      stroke-width: 2;
+    .socials img {
+      width: 32px;
+      height: 32px;
+      margin: 0 10px;
+      vertical-align: middle;
+      cursor: pointer;
     }
     footer {
-      font-size: 0.85rem;
-      color: #6b5c5c;
-      margin: 2rem 0 1rem;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #5A4A4A;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>✨ Vuelve a Ti ✨</h1>
-    <p>Aquí sanas lo invisible y reconectas con tu esencia</p>
-    <p style="max-width:600px;margin:0.8rem auto;">
-      Un espacio creado para mujeres sensibles y buscadoras que desean descansar de la autoexigencia 
-      y volver a su hogar interior. Aquí hallarás suavidad, claridad y guía amorosa para sanar lo invisible y reconectar contigo.
+    <p class="subtitle">Aquí sanas lo invisible y vuelves a ti</p>
+    <p class="description">
+      Un espacio creado para mujeres sensibles y buscadoras que desean descansar de la exigencia y volver a su hogar interior. Aquí encuentras suavidad, claridad y guía para sanar lo invisible y reconectar contigo.
     </p>
   </header>
 
-  <div class="container">
-    <a href="index.html" class="btn highlight">⭐ Oráculos que iluminan</a>
-    <a href="#" class="btn">📄 Ficha para reconectar contigo</a>
-    <a href="#" class="btn">✨ Pronto | Sesiones Vuelve a Ti</a>
-    <a href="#" class="btn">🌿 Mi camino | Conóceme más</a>
+  <div class="card">
+    <a href="index.html" class="button oraculo">⭐ Oráculos que iluminan</a>
+    <a href="https://forms.gle/xxxxx" class="button ficha">📄 Ficha para reconectar contigo</a>
+    <a href="#" class="button pronto">✨ Pronto | Sesiones Vuelve a Ti</a>
+    <a href="https://beacons.ai/rosita.vuelveati" class="button camino">🌱 Mi camino | Conóceme más</a>
 
-    <div class="social">
-      <!-- Instagram -->
-      <a aria-label="Instagram" href="https://instagram.com/rosita.vuelveati" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24">
-          <rect x="3" y="3" width="18" height="18" rx="5"/>
-          <path d="M16 11.37a4 4 0 1 1-4.63-4 4 4 0 0 1 4.63 4z"/>
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-        </svg>
-      </a>
-
-      <!-- WhatsApp -->
-      <a aria-label="WhatsApp" href="https://wa.me/56997337913" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24">
-          <path d="M20.5 3.5A11.8 11.8 0 0 0 3.5 20.5L2 22l1.5-5A11.8 11.8 0 0 0 20.5 3.5z"/>
-          <path d="M8 10c1 4 5 7 9 8"/>
-        </svg>
-      </a>
-
-      <!-- Email -->
-      <a aria-label="Email" href="mailto:rosita.vuelveati@gmail.com">
-        <svg viewBox="0 0 24 24">
-          <rect x="3" y="6" width="18" height="12" rx="2"/>
-          <path d="M3 7l9 6 9-6"/>
-        </svg>
-      </a>
+    <div class="socials">
+      <a href="https://instagram.com/rosita.vuelveati" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+      <a href="https://www.threads.net/@rosita.vuelveati" target="_blank"><img src="threads.svg" alt="Threads"></a>
+      <a href="mailto:rosita.vuelveati@gmail.com"><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email"></a>
     </div>
   </div>
 
-  <footer>
-    © Vuelve a Ti · Rosita Ávila
-  </footer>
+  <footer>© Vuelve a Ti · Rosita Ávila</footer>
 </body>
 </html>
