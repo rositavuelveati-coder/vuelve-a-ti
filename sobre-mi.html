@@ -1,85 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🌿 Sobre mí - Vuelve a Ti 🌿</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌿 Sobre mí | Vuelve a Ti</title>
+
+  <!-- Estilos: imagen ARRIBA y texto a ancho completo debajo -->
   <style>
-    body {
-      font-family: "Georgia", serif;
-      background-color: #f9f5f3;
-      margin: 0;
-      padding: 0;
-      color: #333;
+    :root{
+      --lavanda:#C7B8EA;
+      --beige:#F5E6DA;
+      --rosa:#E8B7C8;
+      --dorado:#D8B673;
+      --texto:#2e2a2a;
+    }
+    html,body{margin:0;padding:0}
+    body{
+      font-family: "Georgia", ui-serif, serif;
+      background: var(--beige);
+      color: var(--texto);
+      line-height: 1.65;
+    }
+    .page{
+      max-width: 980px;
+      margin: 28px auto;
+      padding: 0 16px;
+    }
+    .card{
+      background:#fff;
+      border-radius:18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.06);
+      overflow:hidden;
+      border: 1px solid rgba(216,182,115,.18); /* dorado muy tenue */
+    }
+    .header{
+      text-align:center;
+      padding: 26px 20px 10px;
+    }
+    .header h1{
+      margin:0;
+      font-size: clamp(1.6rem, 1.1rem + 2vw, 2.1rem);
+      color:#5a2b86; /* lavanda más profunda para contraste */
+      letter-spacing:.3px;
+    }
+    .hero{
+      padding: 0 20px 6px;
+    }
+    .hero img{
+      width:100%;
+      max-width: 820px;
+      height:auto;
+      display:block;
+      margin: 8px auto 0;
+      border-radius:14px;
+      border: 3px solid rgba(216,182,115,.35); /* dorado tenue */
+    }
+    .content{
+      padding: 18px 22px 26px;
+    }
+    .content p{
+      margin: 0 0 1.05rem;
+      font-size: clamp(1rem, .95rem + .2vw, 1.06rem);
+    }
+    .content strong{ color:#5a2b86; }
+    a{ color:#6e56cf; text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    /* badge con tu nombre arriba (opcional y sutil) */
+    .byline{
+      text-align:center;
+      font-size:.9rem;
+      color:#6b5e8a;
+      opacity:.85;
+      padding-top:4px;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-
-    h1 {
-      text-align: center;
-      color: #6a1b9a;
-      font-size: 2rem;
-      margin-bottom: 25px;
-    }
-
-    .content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 20px;
-    }
-
-    .content img {
-      max-width: 400px;
-      width: 100%;
-      border-radius: 12px;
-      object-fit: cover;
-      flex: 1 1 300px;
-    }
-
-    .text {
-      flex: 2 1 400px;
-      line-height: 1.6;
-      font-size: 1.05rem;
-    }
-
-    .text strong {
-      color: #6a1b9a;
-    }
-
-    @media (max-width: 768px) {
-      .content {
-        flex-direction: column;
-        text-align: center;
-      }
-      .text {
-        text-align: left;
-      }
+    /* separación inferior general de la tarjeta */
+    @media (min-width: 768px){
+      .content{ padding: 22px 36px 34px; }
+      .hero{ padding: 0 28px 6px; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🌿 Sobre mí</h1>
-    <div class="content">
-      <img src="rosita-avila-sobre-mi.jpg" alt="Rosita Ávila en la naturaleza - Vuelve a Ti" loading="lazy" referrerpolicy="no-referrer" />
-      <div class="text">
+  <main class="page">
+    <article class="card" aria-labelledby="titulo-sobre-mi">
+      <div class="header">
+        <div class="byline">© Rosita Ávila · Vuelve a Ti</div>
+        <h1 id="titulo-sobre-mi">🌿 Sobre mí</h1>
+      </div>
+
+      <!-- Imagen ARRIBA, centrada y responsiva -->
+      <div class="hero">
+        <img
+          src="rosita-avila-sobre-mi.jpg"
+          alt="Rosita Ávila en la naturaleza, brazos abiertos – Vuelve a Ti"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+        />
+      </div>
+
+      <!-- Texto a ancho completo debajo de la imagen -->
+      <div class="content">
         <p><strong>Soy Rosita Ávila</strong>, docente del alma y eterna aprendiz de la vida. Mi historia no ha sido lineal ni fácil: crecí en un contexto de carencia, conocí el peso de la exigencia y atravesé pérdidas profundas. Como muchas mujeres sensibles, busqué respuestas incansablemente: cursos, terapias, meditaciones, métodos… cada paso me daba algo, pero seguía sintiendo un vacío adentro.</p>
 
         <p>Con el tiempo comprendí que el verdadero camino no estaba afuera, sino en volver a mí. Aprendí a desaprender lo que me alejaba de mi esencia, a soltar memorias de dolor, creencias de sacrificio y viejas programaciones que me mantenían en lucha constante. Descubrí una verdad transformadora: lo invisible que nos limita también puede ser sanado, y cada bloqueo puede convertirse en una nueva fuerza.</p>
 
         <p>Así nació <strong>“Vuelve a Ti”</strong>: un espacio vivo, creado para acompañar a mujeres sensibles y buscadoras que se sienten cansadas de intentarlo todo sin encontrarse. Aquí no encontrarás fórmulas mágicas ni exigencias, sino un proceso amoroso que integra herramientas profundas para llegar a tu subconsciente y una conexión suave con lo esencial de tu ser. Un camino donde sanar lo invisible se convierte en volver a tu poder interior y descansar en tu verdadera esencia. 💜✨</p>
 
-        <p>Hoy mi vocación es recordarte que no estás sola, que tu historia también puede transformarse, y que dentro de ti habita ya la claridad y la paz que tanto anhelas. 🌸</p>
+        <p>Hoy mi vocación es recordarte que no estás sola, que tu historia también puede transformarse, y que dentro de ti habita ya la claridad y la paz que tanto anhelas. ✨</p>
       </div>
-    </div>
-  </div>
+    </article>
+  </main>
 </body>
 </html>
