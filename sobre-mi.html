@@ -1,92 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🌿 Sobre mí | Vuelve a Ti</title>
-
-  <!-- Estilos: imagen ARRIBA y texto a ancho completo debajo -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌿 Sobre mí - Vuelve a Ti</title>
   <style>
-    :root{
-      --lavanda:#C7B8EA;
-      --beige:#F5E6DA;
-      --rosa:#E8B7C8;
-      --dorado:#D8B673;
-      --texto:#2e2a2a;
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5ebe1;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
     }
-    html,body{margin:0;padding:0}
-    body{
-      font-family: "Georgia", ui-serif, serif;
-      background: var(--beige);
-      color: var(--texto);
-      line-height: 1.65;
+    .page {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
     }
-    .page{
-      max-width: 980px;
-      margin: 28px auto;
-      padding: 0 16px;
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
-    .card{
-      background:#fff;
-      border-radius:18px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.06);
-      overflow:hidden;
-      border: 1px solid rgba(216,182,115,.18); /* dorado muy tenue */
+    .header h1 {
+      text-align: center;
+      color: #6a1b9a;
     }
-    .header{
-      text-align:center;
-      padding: 26px 20px 10px;
+    .header .byline {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+      margin-bottom: 10px;
     }
-    .header h1{
-      margin:0;
-      font-size: clamp(1.6rem, 1.1rem + 2vw, 2.1rem);
-      color:#5a2b86; /* lavanda más profunda para contraste */
-      letter-spacing:.3px;
+    .hero img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto 20px auto;
+      border-radius: 8px;
     }
-    .hero{
-      padding: 0 20px 6px;
+    p {
+      text-align: justify;
+      margin-bottom: 16px;
     }
-     .hero img{
-  width: 100%;
-  max-width: 400px;  /* la foto no crecerá más que esto */
-  height: auto;
-  display: block;
-  margin: 8px auto 0;
-  border-radius: 14px;
-  border: 3px solid rgba(216,182,115,.35); /* dorado tenue */
-    }
-    .content{
-      padding: 18px 22px 26px;
-    }
-    .content p{
-      margin: 0 0 1.05rem;
-      font-size: clamp(1rem, .95rem + .2vw, 1.06rem);
-    }
-    .content strong{ color:#5a2b86; }
-    a{ color:#6e56cf; text-decoration: none; }
-    a:hover{ text-decoration: underline; }
-
-    /* badge con tu nombre arriba (opcional y sutil) */
-    .byline{
-      text-align:center;
-      font-size:.9rem;
-      color:#6b5e8a;
-      opacity:.85;
-      padding-top:4px;
+    strong {
+      color: #6a1b9a;
     }
 
-    /* separación inferior general de la tarjeta */
-    @media (min-width: 768px){
-      .content{ padding: 22px 36px 34px; }
-      .hero{ padding: 0 28px 6px; }
+    /* Botón Inicio */
+    .home-button{
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      font-size: 14px;
+      line-height: 1;
+      text-decoration: none;
+      color: #4B3B6A;
+      background: #FFFFFF;
+      border: 1px solid #E6D8C7;
+      border-radius: 999px;
+      box-shadow: 0 6px 16px rgba(0,0,0,.08);
+      z-index: 1000;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .home-button:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(0,0,0,.10);
+    }
+    .home-button svg{
+      width: 16px; height: 16px; flex: 0 0 16px;
     }
   </style>
 </head>
 <body>
 
   <!-- Botón Inicio -->
-  <a href="home.html" class="home-button">🏠 Inicio</a>
-  
+  <a href="home.html" class="home-button" aria-label="Volver al inicio">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M3 10.5L12 3l9 7.5v8a1.5 1.5 0 0 1-1.5 1.5h-5V15h-5v6H4.5A1.5 1.5 0 0 1 3 18.5v-8z"
+            stroke="#4B3B6A" stroke-width="1.6" stroke-linejoin="round"/>
+    </svg>
+    Inicio
+  </a>
+
   <main class="page">
     <article class="card" aria-labelledby="titulo-sobre-mi">
       <div class="header">
@@ -94,27 +96,31 @@
         <h1 id="titulo-sobre-mi">🌿 Sobre mí</h1>
       </div>
 
-      <!-- Imagen ARRIBA, centrada y responsiva -->
+      <!-- Imagen ARRIBA -->
       <div class="hero">
-        <img
-          src="rosita-avila-sobre-mi.jpg"
-          alt="Rosita Ávila en la naturaleza, brazos abiertos – Vuelve a Ti"
-          loading="lazy"
-          referrerpolicy="no-referrer"
-        />
+        <img src="rosita-avila-sobre-mi.jpg" alt="Rosita Ávila en la naturaleza" />
       </div>
 
-      <!-- Texto a ancho completo debajo de la imagen -->
-      <div class="content">
-        <p><strong>Soy Rosita Ávila</strong>, docente del alma y eterna aprendiz de la vida. Mi historia no ha sido lineal ni fácil: crecí en un contexto de carencia, conocí el peso de la exigencia y atravesé pérdidas profundas. Como muchas mujeres sensibles, busqué respuestas incansablemente: cursos, terapias, meditaciones, métodos… cada paso me daba algo, pero seguía sintiendo un vacío adentro.</p>
+      <!-- Texto -->
+      <p><strong>Soy Rosita Ávila</strong>, docente del alma y eterna aprendiz de la vida. 
+      Mi historia no ha sido lineal ni fácil: crecí en un contexto de carencia, conocí el peso de la exigencia y atravesé pérdidas profundas. 
+      Como muchas mujeres sensibles, busqué respuestas incansablemente: cursos, terapias, meditaciones, métodos… 
+      cada paso me daba algo, pero seguía sintiendo un vacío adentro.</p>
 
-        <p>Con el tiempo comprendí que el verdadero camino no estaba afuera, sino en volver a mí. Aprendí a desaprender lo que me alejaba de mi esencia, a soltar memorias de dolor, creencias de sacrificio y viejas programaciones que me mantenían en lucha constante. Descubrí una verdad transformadora: lo invisible que nos limita también puede ser sanado, y cada bloqueo puede convertirse en una nueva fuerza.</p>
+      <p>Con el tiempo comprendí que el verdadero camino no estaba afuera, sino en volver a mí. 
+      Aprendí a desaprender lo que me alejaba de mi esencia, a soltar memorias de dolor, creencias de sacrificio y viejas programaciones 
+      que me mantenían en lucha constante. Descubrí una verdad transformadora: lo invisible que nos limita también puede ser sanado, 
+      y cada bloqueo puede convertirse en una nueva fuerza.</p>
 
-        <p>Así nació <strong>“Vuelve a Ti”</strong>: un espacio vivo, creado para acompañar a mujeres sensibles y buscadoras que se sienten cansadas de intentarlo todo sin encontrarse. Aquí no encontrarás fórmulas mágicas ni exigencias, sino un proceso amoroso que integra herramientas profundas para llegar a tu subconsciente y una conexión suave con lo esencial de tu ser. Un camino donde sanar lo invisible se convierte en volver a tu poder interior y descansar en tu verdadera esencia. 💜✨</p>
+      <p>Así nació <strong>“Vuelve a Ti”</strong>: un espacio vivo, creado para acompañar a mujeres sensibles y buscadoras que se sienten cansadas de intentarlo todo sin encontrarse. 
+      Aquí no encontrarás fórmulas mágicas ni exigencias, sino un proceso amoroso que integra herramientas profundas para llegar a tu subconsciente 
+      y una conexión suave con lo esencial de tu ser. Un camino donde sanar lo invisible se convierte en volver a tu poder interior 
+      y descansar en tu verdadera esencia. 💜</p>
 
-        <p>Hoy mi vocación es recordarte que no estás sola, que tu historia también puede transformarse, y que dentro de ti habita ya la claridad y la paz que tanto anhelas. ✨</p>
-      </div>
+      <p>Hoy mi vocación es recordarte que no estás sola, que tu historia también puede transformarse, 
+      y que dentro de ti habita ya la claridad y la paz que tanto anhelas. ✨</p>
     </article>
   </main>
+
 </body>
 </html>
