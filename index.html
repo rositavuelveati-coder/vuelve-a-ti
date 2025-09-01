@@ -81,10 +81,13 @@
     <!-- Pantalla inicial -->
     <section id="welcome" class="screen welcome active">
       <p class="subtitle" style="margin-bottom:28px;">ELIGE EL ORÁCULO QUE TE ILUMINARÁ HOY</p>  
-      <div class="choices">
+      
+    <div class="choices">
         <button class="btn big" data-deck="auto">🌸 De la Autoexigencia a la Suavidad</button>
         <button class="btn big" data-deck="busca">🌙 De Buscadora a Encontradora</button>
-      </div>
+        <button class="btn big" data-deck="recon">🌿 De Desaprender a Reconectar</button>
+    </div>
+      
     </section>
 
     <!-- Pantalla de carta -->
@@ -193,6 +196,61 @@ const deckBusca = [
 ["Luz Expandida","Comparto mi luz desde la plenitud interior.","Al encontrarte, irradias. No desde la carencia, sino desde la abundancia. Hoy, brilla sin esfuerzo."],
 ["Encuentro Encarnado","Soy hogar, soy raíz, soy totalidad.","La búsqueda terminó: estás en ti. El encuentro no es futuro, es ahora. Hoy, vive tu plenitud encarnada."]
 ];
+
+<!-- === MAZO 3: De desaprender a reconectar (40 cartas) === -->
+<script>
+const deckRecon = [
+  // Bloque 1 – Toma de Conciencia (1–10)
+  ["El Peso Heredado","Elijo soltar lo que no me pertenece.","Creciste cargando historias, creencias y exigencias que no eran tuyas. Reconócelas con gratitud, pero recuerda: no necesitas sostenerlas más. Hoy puedes empezar a caminar más ligera."],
+  ["La Voz Externa","Hoy me escucho a mí, no a los ecos del afuera.","Durante años seguiste mandatos, consejos o críticas que apagaron tu propia voz. Ha llegado el momento de distinguir: ¿qué viene de ti y qué viene de otros? Tu verdad interior siempre fue más sabia."],
+  ["El Espejismo del Deber","No todo lo que debo, necesito.","Confundiste obligación con amor, deber con valor. Pero tu esencia no necesita justificarse en lo que haces. Hoy puedes preguntarte: ¿qué de lo que hago nace de mi corazón y qué del deber impuesto?"],
+  ["La Máscara del Logro","No necesito demostrar para merecer.","El esfuerzo constante te hizo olvidar que ya eras suficiente. La máscara del logro no protege, sino que cansa. Hoy tu valor no depende de medallas, sino de tu ser. Suelta la carrera, vuelve a tu ritmo."],
+  ["El Muro de la Exigencia","Me permito ser sin exigencias.","La exigencia te construyó muros para sobrevivir, pero también te aisló de tu suavidad. Cada muro fue defensa, no esencia. Hoy puedes empezar a derribarlos con compasión y abrirte a tu propio abrazo."],
+  ["El Ruido Mental","Hoy elijo silencio para escucharme.","El exceso de pensamientos y comparaciones te desconectó de tu calma. No necesitas más ruido: necesitas tu propia voz. En el silencio, encontrarás la respuesta."],
+  ["El Espejo Ajeno","Soy más que las miradas externas.","Durante años buscaste validación en otros. Pero el espejo de los demás nunca mostró toda tu luz. Hoy recuerda: eres mucho más de lo que ellos pueden ver."],
+  ["La Herida Antigua","Reconozco mi herida, pero no soy mi herida.","Aquello que dolió en el pasado no define quién eres. Fue parte de tu camino, pero no es tu esencia. Hoy puedes abrazar tu herida y dejar que sea maestra, no cadena."],
+  ["El Camino Prestado","Suelto caminos que no son míos.","Tomaste rutas que otros eligieron por ti. Hoy es tiempo de desaprender mapas ajenos y trazar el tuyo propio. La brújula está en tu interior."],
+  ["El Peso del “Siempre”","Me libero de la idea de que todo debe ser igual.","Las costumbres y mandatos que parecían eternos no son cadenas. Puedes cambiarlos, puedes elegir distinto. El “siempre” es solo una ilusión."],
+
+  // Bloque 2 – Liberación / Desaprender (11–20)
+  ["El Arte de Soltar","Suelto con amor lo que me pesa.","Desaprender es liberar suavemente aquello que ya no nutre. No es una guerra, es un acto de ternura. Cada vez que sueltas, te acercas más a ti."],
+  ["El Vacío Fértil","Confío en el espacio que deja lo que solté.","Al soltar, aparece un vacío que puede asustar. Pero ese vacío no es pérdida: es terreno fértil para lo nuevo. Permítete habitarlo con calma."],
+  ["La Desprogramación","Reescribo mi historia interior.","Tus creencias no son destino. Son programas aprendidos que puedes desactivar. Hoy recuerda: lo que fue aprendido puede desaprenderse, y tu libertad comienza allí."],
+  ["El Suspiro de Libertad","Respiro y libero lo que oprime mi pecho.","Cada exhalación es un recordatorio de que puedes soltar. El aire lleva consigo viejas exigencias, y te devuelve ligereza."],
+  ["El Desapego Amoroso","Suelto con amor, no con dureza.","Desapegarte no es indiferencia; es libertad amorosa. Cuando sueltas con ternura, haces espacio para lo auténtico."],
+  ["La Caja de Creencias","Abro mi mente a nuevas posibilidades.","Las creencias rígidas encogen tu mundo. Hoy, abre la caja y descubre que hay más caminos de los que imaginabas."],
+  ["La Capa del Miedo","Atravieso el miedo con suavidad.","El miedo es una capa, no tu verdad. Al mirarlo con ternura, se disuelve. Hoy, da un paso suave a través de él."],
+  ["El Perdón Suave","Me libero perdonándome con compasión.","Perdonarte no borra lo vivido, te devuelve a ti. Es un acto de amor propio que abre espacio a lo nuevo."],
+  ["La Renuncia Al Deber","Elijo por amor, no por obligación.","Cuando eliges desde el corazón, lo que haces tiene sentido y ligereza. Hoy, permite que tu sí nazca del amor."],
+  ["El Soltar Profundo","Suelto lo que ya cumplió su ciclo.","Hay procesos, vínculos y hábitos que ya dieron todo. Agradece y déjalos ir. En ese gesto, te encuentras de nuevo."],
+
+  // Bloque 3 – Reconexión / Volver a ti (21–30)
+  ["El Abrazo del Alma","Me abrazo y me reconozco como valiosa.","La reconexión comienza con un abrazo interior. Al sostenerte con ternura, tu alma recuerda que nunca estuvo sola."],
+  ["La Voz Interior","Escucho la sabiduría de mi corazón.","Tu esencia siempre habló en voz baja, pero clara. Al desaprender el ruido, puedes volver a escuchar lo que tu corazón siempre supo."],
+  ["El Faro Interno","Encuentro mi luz dentro de mí.","No necesitas guías externas constantes. Tu alma tiene un faro propio que siempre supo guiarte. Hoy puedes mirarlo y confiar en él."],
+  ["El Santuario Interior","Mi interior es un lugar seguro.","La reconexión es descubrir que dentro de ti hay un refugio. Un espacio sagrado de calma, siempre disponible. Vuelve ahí cuando lo necesites."],
+  ["El Encuentro Sagrado","Hoy me encuentro conmigo misma.","No necesitas buscar más afuera. El encuentro más importante sucede dentro. En cada pausa, en cada respiro, ahí estás tú."],
+  ["La Raíz del Ser","Me sostengo en lo profundo de mi esencia.","Reconectar es sentir que tienes raíces profundas que te nutren. No flotas a la deriva: estás anclada a tu propia verdad."],
+  ["El Hogar Interior","Mi hogar verdadero está en mí.","Ya no corres detrás de espejismos. Descubres que siempre estuviste en casa. Hoy puedes descansar en tu propio hogar interior."],
+  ["El Río Interior","Fluyo con mi ritmo natural.","Tu alma tiene un cauce propio, como un río. Reconectar es dejarte llevar por ese ritmo único, sin compararte con otros."],
+  ["La Luz Encarnada","Honro mi cuerpo como templo de mi alma.","Reconectar también es habitar tu cuerpo. No eres solo mente o espíritu: eres encarnación viva de tu luz."],
+  ["La Presencia","Elijo estar aquí y ahora.","La verdadera reconexión no está en el pasado ni en el futuro, sino en este instante. Aquí respiras, aquí existes, aquí vuelves a ti."],
+
+  // Bloque 4 – Integración / Encarnar lo nuevo (31–40)
+  ["La Gratitud Viva","Agradezco lo que fui y lo que soy.","La integración comienza con gratitud. Reconoces tu camino, con luces y sombras, y lo bendices. Eso abre paso a lo nuevo."],
+  ["El Compromiso Conmigo","Hoy me elijo con amor.","Encarnar lo nuevo es comprometerte contigo misma. No es egoísmo, es amor propio profundo. Hoy renuevas ese pacto."],
+  ["La Coherencia","Alineo lo que pienso, siento y hago.","La paz nace cuando tu vida entera se vuelve una sola verdad. Hoy, da un paso hacia esa coherencia amorosa."],
+  ["El Sí Profundo","Digo sí a lo que me nutre.","Tu sí tiene fuerza creadora. Cuando eliges desde el corazón, la vida se ordena con suavidad."],
+  ["La Confianza Encarnada","Camino confiando en mí y en la vida.","La confianza deja de ser idea y se vuelve carne en tus pasos. Hoy, anda con fe tranquila."],
+  ["El Ritmo Propio","Honro el tiempo amoroso de mis procesos.","Integrar no se apura. Tu ritmo es sagrado y suficiente. Hoy, avanza a tu compás."],
+  ["La Expansión Suave","Me expando desde la calma.","Crecer no es exigencia, es florecimiento natural. Permite que tu expansión sea dulce y sin prisa."],
+  ["La Semilla Nueva","Planto una intención en tierra fértil.","Cada elección amorosa es semilla. Riega con constancia y paciencia; verás brotar lo nuevo."],
+  ["El Fruto Amoroso","Recojo con gratitud lo que sembré.","Honra los frutos que ya están. Reconocerlos te fortalece y te inspira a seguir creando con amor."],
+  ["La Vida En Ti","Celebro la vida que late dentro de mí.","Encarnar lo nuevo es celebrar que estás viva, aquí y ahora. Hoy, brinda por tu camino con ternura."]
+];
+</script>
+
+  
 
 const decks = {
   auto: { name: "De la autoexigencia a la suavidad", list: deckAuto },
