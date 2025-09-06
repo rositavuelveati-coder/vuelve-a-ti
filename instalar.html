@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instalar la app · Vuelve a Ti</title>
+  <meta name="description" content="Instala el Oráculo Vuelve a Ti como app en tu celular." />
+
+  <!-- PWA: manifest y color de tema -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#3E2833">
+
+  <!-- Tipografías (coherente con tu sitio) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --lavanda:#C7B8EA;
+      --beige:#F5E6DA;
+      --rosa:#E8B7C8;
+      --dorado:#D8B673;
+      --tinta:#3E2833;
+      --bg:#EFE7DE;
+      --shadow:0 12px 36px rgba(62,40,51,.12);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--tinta)}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;padding:20px;display:flex;justify-content:center}
+    .app{width:min(920px,100%)}
+
+    /* Topbar */
+    .topbar{display:flex;align-items:center;gap:10px;margin:4px 0 16px}
+    .home{
+      display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:var(--tinta);
+      font-weight:800;border:1px solid #eadfd6;padding:8px 12px;border-radius:14px;background:white;
+      box-shadow:0 10px 28px rgba(62,40,51,.08);
+    }
+    .home svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+
+    header{text-align:center;margin:8px 0 18px}
+    header h1{font-family:Marcellus,serif;font-weight:400;font-size:clamp(22px,4vw,36px);margin:0}
+    header p{opacity:.9;margin:8px 0 0}
+
+    /* Tarjeta principal */
+    .card{
+      background: linear-gradient(180deg, #FFFFFF 0%, #F9F5FB 60%, #FFF7E9 100%); /* lavanda muy suave → beige dorado */
+      border: 2px solid var(--dorado);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .steps{display:grid;gap:12px;margin:12px 0 8px}
+    .step{
+      background:#fff;border:1px solid #eadfd6;border-radius:16px;padding:14px;
+    }
+    .step h3{margin:0 0 6px;font-size:16px}
+    .muted{opacity:.85}
+
+    /* Botón instalar */
+    .btn{
+      border:1px solid #e7d8cc;background:white;color:var(--tinta);
+      padding:12px 16px;border-radius:18px;font-weight:800;cursor:pointer;
+      box-shadow:var(--shadow);font-size:16px;
+    }
+    .btn.primary{
+      background: linear-gradient(180deg, #FFFFFF 0%, #F3ECF7 100%);
+      border:2px solid var(--lavanda);
+    }
+    .hint{font-size:13px;opacity:.8;margin-top:8px}
+
+    /* Cajita contacto opcional */
+    .box{
+      margin-top:16px;background:#fff;border:1px solid #eadfd6;border-radius:16px;padding:16px;
+    }
+    .box h4{margin:0 0 8px}
+    .field{display:block;margin-top:10px}
+    .input{
+      width:100%;padding:12px;border-radius:12px;border:1px solid #eadfd6;margin-top:6px;
+      font:inherit;
+    }
+    .small{font-size:12px;opacity:.7;margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="app">
+
+    <div class="topbar">
+      <a class="home" href="./home.html" aria-label="Volver al inicio">
+        <svg viewBox="0 0 24 24"><path d="M3 12l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>
+        <span>Inicio</span>
+      </a>
+    </div>
+
+    <header>
+      <h1>📲 Instalar la app “Vuelve a Ti”</h1>
+      <p class="muted">Lleva el oráculo a tu celular para usarlo cuando quieras, incluso sin conexión.</p>
+    </header>
+
+    <section class="card">
+      <p><strong>Cómo instalar:</strong></p>
+      <div class="steps">
+        <div class="step">
+          <h3>1) Toca el botón <em>Instalar app</em></h3>
+          <button id="installBtn" class="btn primary" style="display:none;">📲 Instalar app</button>
+          <p class="hint">Si no aparece, navega un poco por el sitio y vuelve a esta página.</p>
+        </div>
+        <div class="step">
+          <h3>2) Confirma en el aviso del navegador</h3>
+          <p class="muted">Android mostrará un cuadro para agregar la app a tu pantalla de inicio.</p>
+        </div>
+        <div class="step">
+          <h3>3) ¡Listo! 🎉</h3>
+          <p class="muted">Verás el ícono de <em>Vuelve a Ti</em> como una app más en tu teléfono.</p>
+        </div>
+      </div>
+
+      <div class="box">
+        <h4>¿Quieres que te la envíe por correo?</h4>
+        <form action="#" method="POST">
+          <label class="field">Nombre
+            <input class="input" type="text" name="name" required>
+          </label>
+          <label class="field">Correo
+            <input class="input" type="email" name="email" required>
+          </label>
+          <button class="btn" type="submit" style="margin-top:12px;">📩 Envíame la app</button>
+          <p class="small">Al enviar aceptas recibir instrucciones para instalar la app. </p>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- PWA: registrar Service Worker + botón instalar -->
+  <script>
+    // Registrar el Service Worker (usa el mismo sw.js de tu sitio)
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+
+    // Lógica del botón "Instalar app"
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const btn = document.getElementById('installBtn');
+      if (btn) btn.style.display = 'inline-flex';
+    });
+
+    document.getElementById('installBtn')?.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      const btn = document.getElementById('installBtn');
+      if (btn) btn.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
