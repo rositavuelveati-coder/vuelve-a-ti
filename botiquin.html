@@ -5,58 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Botiquín para el Alma | Vuelve a Ti</title>
 
-    <!-- === INICIO DE LOS ESTILOS (CSS) === -->
     <style>
-        /* Estilo base para la página */
         body {
-            font-family: sans-serif; /* Puedes cambiar esto por la fuente de tu marca */
-            background-color: #FDFCFB; /* Un color de fondo suave, como el del oráculo */
+            font-family: sans-serif;
+            background-color: #FDFCFB;
             color: #333;
             margin: 0;
             padding: 0;
         }
+        
+        .btn-inicio {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #eee;
+            text-decoration: none;
+            color: #555;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
 
-        /* --- Estilos para la Página del Botiquín --- */
         .botiquin-container {
-            max-width: 700px; /* Ancho máximo del contenido */
-            margin: 40px auto; /* Centra el contenedor y le da espacio arriba/abajo */
+            position: relative; /* MODIFICADO */
+            max-width: 700px;
+            margin: 40px auto;
             padding: 20px;
             text-align: center;
         }
 
         .botiquin-container h1 {
-            font-size: 2.2em; /* Tamaño del título principal */
-            color: #4B0082; /* Un tono índigo/morado profundo para los títulos */
+            font-size: 1.8em; /* MODIFICADO */
+            color: #4B0082;
         }
 
         .botiquin-intro, .botiquin-accion, footer p {
-            line-height: 1.7; /* Espaciado de línea para fácil lectura */
+            line-height: 1.7;
             color: #555;
         }
 
         .botiquin-accion {
             margin-top: 30px;
-            margin-bottom: 50px; /* Crea espacio antes de los recursos */
+            margin-bottom: 50px;
         }
 
-        /* El contenedor de las cajitas de recursos */
         .recursos-grid {
             display: grid;
-            grid-template-columns: 1fr; /* Una columna en móviles */
-            gap: 25px; /* Espacio entre las cajitas */
+            grid-template-columns: 1fr;
+            gap: 25px;
         }
 
-        /* La cajita individual de cada recurso */
         .recurso-card {
-            background-color: #ffffff; /* Fondo blanco */
+            background-color: #ffffff;
             padding: 30px;
-            border-radius: 20px; /* Bordes redondeados */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.07); /* Sombra suave */
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
             border: 1px solid #f0f0f0;
         }
 
         .recurso-icono {
-            font-size: 2.5em; /* Tamaño del emoji */
+            font-size: 2.5em;
             margin-bottom: 15px;
         }
 
@@ -70,43 +81,45 @@
             margin-bottom: 25px;
         }
 
-        /* El botón de descarga */
         .btn-recurso {
             display: inline-block;
-            background-color: #DDA0DD; /* Un color orquídea/lavanda, ¡cámbialo si quieres! */
+            background-color: #DDA0DD;
             color: white;
             padding: 12px 25px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s; /* Efecto suave al pasar el ratón */
+            transition: background-color 0.3s;
         }
 
         .btn-recurso:hover {
-            background-color: #C78EC7; /* Un tono un poco más oscuro al pasar el ratón */
+            background-color: #C78EC7;
         }
 
         footer {
             margin-top: 60px;
             font-size: 0.9em;
         }
+        
+        .copyright {
+            margin-top: 40px;
+            font-size: 0.8em;
+            color: #aaa;
+        }
 
-        /* --- Para pantallas más grandes (tablets y escritorio) --- */
         @media (min-width: 600px) {
             .recursos-grid {
-                grid-template-columns: 1fr 1fr; /* Dos columnas si hay espacio */
+                grid-template-columns: 1fr 1fr;
             }
         }
     </style>
-    <!-- === FIN DE LOS ESTILOS (CSS) === -->
-
 </head>
 <body>
-
-    <!-- === INICIO DEL CONTENIDO VISIBLE DE LA PÁGINA === -->
+    
     <div class="botiquin-container">
+        <!-- MODIFICADO: El botón ahora está DENTRO del contenedor y apunta al HOME -->
+        <a href="home.html" class="btn-inicio">🏠 Inicio</a>
 
-        <!-- === ENCABEZADO DE LA PÁGINA === -->
         <header>
             <h1>🌿 Bienvenida a tu Botiquín para el Alma 🌿</h1>
             <p class="botiquin-intro">
@@ -117,33 +130,26 @@
             </p>
         </header>
 
-        <!-- === CONTENEDOR DE LOS RECURSOS === -->
         <div class="recursos-grid">
-
-            <!-- RECURSO 1: EL ANCLA DE 5 MINUTOS -->
             <div class="recurso-card">
                 <div class="recurso-icono">⚓️</div>
                 <h3>El Ancla de 5 Minutos</h3>
                 <p>Una ficha descargable con 7 preguntas poderosas para silenciar a tu crítico interior y reconectar con tu sabiduría interna, incluso en los días más grises.</p>
                 <a href="URL_FORMULARIO_ANCLA" class="btn-recurso">Recibir mi Ancla</a>
             </div>
-
-            <!-- RECURSO 2: EL BOTÓN DE PAUSA INTERIOR -->
             <div class="recurso-card">
                 <div class="recurso-icono">⏸️</div>
                 <h3>El Botón de Pausa Interior</h3>
                 <p>Una micro-guía en PDF con la técnica de 4 pasos para detener los pensamientos en bucle en 60 segundos y recuperar tu calma al instante.</p>
                 <a href="URL_FORMULARIO_BOTON_PAUSA" class="btn-recurso">Activar mi Pausa</a>
             </div>
-
-        </div> <!-- fin de recursos-grid -->
+        </div>
 
         <footer>
             <p>Este es el primer paso en tu camino de vuelta a ti. Al recibir tu herramienta, te unes a mi comunidad, donde seguiré compartiendo guías y reflexiones para tu viaje.</p>
+            <p class="copyright">© Vuelve a Ti · Rosita Ávila</p>
         </footer>
-
-    </div> <!-- fin de botiquin-container -->
-    <!-- === FIN DEL CONTENIDO VISIBLE DE LA PÁGINA === -->
+    </div>
 
 </body>
 </html>
