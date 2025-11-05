@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
+    <!-- AÑADIDO: La línea mágica para que se vea bien en celulares -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vuelve a Ti | Rosita Ávila</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    
     <!-- Font Awesome (para íconos) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
@@ -86,35 +85,32 @@
             font-size: 1em;
             color: #777;
         }
-
-.social-links a {
-    display: inline-flex;     /* MODIFICADO: Flexbox es mejor para centrar */
-    justify-content: center;  /* MODIFICADO: Centra horizontalmente el SVG */
-    align-items: center;      /* MODIFICADO: Centra verticalmente el SVG */
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    border: 1px solid #E0C9A6;
-    color: #333;
-    margin: 0 8px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    border-color: #CFAE7A;
-}
-
         
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 1px solid #E0C9A6;
+            color: #333;
+            margin: 0 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
 
-.social-links a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    border-color: #CFAE7A;
-}
+        .social-links a i {
+             font-size: 20px;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-color: #CFAE7A;
+        }
+
         .copyright {
             font-size: 0.8em;
             color: #aaa;
@@ -132,62 +128,33 @@
         </header>
 
         <div class="button-container">
-
             <a href="botiquin.html" class="main-button">
                 <span class="titulo">🌿 Tu Botiquín para el Alma</span>
                 <span class="subtitulo">Alivio y claridad para tu mundo interior</span>
             </a>
-
             <a href="index.html" class="main-button">
                 <span class="titulo">✨ Tu Oráculo de Luz</span>
                 <span class="subtitulo">Recibe un mensaje para tu día</span>
             </a>
-            
-            <!-- ENLACE FINAL - Apunta a la página futura -->
             <a href="sesiones1a1.html" class="main-button">
                 <span class="titulo">✨ Sesiones Individuales</span>
                 <span class="subtitulo">Únete a la lista prioritaria</span>
             </a>
-
             <a href="sobre-mi.html" class="main-button">
                 <span class="titulo">🌿 Mi Camino</span>
                 <span class="subtitulo">Conóceme más</span>
             </a>
-
         </div>
 
         <div class="social-container">
             <h3>Conecta con Vuelve a Ti</h3>
-           
-
             <div class="social-links">
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/rosita.vuelveati/" target="_blank" title="Instagram">
-        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-    </a>
-    
-    <!-- Threads -->
-    <a href="https://www.threads.com/@rosita.vuelveati" target="_blank" title="Threads">
-        <i class="fa-brands fa-threads" aria-hidden="true"></i>
-    </a>
-    
-    <!-- Facebook -->
-    <a href="https://www.facebook.com/rosita.vuelveati" target="_blank" title="Facebook">
-        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
-    </a>
-    
-    <!-- Email -->
-    <a href="mailto:contacto@vuelveati.net" title="Email">
-        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-    </a>
-    
-    <!-- WhatsApp -->
-    <a href="https://wa.me/56977337913" target="_blank" title="WhatsApp">
-        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-    </a>
-</div>
-            
-            
+                <a href="https://www.instagram.com/rosita.vuelveati/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.threads.com/@rosita.vuelveati" target="_blank" title="Threads"><i class="fa-brands fa-threads" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/rosita.vuelveati" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="mailto:contacto@vuelveati.net" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+                <a href="https://wa.me/56977337913" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+            </div>
         </div>
 
         <footer>
@@ -197,6 +164,4 @@
     </div>
 
 </body>
-</html>```
-
----
+</html>
