@@ -1,171 +1,158 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>✨ Vuelve a Ti ✨</title>
-  <meta name="description" content="Aquí s" />
-  <meta name="theme-color" content="#F5E6DA" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botiquín para el Alma | Vuelve a Ti</title>
 
-  <!-- Open Graph / Facebook / WhatsApp -->
-  <meta property="og:title" content="✨ Vuelve a Ti ✨" />
-  <meta property="og:description" content="Aquí activas la guía de tu esencia para sanar lo invisible" />
-  <meta property="og:image" content="https://rositavuelveati-coder.github.io/vuelve-a-ti/og-image-1200x630.jpg" />
-  <meta property="og:image:secure_url" content="https://rositavuelveati-coder.github.io/vuelve-a-ti/og-image-1200x630.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Vuelve a Ti — Sanas lo invisible y reconoce tu esencia" />
-  <meta property="og:url" content="https://rositavuelveati-coder.github.io/vuelve-a-ti/home.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_ES" />
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #FDFCFB;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            position: relative; /* Necesario para el posicionamiento del botón Inicio */
+        }
+        
+        /* AÑADIDO: Estilo para el botón de Inicio */
+        .btn-inicio {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #eee;
+            text-decoration: none;
+            color: #555;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="✨ Vuelve a Ti ✨" />
-  <meta name="twitter:description" content="Aquí activas la guía de tu esencia para sanar lo invisible" />
-  <meta name="twitter:image" content="https://rositavuelveati-coder.github.io/vuelve-a-ti/og-image-1200x630.jpg" />
+        .botiquin-container {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://rositavuelveati-coder.github.io/vuelve-a-ti/favicon.png" />
-  <link rel="apple-touch-icon" href="https://rositavuelveati-coder.github.io/vuelve-a-ti/favicon.png" />
+        .botiquin-container h1 {
+            font-size: 2.2em;
+            color: #4B0082;
+        }
 
-  <!-- Font Awesome para íconos -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+        .botiquin-intro, .botiquin-accion, footer p {
+            line-height: 1.7;
+            color: #555;
+        }
 
-  <!-- Estilos internos (para que nada se pierda) -->
-  <style>
-    :root{
-      --lavender:#C7B8EA; --beige:#F5E6DA; --pink:#E8B7C8; --gold:#D8B673;
-      --ink:#222; --white:#fff;
-      --fs-h1: clamp(1.4rem, 1.1rem + 1.5vw, 2rem);
-      --fs-p:  clamp(0.95rem, 0.9rem + 0.6vw, 1.05rem);
-      --radius: 18px;
-      --shadow-sm: 0 3px 12px rgba(0,0,0,.06);
-      --shadow-md: 0 6px 18px rgba(0,0,0,.08);
-      --ring: 0 0 0 3px rgba(216,182,115,.35);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-      background: var(--beige);
-      color: var(--ink);
-    }
-    main{max-width:740px;margin:0 auto;padding:22px 14px}
-    h1{margin:0 0 8px;text-align:center;font-size:var(--fs-h1)}
-    p{margin:0 0 12px;font-size:var(--fs-p);line-height:1.55;text-align:center}
+        .botiquin-accion {
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
 
-    /* Tarjeta principal de botones */
-    .btn-block{
-      background:var(--white);
-      border:1px solid rgba(0,0,0,.06);
-      border-radius:var(--radius);
-      padding:18px;
-      margin:18px 0;
-      box-shadow:var(--shadow-sm);
-    }
-    .menu-links{
-      display:flex;flex-direction:column;gap:12px;margin-top:10px;
-    }
-    .menu-links a{
-      display:block;text-decoration:none;text-align:center;
-      padding:12px 14px;
-      border-radius:14px;font-weight:600;color:var(--ink);
-      border:2px solid rgba(0,0,0,.08); background:#fff;
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,.03);
-      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-    }
-    .menu-links a:hover{transform:translateY(-1px); box-shadow: var(--shadow-sm)}
-    .menu-links a:focus-visible{outline:none; box-shadow: var(--ring)}
+        .recursos-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
 
-    .copyright{ text-align:center; color:#555; font-size:.92rem; margin-top:8px }
+        .recurso-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+            border: 1px solid #f0f0f0;
+        }
 
-    /* RRSS al final */
-    .vt-wrap{max-width:740px;margin:18px auto 26px;padding:0 14px}
-    .vt-card{
-      background:#fff;border:1px solid rgba(0,0,0,.06);
-      border-radius:16px;padding:14px;
-      box-shadow:var(--shadow-sm);text-align:center;
-    }
-    .vt-title{font:600 1.06rem/1.3 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:0 0 10px}
-    .vt-social{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
-    .vt-btn{
-      --size:46px;
-      width:var(--size);height:var(--size);
-      border-radius:9999px;display:inline-flex;align-items:center;justify-content:center;
-      text-decoration:none;color:var(--ink);
-      background:linear-gradient(180deg,#fff,#faf8f6 70%);
-      border:2px solid var(--gold);
-      box-shadow:0 2px 0 rgba(0,0,0,.05), inset 0 0 0 1px rgba(216,182,115,.15);
-      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-    }
-    .vt-btn i{font-size:1rem}
-    .vt-btn:hover{
-      transform:translateY(-1px);
-      background:linear-gradient(180deg,var(--beige),#fff 70%);
-      box-shadow:var(--shadow-sm);
-    }
-    .vt-btn:focus-visible{outline:none; box-shadow: var(--ring)}
-    .vt-inst:hover{background:linear-gradient(180deg,var(--pink),var(--beige) 70%)}
-    .vt-thr:hover {background:linear-gradient(180deg,var(--lavender),var(--beige) 70%)}
-    .vt-eml:hover {background:linear-gradient(180deg,var(--beige),#fff 70%)}
-    .vt-wa:hover  {background:linear-gradient(180deg,#e9fbe9,var(--beige) 70%)}
+        .recurso-icono {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
 
-    @media (min-width: 640px){
-      main{padding:26px 16px}
-      .btn-block{padding:20px;margin:22px 0}
-      .menu-links a{padding:13px 16px}
-      .vt-card{padding:16px}
-      .vt-btn{--size:48px}.vt-btn i{font-size:1.08rem}
-    }
-    @media (prefers-reduced-motion: reduce){
-      .menu-links a, .vt-btn{transition:none}
-      .menu-links a:hover, .vt-btn:hover{transform:none}
-    }
-  </style>
+        .recurso-card h3 {
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+
+        .recurso-card p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .btn-recurso {
+            display: inline-block;
+            background-color: #DDA0DD;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-recurso:hover {
+            background-color: #C78EC7;
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 0.9em;
+        }
+        
+        /* AÑADIDO: Estilo para el texto de Copyright */
+        .copyright {
+            margin-top: 40px;
+            font-size: 0.8em;
+            color: #aaa;
+        }
+
+        @media (min-width: 600px) {
+            .recursos-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <main>
-    <h1>✨ Vuelve a Ti ✨</h1>
-    <p>Aquí activas la guía de tu esencia para sanar lo invisible</p>
+    
+    <!-- AÑADIDO: Botón de Inicio -->
+    <a href="index.html" class="btn-inicio">🏠 Inicio</a>
 
-    <p>
-  <em>Este espacio es para ti, alma buscadora que ha sostenido mucho y siente que ya lo ha intentado todo. Aquí no encontrarás otro método, sino la guía para activar tu propia esencia, sanar lo invisible y reprogramar tu realidad desde tu poder interior. Es tu invitación a dejar de buscar fuera para, por fin, habitar tu vida con la calma y la suavidad que ya residen en ti.</em>
-    </p>
+    <div class="botiquin-container">
+        <header>
+            <h1>🌿 Bienvenida a tu Botiquín para el Alma 🌿</h1>
+            <p class="botiquin-intro">
+                Sabemos que hay días en que el cansancio emocional pesa, la mente no da tregua y la exigencia se siente abrumadora. Para esos momentos, he creado este espacio sagrado. No estás sola.
+            </p>
+            <p class="botiquin-accion">
+                Este no es un lugar de soluciones mágicas, sino de <strong>primeros auxilios para tu mundo interior</strong>. Elige la herramienta que tu alma necesita hoy para recordar el camino de vuelta a la calma.
+            </p>
+        </header>
 
-    <!-- Bloque de botones -->
-    <div class="btn-block">
-      <div class="menu-links">
-        <a href="botiquin.html">🌿 Tu Botiquín para el Alma | Alivio y Claridad</a>
-        <a href="index.html">✨ Sesiones Individuales | Únete a la Lista Prioritaria</a>
-        <a href="index.html">💫 Tu Oráculo de Luz | Recibe un Mensaje del Alma</a>
-        <a href="sobre-mi.html" class="menu-button">🌹 Mi camino | Conóceme más</a>
-      </div>
+        <div class="recursos-grid">
+            <div class="recurso-card">
+                <div class="recurso-icono">⚓️</div>
+                <h3>El Ancla de 5 Minutos</h3>
+                <p>Una ficha descargable con 7 preguntas poderosas para silenciar a tu crítico interior y reconectar con tu sabiduría interna, incluso en los días más grises.</p>
+                <a href="URL_FORMULARIO_ANCLA" class="btn-recurso">Recibir mi Ancla</a>
+            </div>
+            <div class="recurso-card">
+                <div class="recurso-icono">⏸️</div>
+                <h3>El Botón de Pausa Interior</h3>
+                <p>Una micro-guía en PDF con la técnica de 4 pasos para detener los pensamientos en bucle en 60 segundos y recuperar tu calma al instante.</p>
+                <a href="URL_FORMULARIO_BOTON_PAUSA" class="btn-recurso">Activar mi Pausa</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>Este es el primer paso en tu camino de vuelta a ti. Al recibir tu herramienta, te unes a mi comunidad, donde seguiré compartiendo guías y reflexiones para tu viaje.</p>
+            <!-- AÑADIDO: Texto de Copyright -->
+            <p class="copyright">© Vuelve a Ti · Rosita Ávila</p>
+        </footer>
     </div>
 
-    <p class="copyright">© Vuelve a Ti · Rosita Ávila</p>
-  </main>
-
-  <!-- RRSS al final -->
-  <section class="vt-wrap" id="rrss-vuelve-a-ti">
-    <div class="vt-card">
-      <h2 class="vt-title">Conecta con Vuelve a Ti</h2>
-      <div class="vt-social" role="list">
-        <a class="vt-btn vt-inst" href="https://www.instagram.com/rosita.vuelveati" target="_blank" rel="me noopener noreferrer" aria-label="Instagram">
-          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a class="vt-btn vt-thr" href="https://www.threads.com/@rosita.vuelveati" target="_blank" rel="me noopener noreferrer" aria-label="Threads">
-          <i class="fa-brands fa-threads" aria-hidden="true"></i>
-        </a>
-        <a class="vt-btn vt-eml" href="mailto:rosita.vuelveati@gmail.com?subject=Hola%20Rosita%20-%20Vuelve%20a%20Ti" aria-label="Correo">
-          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-        </a>
-        <a class="vt-btn vt-wa" href="https://wa.me/56977337913?text=Hola%20Rosita%2C%20vengo%20desde%20tu%20web%20%F0%9F%8C%88" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Business">
-          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-  </section>
 </body>
 </html>
