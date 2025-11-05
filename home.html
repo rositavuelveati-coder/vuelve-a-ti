@@ -3,156 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botiquín para el Alma | Vuelve a Ti</title>
+    <title>Vuelve a Ti | Rosita Ávila</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
         body {
-            font-family: sans-serif;
-            background-color: #FDFCFB;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F9F5F2;
             color: #333;
             margin: 0;
-            padding: 0;
-            position: relative; /* Necesario para el posicionamiento del botón Inicio */
-        }
-        
-        /* AÑADIDO: Estilo para el botón de Inicio */
-        .btn-inicio {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background-color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid #eee;
-            text-decoration: none;
-            color: #555;
-            font-size: 0.9em;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        .botiquin-container {
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 20px;
+        .main-container {
+            max-width: 450px;
+            width: 100%;
             text-align: center;
         }
 
-        .botiquin-container h1 {
-            font-size: 2.2em;
-            color: #4B0082;
+        header h1 {
+            font-size: 2em;
         }
 
-        .botiquin-intro, .botiquin-accion, footer p {
-            line-height: 1.7;
+        header p {
+            line-height: 1.6;
             color: #555;
+            margin-bottom: 30px;
         }
 
-        .botiquin-accion {
-            margin-top: 30px;
-            margin-bottom: 50px;
+        .button-container, .social-container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
         }
 
-        .recursos-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-        }
-
-        .recurso-card {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        .main-button {
+            display: block;
+            background-color: #FDFDFD;
             border: 1px solid #f0f0f0;
-        }
-
-        .recurso-icono {
-            font-size: 2.5em;
+            padding: 15px;
             margin-bottom: 15px;
-        }
-
-        .recurso-card h3 {
-            margin-top: 0;
-            font-size: 1.4em;
-        }
-
-        .recurso-card p {
-            color: #666;
-            margin-bottom: 25px;
-        }
-
-        .btn-recurso {
-            display: inline-block;
-            background-color: #DDA0DD;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
+            border-radius: 20px;
             text-decoration: none;
+            color: #333;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .main-button:last-child {
+            margin-bottom: 0;
+        }
+
+        .main-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .main-button .titulo {
+            display: block;
             font-weight: bold;
-            transition: background-color 0.3s;
+            font-size: 1.1em;
         }
 
-        .btn-recurso:hover {
-            background-color: #C78EC7;
+        .main-button .subtitulo {
+            display: block;
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 4px;
         }
 
-        footer {
-            margin-top: 60px;
-            font-size: 0.9em;
+        .social-container h3 {
+            margin-top: 0;
+            font-size: 1em;
+            color: #777;
         }
-        
-        /* AÑADIDO: Estilo para el texto de Copyright */
+
+        .social-links a {
+            margin: 0 10px;
+            font-size: 1.5em; /* Tamaño de los iconos sociales */
+            color: #333;
+            text-decoration: none;
+        }
+
         .copyright {
-            margin-top: 40px;
             font-size: 0.8em;
             color: #aaa;
-        }
-
-        @media (min-width: 600px) {
-            .recursos-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
-    
-    <!-- AÑADIDO: Botón de Inicio -->
-    <a href="index.html" class="btn-inicio">🏠 Inicio</a>
 
-    <div class="botiquin-container">
+    <div class="main-container">
+
         <header>
-            <h1>🌿 Bienvenida a tu Botiquín para el Alma 🌿</h1>
-            <p class="botiquin-intro">
-                Sabemos que hay días en que el cansancio emocional pesa, la mente no da tregua y la exigencia se siente abrumadora. Para esos momentos, he creado este espacio sagrado. No estás sola.
-            </p>
-            <p class="botiquin-accion">
-                Este no es un lugar de soluciones mágicas, sino de <strong>primeros auxilios para tu mundo interior</strong>. Elige la herramienta que tu alma necesita hoy para recordar el camino de vuelta a la calma.
-            </p>
+            <h1>✨ Vuelve a Ti ✨</h1>
+            <p><strong>De la mente que ordena, al alma que recuerda.</strong><br>Este espacio es para ti, alma buscadora que ha sostenido mucho. Aquí activas tu esencia, sanas lo invisible y reprogramas tu realidad desde tu poder interior.</p>
         </header>
 
-        <div class="recursos-grid">
-            <div class="recurso-card">
-                <div class="recurso-icono">⚓️</div>
-                <h3>El Ancla de 5 Minutos</h3>
-                <p>Una ficha descargable con 7 preguntas poderosas para silenciar a tu crítico interior y reconectar con tu sabiduría interna, incluso en los días más grises.</p>
-                <a href="URL_FORMULARIO_ANCLA" class="btn-recurso">Recibir mi Ancla</a>
-            </div>
-            <div class="recurso-card">
-                <div class="recurso-icono">⏸️</div>
-                <h3>El Botón de Pausa Interior</h3>
-                <p>Una micro-guía en PDF con la técnica de 4 pasos para detener los pensamientos en bucle en 60 segundos y recuperar tu calma al instante.</p>
-                <a href="URL_FORMULARIO_BOTON_PAUSA" class="btn-recurso">Activar mi Pausa</a>
+        <div class="button-container">
+
+            <a href="botiquin.html" class="main-button">
+                <span class="titulo">🌿 Tu Botiquín para el Alma</span>
+                <span class="subtitulo">Alivio y claridad para tu mundo interior</span>
+            </a>
+
+            <a href="index.html" class="main-button">
+                <span class="titulo">✨ Tu Oráculo de Luz</span>
+                <span class="subtitulo">Recibe un mensaje para tu día</span>
+            </a>
+            
+            <!-- ENLACE FINAL - Apunta a la página futura -->
+            <a href="sesiones1a1.html" class="main-button">
+                <span class="titulo">✨ Sesiones Individuales</span>
+                <span class="subtitulo">Únete a la lista prioritaria</span>
+            </a>
+
+            <a href="sobre-mi.html" class="main-button">
+                <span class="titulo">🌿 Mi Camino</span>
+                <span class="subtitulo">Conóceme más</span>
+            </a>
+
+        </div>
+
+        <div class="social-container">
+            <h3>Conecta con Vuelve a Ti</h3>
+            <div class="social-links">
+                <!-- ENLACE FINAL -->
+                <a href="https://www.instagram.com/rosita.vuelveati/" target="_blank" title="Instagram">📷</a>
+                <!-- ENLACE FINAL -->
+                <a href="https://www.threads.com/@rosita.vuelveati" target="_blank" title="Threads">@</a>
+                <!-- AÑADIDO: Enlace a Facebook -->
+                <a href="https://www.facebook.com/rosita.vuelveati" target="_blank" title="Facebook">📘</a>
+                <!-- ENLACE FINAL -->
+                <a href="mailto:contacto@vuelveati.net" title="Email">✉️</a>
+                <!-- ENLACE FINAL - Número de teléfono sin el '+' -->
+                <a href="https://wa.me/56977337913" target="_blank" title="WhatsApp">💬</a>
             </div>
         </div>
 
         <footer>
-            <p>Este es el primer paso en tu camino de vuelta a ti. Al recibir tu herramienta, te unes a mi comunidad, donde seguiré compartiendo guías y reflexiones para tu viaje.</p>
-            <!-- AÑADIDO: Texto de Copyright -->
             <p class="copyright">© Vuelve a Ti · Rosita Ávila</p>
         </footer>
+
     </div>
 
 </body>
-</html>
+</html>```
+
+---
