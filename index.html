@@ -91,7 +91,7 @@ al<!DOCTYPE html>
 
     <header>
       <h1>✨ Tu Oráculo de Luz ✨</h1>
-      <p><em>Un mensaje del alma para tu día<em></p>
+      <p><em>Un mensaje del alma para tu día</em>em></p>
 
       <p class="intro" style="max-width:640px;margin:16px auto;font-size:15px;line-height:1.6;text-align:center;opacity:.9;">
       <strong>Confía en tu intuición.</strong> Cierra los ojos, respira profundo y elige la pregunta que más resuena en tu corazón hoy. El universo tiene una guía para ti.
@@ -127,6 +127,35 @@ al<!DOCTYPE html>
 
   </div>
 </section>
+
+<style>
+  /* --- Estilos para los botones del Oráculo --- */
+
+  /* Ajuste para que los botones se adapten al nuevo contenido de dos líneas */
+  .choices .btn.big {
+    height: auto; /* Permite que la altura crezca según el texto */
+    padding-top: 18px;
+    padding-bottom: 18px;
+    line-height: 1.4; /* Mejora el espaciado del texto */
+  }
+
+  /* Estilo para el TÍTULO dentro del botón */
+  .btn .titulo {
+    display: block; /* Ocupa su propia línea, forzando al subtítulo a bajar */
+    font-weight: bold; /* Lo pone en negrita */
+    font-size: 1em; /* Tamaño de letra base del botón */
+  }
+
+  /* Estilo para el SUBTÍTULO dentro del botón */
+  .btn .subtitulo {
+    display: block; /* Ocupa su propia línea */
+    font-size: 0.85em; /* Lo hace un poco más pequeño que el título */
+    font-weight: normal; /* Le quita la negrita que pueda heredar */
+    color: #666; /* Un color gris suave para diferenciarlo */
+    margin-top: 5px; /* Crea un pequeño espacio entre título y subtítulo */
+  }
+</style>
+    
 
     <!-- Pantalla de carta -->
     <section id="reading" class="screen">
