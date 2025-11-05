@@ -83,20 +83,28 @@
             color: #777;
         }
 
-        .social-links a {
-    display: inline-block;
+.social-links a {
+    display: inline-flex;     /* MODIFICADO: Flexbox es mejor para centrar */
+    justify-content: center;  /* MODIFICADO: Centra horizontalmente el SVG */
+    align-items: center;      /* MODIFICADO: Centra verticalmente el SVG */
     width: 45px;
     height: 45px;
-    line-height: 45px;
     border-radius: 50%;
     background-color: #ffffff;
     border: 1px solid #E0C9A6;
     color: #333;
-    font-size: 20px;
     margin: 0 8px;
     text-decoration: none;
     transition: all 0.3s ease;
 }
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-color: #CFAE7A;
+}
+
+        
 
 .social-links a:hover {
     transform: translateY(-3px);
