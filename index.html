@@ -89,27 +89,22 @@
       </a>
     </div>
 
-    <header>
-      <h1>✨ Tu Oráculo de Luz ✨</h1>
-      
-     .oraculo-lema {
-        font-size: 1.1em; /* Reduce el tamaño. Ajusta este valor si es necesario */
-        font-weight: normal; /* Le quita la negrita */
-        color: #555; /* Lo hace un poco más suave que el negro */
-        margin-top: -10px; /* Lo acerca al título principal */
-        font-style: italic; /* Mantenemos la cursiva */
-    }
-     
-      <p class="intro" style="max-width:640px;margin:35px auto;font-size:15px;line-height:1.6;text-align:center;opacity:.9;">
-      <strong>Confía en tu intuición.</strong> Cierra los ojos, respira profundo y elige la pregunta que más resuena en tu corazón hoy. El universo tiene una guía para ti.
+    
+<header>
+  <h1>✨ Tu Oráculo de Luz ✨</h1>
+  
+  <!-- Este es el subtítulo al que le aplicaremos el estilo -->
+  <p class="oraculo-lema">Un mensaje del alma para tu día</p>
+  
+  <!-- Este es el párrafo de instrucciones que ya tenías -->
+  <p class="intro" style="max-width:640px;margin:35px auto;font-size:15px;line-height:1.6;text-align:center;opacity:.9;">
+    <strong>Confía en tu intuición.</strong> Cierra los ojos, respira profundo y elige la pregunta que más resuena en tu corazón hoy. El universo tiene una guía para ti.
   </p>
-      
 </header>
 
-      
-    </header>
 
- <!-- Pantalla inicial Optimizada -->
+          
+     <!-- Pantalla inicial Optimizada -->
 <section id="welcome" class="screen welcome active">
   <p class="subtitle" style="margin-bottom:28px;">Elige el oráculo que te iluminará hoy:</p>
   <div class="choices">
@@ -143,6 +138,14 @@
     margin-bottom: 35px; /* Ajusta este número si quieres más o menos espacio */
   }
 
+.oraculo-lema {
+    font-size: 1.1em; /* Reduce el tamaño. Ajusta este valor si es necesario */
+    font-weight: normal; /* Le quita la negrita */
+    color: #555; /* Lo hace un poco más suave que el negro */
+    margin-top: -10px; /* Lo acerca al título principal */
+    font-style: italic; /* Mantenemos la cursiva */
+  }
+  
   /* Ajuste para que los botones se adapten al nuevo contenido de dos líneas */
   .choices .btn.big {
     height: auto;
