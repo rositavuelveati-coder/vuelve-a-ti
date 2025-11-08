@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sesiones Individuales - Vuelve a Ti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Marcellus&display=swap" rel="stylesheet">
+  <style>
+    /* Estilos para el botón de Inicio */
+    .topbar { max-width: 800px; margin: 20px auto 0 auto; padding: 0 20px; }
+    .home { display: inline-flex; gap: 8px; align-items: center; text-decoration: none; color: #3E2833; font-weight: 800; border: 1px solid #eadfd6; padding: 8px 12px; border-radius: 14px; background: white; box-shadow: 0 10px 38px rgba(62,40,51,.08); }
+    .home svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; }
+    
+    /* Estilos para el pie de página (footer) */
+    footer { text-align: center; margin-top: 40px; margin-bottom: 20px; font-size: 14px; opacity: 0.7; color: #3E2833; }
+    
+    /* Estilos Generales de la Página */
+    body { font-family: 'Inter', sans-serif; background-color: #f5ebe1; margin: 0; padding: 0; line-height: 1.6; color: #333; }
+    .page { max-width: 800px; margin: 20px auto 40px auto; padding: 0 20px; }
+    .card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); text-align: center; }
+    .header h1 { color: #6a1b9a; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 26px; }
+    p { margin-bottom: 20px; font-size: 16px; color: #3E2833; max-width: 600px; margin-left: auto; margin-right: auto;}
+    
+    /* Estilo del Botón de Acción */
+    .cta-button {
+      display: inline-block;
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #6a1b9a; /* Color lavanda fuerte */
+      border: none;
+      border-radius: 999px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transition: all .2s ease;
+    }
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
 
+  <!-- Botón Inicio -->
+  <div class="topbar">
+    <a class="home" href="home.html" aria-label="Volver al inicio">
+      <svg viewBox="0 0 24 24"><path d="M3 12l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>
+      <span>Inicio</span>
+    </a>
+  </div>
+
+  <main class="page">
+    <article class="card">
+      <div class="header">
+        <h1>Un Espacio Sagrado para Ti</h1>
+      </div>
+      
+      <p>Has recorrido un largo camino de búsqueda y sanación. A veces, para dar el siguiente paso, se necesita un acompañamiento cercano, una guía que sostenga tu proceso con total presencia y suavidad.</p>
+
+      <p>Actualmente no tengo cupos disponibles, pero he creado una <strong>Lista Prioritaria</strong> para aquellas almas que, como tú, sienten el llamado a profundizar.</p>
+      
+      <p>Al unirte, serás la primera en saber cuándo se abra un nuevo espacio para trabajar juntas. Sin compromiso, solo con la intención de que, si nuestros caminos deben cruzarse, el universo nos lo facilite.</p>
+
+      <a href="https://forms.gle/L51XNFxXbSZjR5bx7" target="_blank" class="cta-button">
+        Quiero unirme a la Lista Prioritaria
+      </a>
+
+    </article>
+  </main>
+
+  <footer>© Rosita Ávila · Vuelve a Ti</footer>
+
+</body>
+</html>
