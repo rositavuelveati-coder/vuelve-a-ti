@@ -8,7 +8,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+ 
   <style>
+
+    /* ===== CÓDIGO DE ESTILOS PARA EL BOTÓN DE INICIO ===== */
+.topbar{display:flex;justify-content:flex-start;align-items:center;margin:2px 0 10px}
+.home{
+  display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:#3E2833;
+  font-weight:800;border:1px solid #eadfd6;padding:8px 12px;border-radius:14px;background:white;
+  box-shadow:0 10px 38px rgba(62,40,51,.08);
+}
+.home svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+
+    
     :root{
       --tinta:#3E2833;
       --bg:#EFE7DE;
@@ -81,14 +93,14 @@
 <body>
   <div class="app">
 
-    <!-- Botón Inicio -->
-    <div class="topbar">
-      <a class="home" href="./home.html" aria-label="Volver al inicio">
-        <svg viewBox="0 0 24 24"><path d="M3 12l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>
-        <span>Inicio</span>
-      </a>
-    </div>
-
+   <!-- Botón Inicio -->
+<div class="topbar">
+  <a class="home" href="./home.html" aria-label="Volver al inicio">
+    <svg viewBox="0 0 24 24"><path d="M3 12l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>
+    <span>Inicio</span>
+  </a>
+</div>
+    
     
 <header>
   <h1>Tu Oráculo de Luz</h1>
