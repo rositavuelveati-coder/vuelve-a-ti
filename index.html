@@ -10,6 +10,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
  
   <style>
+    
+/* === ESTRUCTURA DE PÁGINA UNIFICADA (AÑADIR ESTO) === */
+.page {
+  max-width: 800px;
+  margin: 20px auto 40px auto;
+  padding: 0 20px;
+}
+.card-principal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center; /* Centra el texto dentro de la tarjeta */
+}
+.header {
+  margin-bottom: 25px; /* Espacio debajo del título */
+}
+.header h1 {
+  color: #6a1b9a; /* Color morado del título */
+  font-family: Marcellus, serif;
+  font-weight: 400;
+  font-size: clamp(22px,4vw,36px);
+  margin: 0;
+}
 
     /* ===== CÓDIGO DE ESTILOS PARA EL BOTÓN DE INICIO ===== */
 .topbar{display:flex;justify-content:flex-start;align-items:center;margin:2px 0 10px}
@@ -101,9 +125,15 @@
   </a>
 </div>
     
+<main class="page">
+  <article class="card-principal">
     
 <header>
-  <h1>Tu Oráculo de Luz</h1>
+  
+  <!-- ESTE ES EL NUEVO BLOQUE DEL TÍTULO -->
+<div class="header">
+    <h1>Tu Oráculo de Luz</h1>
+</div>
   
   <!-- Este es el subtítulo al que le aplicaremos el estilo -->
   <p class="oraculo-lema">Un mensaje del alma para tu día</p>
@@ -429,5 +459,9 @@
     }
   })();
   </script>
+
+  </article>
+  </main>
+    
 </body>
 </html>
