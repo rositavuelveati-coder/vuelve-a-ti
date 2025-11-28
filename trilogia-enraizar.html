@@ -6,26 +6,64 @@
   <title>Trilogía Enraizar | Vuelve a Ti</title>
 
   <style>
+    /* ===== BOTÓN INICIO (MISMO QUE OTRAS PÁGINAS) ===== */
+    .topbar { 
+      display: flex; 
+      justify-content: flex-start; 
+      align-items: center; 
+      max-width: 800px;
+      margin: 20px auto 0 auto;
+      padding: 0 20px;
+    }
+    .home {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      text-decoration: none;
+      color: #3E2833;
+      font-weight: 800;
+      border: 1px solid #eadfd6;
+      padding: 8px 12px;
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 10px 38px rgba(62,40,51,.08);
+      transition: transform .15s ease;
+    }
+    .home:hover {
+      transform: translateY(-1px);
+    }
+    .home svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+    }
+
     /* ===== ESTILO BASE (MOBILE FIRST) ===== */
     body {
-      font-family: Arial, sans-serif;      /* MISMA LETRA QUE "SOBRE MÍ" */
-      background-color: #f5ebe1;           /* MISMO FONDO QUE "SOBRE MÍ" */
+      font-family: Arial, sans-serif;      /* igual que "Sobre Mí" */
+      background-color: #f5ebe1;           /* mismo fondo */
       color: #333;
       margin: 0;
-      padding: 16px 12px;
+      padding: 16px 12px 24px 12px;
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: column;
       min-height: 100vh;
       line-height: 1.6;
     }
 
-    .page {
-      width: 100%;
+    main.page {
       max-width: 800px;
+      width: 100%;
+      margin: 10px auto 0 auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+    .card {
       background: #fff;
       padding: 20px 18px;
-      margin: 20px auto;
       border-radius: 20px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.06);
     }
@@ -34,7 +72,7 @@
       text-align: center;
       color: #6a1b9a;
       margin-top: 0;
-      margin-bottom: 14px;
+      margin-bottom: 20px;
       font-size: 1.6em;
       line-height: 1.2;
     }
@@ -89,30 +127,18 @@
       color: #3E2833;
     }
 
-    /* Botón de regreso */
-    .back {
-      display: inline-block;
-      margin-bottom: 10px;
-      font-size: 0.9em;
-      text-decoration: none;
-      color: #6a1b9a;
-      font-weight: bold;
-    }
-
-    .back + h1 {
-      margin-top: 4px;
-    }
-
-    /* ===== AJUSTES PARA PANTALLAS MÁS GRANDES (TABLET / ESCRITORIO) ===== */
+    /* ===== AJUSTES PARA TABLET / ESCRITORIO ===== */
     @media (min-width: 700px) {
       body {
-        padding: 24px;
-        align-items: center;
+        padding: 24px 24px 30px 24px;
       }
 
-      .page {
+      main.page {
+        margin-top: 20px;
+      }
+
+      .card {
         padding: 28px;
-        margin: 20px auto;
         box-shadow: 0 6px 24px rgba(0,0,0,0.06);
       }
 
@@ -135,54 +161,62 @@
         margin-top: 26px;
       }
     }
-
   </style>
 </head>
 
 <body>
 
-  <div class="page">
-
-    <a href="home.html" class="back">← Volver</a>
-
-    <h1>Trilogía Enraizar:<br>De la Fuga a la Estructura</h1>
-
-    <p><strong>¿Sientes que tienes un motor de alta potencia (tu sensibilidad) pero te falta el volante (estructura)?</strong></p>
-
-    <p>Pasas los días haciendo mucho, pero terminas con la sensación de no haber avanzado nada. Eso no es falta de capacidad, <strong>es una fuga energética.</strong></p>
-
-    <p>He diseñado esta intervención estratégica de <strong>3 sesiones</strong> para detectar y cerrar esa fuga, permitiéndote construir una base sólida para tu vida.</p>
-
-    <p><strong>¿Qué lograremos juntas?</strong></p>
-
-    <ul>
-      <li><strong>Diagnóstico:</strong> Encontraremos el bloqueo raíz que te impide concretar.</li>
-      <li><strong>Limpieza Profunda:</strong> Reprogramaremos ese bloqueo con la guía de tu Yo Superior.</li>
-      <li><strong>Estructura Sensible:</strong> Diseñaremos una rutina real (no ideal) que proteja tu energía mientras avanzas.</li>
-    </ul>
-
-    <p><strong>Incluye:</strong></p>
-
-    <ul>
-      <li>3 Sesiones 1 a 1 Online (60 min).</li>
-      <li>Diagnóstico Energético.</li>
-      <li>Herramientas de soporte entre sesiones.</li>
-    </ul>
-
-    <p><strong>Actualmente estoy abriendo solo 5 cupos a precio especial de lanzamiento.</strong></p>
-
-    <!-- CTA DE WHATSAPP -->
-    <div class="cta-container">
-      <a 
-        class="cta-button"
-        href="https://wa.me/56977337913?text=Hola%20Rosita,%20le%C3%AD%20sobre%20la%20Trilog%C3%ADa%20Enraizar.%20Siento%20que%20necesito%20estructura%20y%20quiero%20saber%20si%20este%20programa%20es%20para%20m%C3%AD%20y%20el%20valor."
-        target="_blank">
-        Solicitar información y valor 👇
-      </a>
-    </div>
-
-    <footer>© Vuelve a Ti · Rosita Ávila</footer>
+  <!-- Botón Inicio -->
+  <div class="topbar">
+    <a class="home" href="home.html" aria-label="Volver al inicio">
+      <svg viewBox="0 0 24 24"><path d="M3 12l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>
+      <span>Inicio</span>
+    </a>
   </div>
+
+  <main class="page">
+    <article class="card">
+
+      <h1>Trilogía Enraizar:<br>De la Fuga a la Estructura</h1>
+
+      <p><strong>¿Sientes que tienes un motor de alta potencia (tu sensibilidad) pero te falta el volante (estructura)?</strong></p>
+
+      <p>Pasas los días haciendo mucho, pero terminas con la sensación de no haber avanzado nada. Eso no es falta de capacidad, <strong>es una fuga energética.</strong></p>
+
+      <p>He diseñado esta intervención estratégica de <strong>3 sesiones</strong> para detectar y cerrar esa fuga, permitiéndote construir una base sólida para tu vida.</p>
+
+      <p><strong>¿Qué lograremos juntas?</strong></p>
+
+      <ul>
+        <li><strong>Diagnóstico:</strong> Encontraremos el bloqueo raíz que te impide concretar.</li>
+        <li><strong>Limpieza Profunda:</strong> Reprogramaremos ese bloqueo con la guía de tu Yo Superior.</li>
+        <li><strong>Estructura Sensible:</strong> Diseñaremos una rutina real (no ideal) que proteja tu energía mientras avanzas.</li>
+      </ul>
+
+      <p><strong>Incluye:</strong></p>
+
+      <ul>
+        <li>3 Sesiones 1 a 1 Online (60 min).</li>
+        <li>Diagnóstico Energético.</li>
+        <li>Herramientas de soporte entre sesiones.</li>
+      </ul>
+
+      <p><strong>Actualmente estoy abriendo solo 5 cupos a precio especial de lanzamiento.</strong></p>
+
+      <!-- CTA DE WHATSAPP -->
+      <div class="cta-container">
+        <a 
+          class="cta-button"
+          href="https://wa.me/56977337913?text=Hola%20Rosita,%20le%C3%AD%20sobre%20la%20Trilog%C3%ADa%20Enraizar.%20Siento%20que%20necesito%20estructura%20y%20quiero%20saber%20si%20este%20programa%20es%20para%20m%C3%AD%20y%20el%20valor."
+          target="_blank">
+          Solicitar información y valor 👇
+        </a>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>© Vuelve a Ti · Rosita Ávila</footer>
 
 </body>
 </html>
