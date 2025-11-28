@@ -8,23 +8,24 @@
   <style>
     /* ===== ESTILO BASE (MOBILE FIRST) ===== */
     body {
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-      background-color: #F9F5F2;
+      font-family: Arial, sans-serif;      /* MISMA LETRA QUE "SOBRE MÍ" */
+      background-color: #f5ebe1;           /* MISMO FONDO QUE "SOBRE MÍ" */
+      color: #333;
       margin: 0;
       padding: 16px 12px;
       display: flex;
       justify-content: center;
       align-items: flex-start;
       min-height: 100vh;
-      color: #3E2833;
+      line-height: 1.6;
     }
 
     .page {
       width: 100%;
-      max-width: 520px;
+      max-width: 800px;
       background: #fff;
       padding: 20px 18px;
-      margin-top: 10px;
+      margin: 20px auto;
       border-radius: 20px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.06);
     }
@@ -39,9 +40,9 @@
     }
 
     p {
-      line-height: 1.65;
       margin-bottom: 16px;
       font-size: 0.96em;
+      text-align: left;
     }
 
     strong {
@@ -49,7 +50,7 @@
     }
 
     ul {
-      margin: 0 0 16px 18px;
+      margin: 0 0 16px 20px;
       padding: 0;
       line-height: 1.6;
       font-size: 0.96em;
@@ -62,7 +63,7 @@
 
     .cta-button {
       display: inline-block;
-      width: 100%;                 /* ancho completo en móvil */
+      width: 100%;                 
       text-align: center;
       background-color: #6a1b9a;
       color: white;
@@ -85,6 +86,7 @@
       margin-top: 22px;
       font-size: 0.78em;
       opacity: 0.7;
+      color: #3E2833;
     }
 
     /* Botón de regreso */
@@ -97,7 +99,6 @@
       font-weight: bold;
     }
 
-    /* Línea suave bajo el botón volver (solo estética) */
     .back + h1 {
       margin-top: 4px;
     }
@@ -111,7 +112,7 @@
 
       .page {
         padding: 28px;
-        margin-top: 20px;
+        margin: 20px auto;
         box-shadow: 0 6px 24px rgba(0,0,0,0.06);
       }
 
@@ -125,7 +126,7 @@
       }
 
       .cta-button {
-        width: auto;              /* en escritorio no es obligatorio que ocupe todo */
+        width: auto;              
         min-width: 260px;
         padding: 14px 26px;
       }
