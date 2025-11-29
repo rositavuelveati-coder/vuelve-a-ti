@@ -7,6 +7,24 @@
     <!-- Font Awesome (para íconos) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
+/* COLOR ESPECIAL PARA EL BOTÓN TRILOGÍA ENRAIZAR */
+.main-button.trilogia {
+    background: linear-gradient(180deg, #7d2bb7, #6a1b9a);
+    border: 2px solid #6a1b9a;
+    color: white !important;
+    box-shadow: 0 6px 18px rgba(106, 27, 154, 0.25);
+}
+
+.main-button.trilogia .titulo,
+.main-button.trilogia .subtitulo {
+    color: white !important;
+}
+
+.main-button.trilogia:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(106, 27, 154, 0.35);
+}
+
     <style>
         body {
             font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
@@ -144,12 +162,12 @@
                 <span class="subtitulo">Un Mensaje de guía para Hoy</span>
             </a>
 
-            <!-- NUEVO BOTÓN: TRILOGÍA ENRAIZAR -->
+            <!-- NUEVO BOTÓN COLOR ESPECIAL: TRILOGÍA ENRAIZAR -->
             <a href="enraizar-cierre2025.html" class="main-button">
                 <span class="titulo">Trilogía Enraizar: Edición Cierre de Año</span>
                 <span class="subtitulo">Limpia el 2025 y Estructura tu 2026</span>
             </a>
-            
+       
             <a href="sesiones1a1.html" class="main-button">
                 <span class="titulo">Mentoría 1 a 1</span>
                 <span class="subtitulo">Lista de Espera Prioritaria</span>
