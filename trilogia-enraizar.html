@@ -6,40 +6,33 @@
   <title>Trilogía Enraizar | Vuelve a Ti</title>
 
   <style>
-    /* Evitar que el ancho + padding genere scroll horizontal */
     * {
-      box-sizing: border-box;
+      box-sizing: border-box; /* evita scroll horizontal raro */
     }
 
-    /* ===== BOTÓN INICIO (MISMO QUE OTRAS PÁGINAS) ===== */
+    /* ===== BOTÓN INICIO (igual que en "Sobre Mí") ===== */
     .topbar { 
       display: flex; 
       justify-content: flex-start; 
       align-items: center; 
       max-width: 800px;
       margin: 20px auto 0 auto;
-      padding: 0 20px; /* igual que en "Sobre Mí": alinea con la tarjeta */
-
-      /*Botón INICIO */
-.home {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  text-decoration: none;
-  color: #3E2833;
-  font-weight: 800;
-  border: 1px solid #eadfd6;
-  padding: 8px 12px;
-  border-radius: 14px;
-  background: white;
-  box-shadow: 0 10px 38px rgba(62,40,51,.08);
-  transition: transform .15s ease;
-
-  width: auto;          /* 🔥 evita que se estire horizontalmente */
-  max-width: fit-content; /* 🔥 se ajusta al tamaño del texto */
-}
-
-      
+      padding: 0 20px;
+    }
+    .home {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      text-decoration: none;
+      color: #3E2833;
+      font-weight: 800;
+      border: 1px solid #eadfd6;
+      padding: 8px 12px;
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 10px 38px rgba(62,40,51,.08);
+      transition: transform .15s ease;
+    }
     .home:hover {
       transform: translateY(-1px);
     }
@@ -51,26 +44,23 @@
       stroke-width: 2;
     }
 
-    /* ===== ESTILO BASE (MOBILE FIRST) ===== */
+    /* ===== ESTILO GENERAL ===== */
     body {
       font-family: Arial, sans-serif;
       background-color: #f5ebe1;
       color: #333;
       margin: 0;
-      padding: 16px 12px 24px 12px;
-      display: flex;
-      flex-direction: column;
+      padding: 0 0 24px 0;
       min-height: 100vh;
       line-height: 1.6;
-      overflow-x: hidden; /* por si acaso algún elemento se pasa 1px */
+      overflow-x: hidden;
     }
 
     main.page {
       max-width: 800px;
       width: 100%;
       margin: 10px auto 0 auto;
-      padding: 0 20px;
-      flex: 1;
+      padding: 0 20px 0 20px;
     }
 
     .card {
@@ -84,7 +74,7 @@
       text-align: center;
       color: #6a1b9a;
       margin-top: 0;
-      margin-bottom: 28px; /* MÁS ESPACIO antes de la pregunta */
+      margin-bottom: 28px; /* más espacio antes de la pregunta */
       font-size: 1.6em;
       line-height: 1.2;
     }
@@ -93,11 +83,6 @@
       margin-bottom: 16px;
       font-size: 0.96em;
       text-align: left;
-    }
-
-    /* por si queremos tocar solo la primera pregunta más adelante */
-    .intro-pregunta {
-      margin-bottom: 18px;
     }
 
     strong {
@@ -111,7 +96,6 @@
       font-size: 0.96em;
     }
 
-    /* texto final centrado */
     .texto-final {
       text-align: center;
       margin-top: 26px;
@@ -150,12 +134,8 @@
       color: #3E2833;
     }
 
-    /* ===== AJUSTES PARA TABLET / ESCRITORIO ===== */
+    /* ===== TABLET / ESCRITORIO ===== */
     @media (min-width: 700px) {
-      body {
-        padding: 24px 24px 30px 24px;
-      }
-
       main.page {
         margin-top: 20px;
       }
@@ -202,7 +182,7 @@
 
       <h1>Trilogía Enraizar:<br>De la Fuga a la Estructura</h1>
 
-      <p class="intro-pregunta">
+      <p>
         <strong>¿Sientes que tienes un motor de alta potencia (tu sensibilidad) pero te falta el volante (estructura)?</strong>
       </p>
 
@@ -236,7 +216,6 @@
         <strong>Actualmente estoy abriendo solo 5 cupos a precio especial de lanzamiento.</strong>
       </p>
 
-      <!-- CTA DE WHATSAPP -->
       <div class="cta-container">
         <a 
           class="cta-button"
