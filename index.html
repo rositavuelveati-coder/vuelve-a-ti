@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+ 
   <style>
     
 /* === ESTRUCTURA DE PÁGINA UNIFICADA === */
@@ -147,6 +148,7 @@ body.mode-reading header, body.mode-reading #welcome{display:none !important;}
 </head>
 <body>
   <div class="app">
+
    <!-- Botón Inicio -->
    <div class="topbar">
      <a class="home" href="./home.html" aria-label="Volver al inicio">
@@ -154,42 +156,48 @@ body.mode-reading header, body.mode-reading #welcome{display:none !important;}
        <span>Inicio</span>
      </a>
    </div>
+    
    <main class="page">
     <article class="card-principal">
+    
 <header>
   <div class="header">
     <h1>Tu Oráculo de Luz</h1>
   </div>
+  
   <p class="oraculo-lema">Un mensaje del alma para tu día</p>
+  
   <p class="intro" style="max-width:640px;margin:35px auto;font-size:15px;line-height:1.6;text-align:center;opacity:.9;">
     <em><strong>Confía en tu intuición.</strong> Cierra los ojos, respira profundo y elige la pregunta que más resuena en tu corazón hoy, luego elige el oráculo que te iluminará.</em>
   </p>
 </header>
+          
 <!-- Pantalla inicial Optimizada -->
 <section id="welcome" class="screen welcome active">
   <p class="subtitle" style="margin-bottom:28px;">El universo tiene una guía para ti:</p>
   <div class="choices">
-code
-Code
-<!-- === BOTÓN 1: SUAVIDAD === -->
-<button class="btn big" data-deck="auto">
-  <span class="titulo">Oráculo de la Suavidad</span>
-  <span class="subtitulo">El antídoto para tu autoexigencia. Baja el volumen de tu crítica interna.</span>
-</button>
 
-<!-- === BOTÓN 2: CLARIDAD === -->
-<button class="btn big" data-deck="busca">
-  <span class="titulo">Oráculo de la Claridad</span>
-  <span class="subtitulo">Sal del bucle mental. Un mensaje directo para destrabar tu indecisión.</span>
-</button>
+    <!-- === BOTÓN 1: SUAVIDAD === -->
+    <button class="btn big" data-deck="auto">
+      <span class="titulo">Oráculo de la Suavidad</span>
+      <span class="subtitulo">El antídoto para tu autoexigencia. Baja el volumen de tu crítica interna.</span>
+    </button>
 
-<!-- === BOTÓN 3: SOLTAR === -->
-<button class="btn big" data-deck="recon">
-  <span class="titulo">Oráculo del Soltar</span>
-  <span class="subtitulo">Deja de intentar controlarlo todo. Un mensaje para confiar y fluir.</span>
-</button>
+    <!-- === BOTÓN 2: CLARIDAD === -->
+    <button class="btn big" data-deck="busca">
+      <span class="titulo">Oráculo de la Claridad</span>
+      <span class="subtitulo">Sal del bucle mental. Un mensaje directo para destrabar tu indecisión.</span>
+    </button>
+
+    <!-- === BOTÓN 3: SOLTAR === -->
+    <button class="btn big" data-deck="recon">
+      <span class="titulo">Oráculo del Soltar</span>
+      <span class="subtitulo">Deja de intentar controlarlo todo. Un mensaje para confiar y fluir.</span>
+    </button>
+
   </div>
 </section>
+
 <style>
   /* Espacio entre el botón inicio y el título */
   header {
@@ -229,27 +237,29 @@ Code
     margin-top: 5px;
   }
 </style>
-code
-Code
-<!-- Pantalla de carta -->
-<section id="reading" class="screen">
-  <article class="card" id="card">
-    <div class="title" id="title">Nombre de la Carta</div>
-    <div class="phrase" id="phrase">“Frase de poder…”</div>
-    <div class="msg" id="msg">“Mensaje guía…”</div>
-  </article>
-  <div class="meta" id="meta">Mazo · Carta X</div>
-  <div class="actions">
-    <button id="backBtn" class="btn ghost">← Elegir otro oráculo</button>
-    <button id="againBtn" class="btn">Otra carta</button>
-  </div>
-</section>
+    
 
-<footer>© Vuelve a Ti · Rosita Ávila</footer>
+    <!-- Pantalla de carta -->
+    <section id="reading" class="screen">
+      <article class="card" id="card">
+        <div class="title" id="title">Nombre de la Carta</div>
+        <div class="phrase" id="phrase">“Frase de poder…”</div>
+        <div class="msg" id="msg">“Mensaje guía…”</div>
+      </article>
+      <div class="meta" id="meta">Mazo · Carta X</div>
+      <div class="actions">
+        <button id="backBtn" class="btn ghost">← Elegir otro oráculo</button>
+        <button id="againBtn" class="btn">Otra carta</button>
+      </div>
+    </section>
+
+    <footer>© Vuelve a Ti · Rosita Ávila</footer>
   </article>
   </main>
   </div>
+
   <!-- ===================== DATA DE LOS MAZOS ===================== -->
+
   <!-- MAZO 1: Oráculo de la Suavidad (40 cartas) -->
   <script>
   const deckAuto = [
@@ -295,6 +305,7 @@ Code
   ["Vida Suave","Construyo mi vida desde la calma y el amor.","Vivir en suavidad es una elección diaria. No es renuncia, es liberación. Hoy, haz de tu vida un refugio amoroso."]
   ];
   </script>
+
   <!-- MAZO 2: Oráculo de la Claridad (40 cartas) -->
   <script>
   const deckBusca = [
@@ -340,6 +351,7 @@ Code
   ["Encuentro Encarnado","Soy hogar, soy raíz, soy totalidad.","La búsqueda terminó: estás en ti. El encuentro no es futuro, es ahora. Hoy, vive tu plenitud encarnada."]
   ];
   </script>
+
   <!-- MAZO 3: Oráculo del Soltar (40 cartas) -->
   <script>
   const deckRecon = [
@@ -385,6 +397,7 @@ Code
     ["La Vida En Ti","Celebro la vida que late dentro de mí.","Encarnar lo nuevo es celebrar que estás viva, aquí y ahora. Hoy, brinda por tu camino con ternura."]
   ];
   </script>
+
   <!-- ===================== LÓGICA DE LA APP ===================== -->
   <script>
   // Registrar los 3 mazos
@@ -467,5 +480,6 @@ Code
     }
   })();
   </script>
+
 </body>
 </html>

@@ -6,200 +6,200 @@
     <title>Vuelve a Ti | Rosita Ávila</title>
     <!-- Font Awesome (para íconos) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-code
-Code
-<style>
-    body {
-        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-        background-color: #F9F5F2;
-        color: #333;
-        margin: 0;
-        padding: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-    }
 
-    .main-container {
-        max-width: 450px;
-        width: 100%;
-        text-align: center;
-    }
+    <style>
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+            background-color: #F9F5F2;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-    header h1 {
-        font-size: 2em;
-    }
+        .main-container {
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+        }
 
-    header p {
-        line-height: 1.6;
-        color: #555;
-        margin-bottom: 30px;
-    }
+        header h1 {
+            font-size: 2em;
+        }
 
-    .button-container, .social-container {
-        background-color: white;
-        padding: 25px;
-        border-radius: 25px;
-        box-shadow: 0 6px 24px rgba(0,0,0,.06);
-        margin-bottom: 20px;
-    }
+        header p {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 30px;
+        }
 
-    .main-button {
-        display: block;
-        background: linear-gradient(180deg, #fff, #faf8f6 70%);
-        border: 2px solid #D8B673;
-        padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 20px;
-        text-decoration: none;
-        color: #333;
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
+        .button-container, .social-container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0 6px 24px rgba(0,0,0,.06);
+            margin-bottom: 20px;
+        }
 
-    .main-button:last-child {
-        margin-bottom: 0;
-    }
+        .main-button {
+            display: block;
+            background: linear-gradient(180deg, #fff, #faf8f6 70%);
+            border: 2px solid #D8B673;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
 
-    .main-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
+        .main-button:last-child {
+            margin-bottom: 0;
+        }
 
-    .main-button .titulo {
-        display: block;
-        font-weight: bold;
-        font-size: 1.1em;
-    }
+        .main-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
 
-    .main-button .subtitulo {
-        display: block;
-        font-size: 0.85em;
-        color: #888;
-        margin-top: 4px;
-    }
+        .main-button .titulo {
+            display: block;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
 
-    /* 🌟 BOTÓN ESPECIAL MORADO PARA TRILOGÍA ENRAIZAR */
-    .main-button.trilogia {
-        background: linear-gradient(180deg, #7d2bb7, #6a1b9a);
-        border: 2px solid #6a1b9a;
-        color: white !important;
-        box-shadow: 0 6px 18px rgba(106, 27, 154, 0.25);
-    }
+        .main-button .subtitulo {
+            display: block;
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 4px;
+        }
 
-    .main-button.trilogia .titulo,
-    .main-button.trilogia .subtitulo {
-        color: white !important;
-    }
+        /* 🌟 BOTÓN ESPECIAL MORADO PARA TRILOGÍA ENRAIZAR */
+        .main-button.trilogia {
+            background: linear-gradient(180deg, #7d2bb7, #6a1b9a);
+            border: 2px solid #6a1b9a;
+            color: white !important;
+            box-shadow: 0 6px 18px rgba(106, 27, 154, 0.25);
+        }
 
-    .main-button.trilogia:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(106, 27, 154, 0.35);
-    }
+        .main-button.trilogia .titulo,
+        .main-button.trilogia .subtitulo {
+            color: white !important;
+        }
 
-    .social-container h3 {
-        margin-top: 0;
-        font-size: 1em;
-        color: #777;
-    }
-    
-    .social-links {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
+        .main-button.trilogia:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(106, 27, 154, 0.35);
+        }
 
-    .social-links a {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: linear-gradient(180deg, #fff, #faf8f6 70%);
-        border: 2px solid #D8B673;
-        color: #333;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-    .social-links a i {
-        font-size: 18px;
-    }
-
-    .social-links a:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        border-color: #CFAE7A;
-    }
-
-    .copyright {
-        font-size: 0.8em;
-        color: #aaa;
-        margin-top: 30px;
-    }
-</style>
-</head>
-<body>
-code
-Code
-<div class="main-container">
-
-    <header>
-        <h1>Vuelve a Ti</h1>
-        <p>
-            <strong>Sanación y Reprogramación Energética para la Mujer Sensible y Autoexigente.</strong><br>
-            <em>Tu sensibilidad no es el problema, es la falta de estructura.</em><br><br>
-            Has buscado respuestas afuera durante años. Aquí encuentras las herramientas para enraizar tu energía,
-            regular tu sistema nervioso y pasar del agotamiento emocional a la calma tangible.
-        </p>
-    </header>
-
-    <div class="button-container">
-
-        <a href="botiquin.html" class="main-button">
-            <span class="titulo">Recursos Gratuitos</span>
-            <span class="subtitulo">Empieza a Enraizar Aquí</span>
-        </a>
-
-        <a href="index.html" class="main-button">
-            <span class="titulo">Oráculo de Claridad</span>
-            <span class="subtitulo">Un Mensaje de guía para Hoy</span>
-        </a>
-
-        <!-- 🌟 BOTÓN ESPECIAL TRILOGÍA -->
-        <a href="enraizar-cierre2025.html" class="main-button trilogia">
-            <span class="titulo">Trilogía Enraizar: Edición Cierre de Año</span>
-            <span class="subtitulo">Limpia el 2025 y Estructura tu 2026</span>
-        </a>
+        .social-container h3 {
+            margin-top: 0;
+            font-size: 1em;
+            color: #777;
+        }
         
-        <a href="sesiones1a1.html" class="main-button">
-            <span class="titulo">Mentoría 1 a 1</span>
-            <span class="subtitulo">Lista de Espera Prioritaria</span>
-        </a>
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
 
-        <a href="sobre-mi.html" class="main-button">
-            <span class="titulo">Sobre Mí</span>
-            <span class="subtitulo">De la Buscadora Agotada a la Mujer Enraizada</span>
-        </a>
-    </div>
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #fff, #faf8f6 70%);
+            border: 2px solid #D8B673;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
 
-    <div class="social-container">
-        <h3>Conecta con Vuelve a Ti</h3>
-        <div class="social-links">
-            <a href="https://www.instagram.com/rosita.vuelveati/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.threads.com/@rosita.vuelveati" target="_blank" title="Threads"><i class="fa-brands fa-threads"></i></a>
-            <a href="https://www.facebook.com/rosita.vuelveati" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="mailto:contacto@vuelveati.net" title="Email"><i class="fa-solid fa-envelope"></i></a>
-            <a href="https://wa.me/56977337913" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        .social-links a i {
+            font-size: 18px;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-color: #CFAE7A;
+        }
+
+        .copyright {
+            font-size: 0.8em;
+            color: #aaa;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <header>
+            <h1>✨ Vuelve a Ti ✨</h1>
+            <p>
+                <strong>Sanación y Reprogramación Energética para la Mujer Sensible y Autoexigente.</strong><br>
+                <em>Tu sensibilidad no es el problema, es la falta de estructura.</em><br><br>
+                Has buscado respuestas afuera durante años. Aquí encuentras las herramientas para enraizar tu energía,
+                regular tu sistema nervioso y pasar del agotamiento emocional a la calma tangible.
+            </p>
+        </header>
+
+        <div class="button-container">
+
+            <a href="botiquin.html" class="main-button">
+                <span class="titulo">Recursos Gratuitos</span>
+                <span class="subtitulo">Empieza a Enraizar Aquí</span>
+            </a>
+
+            <a href="index.html" class="main-button">
+                <span class="titulo">Oráculo de Claridad</span>
+                <span class="subtitulo">Un Mensaje de guía para Hoy</span>
+            </a>
+
+            <!-- 🌟 BOTÓN ESPECIAL TRILOGÍA -->
+            <a href="enraizar-cierre2025.html" class="main-button trilogia">
+                <span class="titulo">Trilogía Enraizar: Edición Cierre de Año</span>
+                <span class="subtitulo">Limpia el 2025 y Estructura tu 2026</span>
+            </a>
+            
+            <a href="sesiones1a1.html" class="main-button">
+                <span class="titulo">Mentoría 1 a 1</span>
+                <span class="subtitulo">Lista de Espera Prioritaria</span>
+            </a>
+
+            <a href="sobre-mi.html" class="main-button">
+                <span class="titulo">Sobre Mí</span>
+                <span class="subtitulo">De la Buscadora Agotada a la Mujer Enraizada</span>
+            </a>
         </div>
+
+        <div class="social-container">
+            <h3>Conecta con Vuelve a Ti</h3>
+            <div class="social-links">
+                <a href="https://www.instagram.com/rosita.vuelveati/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.threads.com/@rosita.vuelveati" target="_blank" title="Threads"><i class="fa-brands fa-threads"></i></a>
+                <a href="https://www.facebook.com/rosita.vuelveati" target="_blank" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="mailto:contacto@vuelveati.net" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://wa.me/56977337913" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="copyright">© Vuelve a Ti · Rosita Ávila</p>
+        </footer>
+
     </div>
 
-    <footer>
-        <p class="copyright">© Vuelve a Ti · Rosita Ávila</p>
-    </footer>
-
-</div>
 </body>
 </html>
