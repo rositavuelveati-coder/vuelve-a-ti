@@ -4,23 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <!-- SEO PARA LA APP (Diferente al Home para no competir) -->
+  <!-- SEO PARA LA APP -->
   <title>Oráculo de Luz | Vuelve a Ti - Rosita Ávila</title>
   <meta name="description" content="Una herramienta de guía suave para la mujer altamente sensible (PAS). Recibe un mensaje de claridad, suavidad o para soltar el control hoy mismo." />
-  <meta name="robots" content="index, follow">
   
-  <!-- Open Graph Oráculo -->
+  <!-- ESTA LÍNEA CONECTA CON TU APP (PWA) -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#EFE7DE">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Oráculo Vuelve a Ti: Tu mensaje de luz para hoy">
   <meta property="og:description" content="¿Necesitas calma o claridad? Saca una carta y recibe la guía que tu alma necesita.">
   <meta property="og:type" content="website">
 
-  <!-- Fuentes optimizadas (Preconnect + Swap) -->
+  <!-- Fuentes optimizadas -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
  
   <style>
-    /* VARIABLES & RESET */
+    /* ESTILOS (No toques nada aquí, ya está optimizado) */
     :root{
       --tinta: #3E2833;
       --bg: #EFE7DE;
@@ -86,7 +90,7 @@
       box-shadow: var(--shadow);
       text-align: center;
       margin-top: 10px;
-      min-height: 80vh; /* Ocupa buen espacio */
+      min-height: 80vh;
     }
 
     /* TYPOGRAPHY */
@@ -231,45 +235,150 @@
    </main>
   </div>
 
-  <!-- DATOS DE LAS CARTAS (Comprimidos para ahorrar espacio visual, misma data) -->
+  <!-- LÓGICA DE LA APP (AQUÍ ESTÁN TUS CARTAS) -->
   <script>
-  const decks = {
-    auto: { name: "Suavidad", list: [
-      ["Carga Pesada","Reconozco que he llevado más de lo que me corresponde.","No eres débil por admitir tu cansancio. Ver la carga es el primer paso para soltarla."],
-      ["La Voz Dura","Observo la dureza con la que me hablo.","Tus palabras pueden ser cuchillos o caricias. Al reconocer la exigencia de tu voz interna, se abre el espacio para suavizarla."],
-      ["Siempre Más","Acepto que no necesito demostrarme todo el tiempo.","Esa carrera interminable hacia el ‘más’ te aleja de ti misma. Hoy, basta con ser."],
-      ["Reloj Implacable","Veo cómo me presiono con el tiempo.","Tu valor no se mide en segundos. La prisa constante es una ilusión que te roba la paz."],
-      ["Perfección Fría","Reconozco la dureza de querer hacerlo perfecto.","La perfección nunca fue hogar, solo una cárcel invisible. Hoy, permite que algo quede incompleto."],
-      ["Armadura de Hierro","Acepto que me he protegido con rigidez.","La dureza nació como defensa. Agradece a tu armadura, pero recuerda que ya no necesitas tanto peso."],
-      ["La Comparación","Me doy cuenta de cuánto me comparo.","Mirarte desde el espejo de otros solo trae dureza. Hoy, vuelve tu mirada hacia ti."],
-      ["No Es Suficiente","Observo mi sensación de no ser bastante.","Este pensamiento es el origen de tu autoexigencia. Nombrarlo es sanar. Tú ya eres suficiente."],
-      ["Peso en los Hombros","Acepto que me he exigido hasta el agotamiento.","Tus hombros han cargado más de lo justo. Hoy, no necesitas demostrar fuerza, solo respirar."],
-      ["La Mirada Crítica","Reconozco mi dureza al mirarme.","La forma en que te observas puede herir o sanar. Hoy, mírate como mirarías a alguien amado."]
-      // ... (He mantenido la estructura para que funcione con tu array completo. Pega el resto de cartas aquí si faltan, o usa el JS original si prefieres mantener los 40 items)
-    ]},
-    busca: { name: "Claridad", list: [
-      ["Camino Inquieto","Reconozco mi anhelo de encontrar afuera lo que ya soy.","Tu hogar estaba dentro. Hoy, observa ese impulso con ternura."],
-      ["Espejos Ajenos","Me doy cuenta de cuánto me pierdo en los demás.","Los espejos de afuera pueden inspirar, pero no definirte. Recuerda que tu reflejo más fiel está en tu interior."],
-      ["Senderos Múltiples","Reconozco cuántos caminos externos he seguido.","El alma buscadora probó mil rutas. Hoy, agradece los caminos y vuelve a tu centro."],
-      ["Sed de Más","Acepto que siempre creí que faltaba algo.","Esa sensación de vacío te llevó a buscar sin descanso. Hoy, date cuenta: no falta nada."],
-      ["Tierra Lejana","He buscado lejos lo que estaba cerca.","Lo cercano, lo simple, también guarda tesoros. Hoy, abre los ojos a lo inmediato."]
-    ]},
-    recon: { name: "Soltar", list: [
-      ["El Peso Heredado","Elijo soltar lo que no me pertenece.","Creciste cargando historias que no eran tuyas. Hoy puedes empezar a caminar más ligera."],
-      ["La Voz Externa","Hoy me escucho a mí, no a los ecos del afuera.","¿Qué viene de ti y qué viene de otros? Tu verdad interior siempre fue más sabia."],
-      ["El Espejismo del Deber","No todo lo que debo, necesito.","Tu esencia no necesita justificarse en lo que haces. ¿Qué de lo que haces nace de tu corazón?"],
-      ["La Máscara del Logro","No necesito demostrar para merecer.","El esfuerzo constante te hizo olvidar que ya eras suficiente. Suelta la carrera."],
-      ["El Muro de la Exigencia","Me permito ser sin exigencias.","Cada muro fue defensa, no esencia. Hoy puedes empezar a derribarlos con compasión."]
-    ]}
-  };
+  
+  // === MAZO 1: SUIVIDAD (40 cartas) ===
+  const deckAuto = [
+    ["Carga Pesada","Reconozco que he llevado más de lo que me corresponde.","No eres débil por admitir tu cansancio. Ver la carga es el primer paso para soltarla. Hoy, date el permiso de sentir y soltar lo que pesa."],
+    ["La Voz Dura","Observo la dureza con la que me hablo.","Tus palabras pueden ser cuchillos o caricias. Al reconocer la exigencia de tu voz interna, se abre el espacio para suavizarla. Escucha con compasión."],
+    ["Siempre Más","Acepto que no necesito demostrarme todo el tiempo.","Esa carrera interminable hacia el ‘más’ te aleja de ti misma. Reconocer que nunca fue suficiente es honrar tu alma cansada. Hoy, basta con ser."],
+    ["Reloj Implacable","Veo cómo me presiono con el tiempo.","Tu valor no se mide en segundos. La prisa constante es una ilusión que te roba la paz. Hoy, observa con ternura tu forma de correr."],
+    ["Perfección Fría","Reconozco la dureza de querer hacerlo perfecto.","La perfección nunca fue hogar, solo una cárcel invisible. Ver esta exigencia es el inicio de tu libertad. Hoy, permite que algo quede incompleto."],
+    ["Armadura de Hierro","Acepto que me he protegido con rigidez.","La dureza nació como defensa, no como esencia. Agradece a tu armadura, pero recuerda que ya no necesitas tanto peso. Tu suavidad también te protege."],
+    ["La Comparación","Me doy cuenta de cuánto me comparo.","Mirarte desde el espejo de otros solo trae dureza. Reconocer este hábito abre camino a mirarte con amor propio. Hoy, vuelve tu mirada hacia ti."],
+    ["No Es Suficiente","Observo mi sensación de no ser bastante.","Este pensamiento es el origen de tu autoexigencia. Nombrarlo es sanar. Tú ya eres suficiente en tu esencia, no en lo que haces."],
+    ["Peso en los Hombros","Acepto que me he exigido hasta el agotamiento.","Tus hombros han cargado más de lo justo. Al reconocerlo, comienzan a descansar. Hoy, no necesitas demostrar fuerza, solo respirar."],
+    ["La Mirada Crítica","Reconozco mi dureza al mirarme.","La forma en que te observas puede herir o sanar. Admitir esa mirada crítica es un acto de conciencia. Hoy, mírate como mirarías a alguien amado."],
+    ["Rendirse al Fluir","Confío en que la vida sabe más que mi control.","La rigidez nace del miedo. Cada vez que sueltas, algo más grande puede sostenerte. Hoy, entrégate al fluir."],
+    ["Manos Abiertas","Suelto lo que no depende de mí.","Cerrar los puños te cansa. Abre tus manos y descubre que la vida trae regalos cuando no fuerzas. Hoy, recibe."],
+    ["Soltar la Meta","Me libero de la obsesión por el resultado.","El camino es más sabio que tu expectativa. Cada paso vale por sí mismo. Hoy, camina sin buscar llegar rápido."],
+    ["Dejar de Empujar","Elijo dejar de forzar lo que no fluye.","Forzar desgasta el alma. Lo que es para ti no necesita empuje. Hoy, descansa en la confianza de lo inevitable."],
+    ["El Suspiro Suave","Un suspiro me basta para soltar el control.","Cada respiración profunda te recuerda que no necesitas dominarlo todo. Hoy, suspira y siente alivio."],
+    ["Puente de Confianza","Camino confiando aunque no vea el final.","El control te exige certezas, pero la confianza te regala paz. Hoy, da un paso con fe, aunque no tengas todas las respuestas."],
+    ["El Río Claro","Me dejo llevar como el agua, sin resistirme.","El agua nunca discute con las piedras, las rodea. Inspírate en su sabiduría y fluye sin rigidez. Hoy, sé río."],
+    ["Hojas en el Viento","Acepto no tener el control de todo.","Como las hojas al viento, aprende a moverte con lo que llega. La flexibilidad es tu aliada. Hoy, entrégate al movimiento natural."],
+    ["Soltar el Deber","Ya no me aferro al ‘tengo que’.","El deber sin alma es una carga muerta. Suelta lo que no vibra contigo. Hoy, solo elige lo que nutre tu corazón."],
+    ["Entrega Serena","Me entrego con serenidad al misterio de la vida.","No necesitas saberlo todo para estar segura. La serenidad nace de confiar. Hoy, descansa en esa entrega amorosa."],
+    ["Abrazo Interno","Me abrazo con ternura en cada paso.","El cuidado comienza dentro. La ternura es la medicina que transforma dureza en suavidad. Hoy, regálate un gesto amoroso."],
+    ["Mirada Suave","Elijo mirarme con ojos de amor.","Tus ojos pueden ser refugio o castigo. Suaviza tu mirada hacia ti y verás florecer la paz. Hoy, mírate con cariño."],
+    ["Caricia Invisible","Me acaricio con pensamientos suaves.","Cada pensamiento puede ser caricia o espina. Elige palabras dulces hacia ti. Hoy, construye suavidad con tu mente."],
+    ["Madre Interior","Soy mi propia madre amorosa.","Dentro de ti habita una presencia que sabe cuidar. Déjala hablar más fuerte que la exigencia. Hoy, abrázate como nunca lo hicieron."],
+    ["Dulzura Cotidiana","Llevo ternura a los gestos pequeños de mi día.","No necesitas grandes rituales para habitar suavidad. Basta un té caliente, un respiro lento o una sonrisa al espejo. Hoy, honra lo pequeño."],
+    ["Permiso de Sentir","Me permito sentir sin juzgarme.","La ternura también es aceptar lo incómodo sin crítica. Cada emoción merece un lugar en tu corazón. Hoy, abre espacio al sentir."],
+    ["Cuerpo Refugio","Escucho a mi cuerpo con amor y respeto.","Tu cuerpo habla con sabiduría, no con exigencia. Trátalo como a una amiga. Hoy, atiende una necesidad simple y real."],
+    ["Suavidad Encendida","Dejo que mi ternura ilumine mis pasos.","La ternura no es debilidad, es una fuerza luminosa. Cada gesto suave crea mundos nuevos. Hoy, deja brillar tu suavidad."],
+    ["Palabras Mansas","Elijo hablarme con calma y dulzura.","Tus palabras construyen realidades. Haz de tu voz un río sereno. Hoy, conversa contigo como con tu mejor amiga."],
+    ["Refugio Interior","Mi interior es un espacio de ternura y calma.","Dentro de ti existe un hogar suave al que siempre puedes volver. Hoy, recuerda que no estás perdida: la ternura vive en ti."],
+    ["Ritmo Propio","Honro mi propio ritmo sin compararme.","La suavidad florece cuando caminas a tu paso. El mundo no necesita prisa, necesita autenticidad. Hoy, respeta tu compás."],
+    ["Corazón Ligero","Elijo soltar cargas y vivir ligera.","La vida es más amable cuando no llevas peso extra. Hoy, entrega una carga innecesaria y siente tu ligereza."],
+    ["Juego Inocente","Me permito jugar sin propósito.","El juego es un puente hacia la suavidad. No todo necesita utilidad. Hoy, juega por el simple gozo de existir."],
+    ["Tiempo Suave","Vivo mis días sin apuro, en calma.","El tiempo se vuelve aliado cuando lo habitas suavemente. Hoy, regálate un instante lento, como si fuera eterno."],
+    ["Cosecha Serena","Recibo lo bueno con gratitud y calma.","No necesitas correr detrás de lo que ya florece. La serenidad es fruto de confiar en tu siembra. Hoy, agradece lo recibido."],
+    ["Sonrisa Serena","Mi sonrisa abre caminos de suavidad.","Una sonrisa sincera cambia tu mundo y el de otros. Hoy, deja que la suavidad se exprese en tu rostro."],
+    ["Presencia Dulce","Habito mi presente con dulzura.","El ahora es un jardín que pide suavidad. Cada instante se vuelve más bello cuando lo abrazas sin dureza. Hoy, quédate aquí."],
+    ["Alma Ligera","Elijo caminar libre de exigencia.","La suavidad es un estado del alma. No necesitas probar nada, solo estar. Hoy, camina ligera y plena."],
+    ["Danza Serena","Me muevo con gracia y calma.","Tu vida puede ser danza y no carrera. Baila con lo que llega, deja que el ritmo sea tu maestro. Hoy, muévete suavemente."],
+    ["Vida Suave","Construyo mi vida desde la calma y el amor.","Vivir en suavidad es una elección diaria. No es renuncia, es liberación. Hoy, haz de tu vida un refugio amoroso."]
+  ];
 
-  /* NOTA: Para producción real, pega aquí los arrays completos de 40 cartas que tenías en tu código original. 
-     He puesto los primeros 5-10 de cada uno para aligerar el código aquí mostrado, pero la lógica funciona igual. */
+  // === MAZO 2: CLARIDAD (40 cartas) ===
+  const deckBusca = [
+    ["Camino Inquieto","Reconozco mi anhelo de encontrar afuera lo que ya soy.","La búsqueda comenzó con movimiento externo. Corrías tras respuestas en otros lugares, sin saber que tu hogar estaba dentro. Hoy, observa ese impulso con ternura."],
+    ["Espejos Ajenos","Me doy cuenta de cuánto me pierdo en los demás.","Los espejos de afuera pueden inspirar, pero no definirte. Cuando buscas demasiado en otros, olvidas tu luz propia. Hoy, recuerda que tu reflejo más fiel está en tu interior."],
+    ["Senderos Múltiples","Reconozco cuántos caminos externos he seguido.","El alma buscadora probó mil rutas. Todas te enseñaron algo, pero ninguna podía completarte. Hoy, agradece los caminos y vuelve a tu centro."],
+    ["Sed de Más","Acepto que siempre creí que faltaba algo.","Esa sensación de vacío te llevó a buscar sin descanso. Reconocerlo es el inicio de tu hallazgo verdadero. Hoy, no falta nada."],
+    ["Tierra Lejana","He buscado lejos lo que estaba cerca.","Tus ojos miraban a la distancia, creyendo que allí estaba la respuesta. Pero lo cercano, lo simple, también guarda tesoros. Hoy, abre los ojos a lo inmediato."],
+    ["La Maestra Fuera","He creído que otros tenían mis respuestas.","Escuchar es valioso, pero tu verdad no vive en voces ajenas. Hoy, reconoce que tú también eres maestra de ti."],
+    ["Sed Espiritual","Acepto que busqué en prácticas externas mi plenitud.","La búsqueda espiritual puede volverse exigencia disfrazada. Todo lo que anhelas está en tu respiración presente. Hoy, vuelve a lo simple."],
+    ["Comparación Constante","Me he perdido midiendo mi camino con otros.","Ningún viaje es igual. Tu búsqueda no se valida en comparación. Hoy, honra tu trayecto único."],
+    ["Voces Externas","Reconozco cuánto me confundieron tantas voces.","Demasiadas respuestas externas pueden silenciar tu verdad. Hoy, apaga el ruido y escucha tu corazón."],
+    ["Sombra de Escasez","Acepto que creí que algo me faltaba.","La búsqueda exterior nace del espejismo de la carencia. Pero ya eres completa. Hoy, mírate con plenitud."],
+    ["Camino Cansado","Acepto mi cansancio de buscar sin fin.","La fatiga es señal de que no necesitas seguir corriendo. Hoy, permite que tu cuerpo y tu alma descansen."],
+    ["Vacío Interior","Reconozco el vacío que siento tras tantas búsquedas.","Ese vacío no es fracaso, es invitación. El silencio que deja la búsqueda externa abre espacio para algo más profundo."],
+    ["Desencanto Dulce","Acepto que no encontré lo que esperaba.","El desencanto es un portal. Dejar caer ilusiones también es necesario para despertar. Hoy, recibe este desencanto como maestro."],
+    ["Peso de Expectativas","Suelto la carga de todo lo que debía encontrar.","Las expectativas no cumplidas te pesan. Libérate de ese deber. Hoy, el no haber encontrado afuera es tu regalo para mirar adentro."],
+    ["Laberinto Estéril","Acepto que algunos caminos me llevaron a la nada.","No todos los recorridos dan fruto. Y está bien. Aprendiste incluso en la aparente esterilidad. Hoy, agradece el laberinto."],
+    ["Desilusión Clara","Reconozco mi desilusión como un despertar.","No encontraste afuera lo que buscabas. Esa claridad es el inicio de tu verdad. Hoy, permite que la desilusión te limpie de ilusiones."],
+    ["Rendida al Cansancio","Me permito parar y soltar la carrera.","No siempre avanzar es sabio. A veces detenerse es la mayor evolución. Hoy, honra tu cansancio como señal de sabiduría."],
+    ["Hambre Eterna","Acepto que ningún logro llenó mi hambre.","Esa hambre de más, nunca se sacia afuera. Reconocerlo abre espacio para nutrirte dentro. Hoy, escucha esa necesidad real."],
+    ["Silencio Forzado","Descubro que el silencio llega cuando ya no puedo más.","El cuerpo y el alma paran cuando la mente no quiere. Ese silencio es medicina. Hoy, descansa en él sin resistencia."],
+    ["Fin de la Carrera","Acepto que ya no quiero correr.","Tu alma anhela calma, no maratones. Reconocer el fin de la carrera es abrir paso a la paz. Hoy, suelta la prisa."],
+    ["Puerta Interior","La entrada a mi verdad está dentro de mí.","Dejas de mirar afuera y descubres la puerta interna. Allí siempre estuvo tu tesoro. Hoy, cruza ese umbral."],
+    ["Corazón Vivo","Escucho la voz suave de mi corazón.","Dentro late una sabiduría que no miente. El corazón no exige, susurra. Hoy, atiéndelo."],
+    ["Luz Íntima","Mi luz propia me guía en la oscuridad.","No necesitas faros externos. Tu luz interna basta para iluminar tu camino. Hoy, confía en ella."],
+    ["Sagrado Silencio","Encuentro en el silencio mi verdad más profunda.","El ruido externo se apaga para que escuches tu voz. El silencio no es vacío, es plenitud. Hoy, sumérgete en él."],
+    ["Cueva Sagrada","Mi interior es un refugio seguro.","Como quien entra a una cueva cálida, en tu interior encuentras abrigo. Hoy, habita ese espacio íntimo."],
+    ["Raíz Profunda","Me enraizo en mi verdad interior.","La fortaleza no viene de lo externo, sino de tu raíz. Hoy, recuerda que tu raíz está dentro."],
+    ["Escucha Suave","Elijo escucharme con atención amorosa.","Tu alma siempre habló, pero estabas distraída. Hoy, abre tus oídos internos a esa voz sabia."],
+    ["Agua Interior","Bebo del manantial que nace en mí.","No necesitas correr a buscar agua afuera. Dentro de ti fluye un manantial eterno. Hoy, bebe de él."],
+    ["Guía Interior","Confío en que mi guía interna nunca me abandona.","La vida entera te habla desde dentro. Esa guía está contigo siempre. Hoy, escúchala y confía."],
+    ["Tesoro Escondido","Lo que busqué afuera, siempre vivió en mí.","El giro hacia adentro revela el tesoro oculto. No lo perdiste, solo lo habías olvidado. Hoy, recuérdalo."],
+    ["Presencia Plena","Habito este instante como totalidad.","La verdadera encontradora no busca, vive. Cada respiración es plenitud. Hoy, sé presencia."],
+    ["Encarnada Luz","Honro mi cuerpo como la casa de mi alma.","No hay separación entre espíritu y cuerpo. Al encarnarte plenamente, encuentras paz. Hoy, honra tu cuerpo."],
+    ["Gozo Simple","Encuentro alegría en lo sencillo.","La plenitud no es complicada, es simple. Una taza de té, una risa, un amanecer. Hoy, celebra lo pequeño."],
+    ["Aquí Soy","Encuentro en el presente todo lo que necesito.","El encuentro ocurre aquí, no mañana. Hoy, habita este momento y verás que ya basta."],
+    ["Raíz Viva","Me sostengo en mis raíces y florezco aquí.","Eres árbol completo: raíz, tronco y fruto. Hoy, enraíza en tu verdad y florece."],
+    ["Ser Completa","Me reconozco plena sin buscar nada más.","No te falta nada. Estás entera. Hoy, abrázate como totalidad."],
+    ["Encuentro Real","Soy la respuesta que buscaba.","No hay nada más que encontrar. Tú eres la respuesta. Hoy, mírate y confía."],
+    ["Alma Serena","Encuentro calma en mi propio ser.","La serenidad no se compra ni se busca, se encarna. Hoy, descansa en ti."],
+    ["Luz Expandida","Comparto mi luz desde la plenitud interior.","Al encontrarte, irradias. No desde la carencia, sino desde la abundancia. Hoy, brilla sin esfuerzo."],
+    ["Encuentro Encarnado","Soy hogar, soy raíz, soy totalidad.","La búsqueda terminó: estás en ti. El encuentro no es futuro, es ahora. Hoy, vive tu plenitud encarnada."]
+  ];
 
-  // LÓGICA OPTIMIZADA
+  // === MAZO 3: SOLTAR (40 cartas) ===
+  const deckRecon = [
+    ["El Peso Heredado","Elijo soltar lo que no me pertenece.","Creciste cargando historias, creencias y exigencias que no eran tuyas. Reconócelas con gratitud, pero recuerda: no necesitas sostenerlas más. Hoy puedes empezar a caminar más ligera."],
+    ["La Voz Externa","Hoy me escucho a mí, no a los ecos del afuera.","Durante años seguiste mandatos, consejos o críticas que apagaron tu propia voz. Ha llegado el momento de distinguir: ¿qué viene de ti y qué viene de otros? Tu verdad interior siempre fue más sabia."],
+    ["El Espejismo del Deber","No todo lo que debo, necesito.","Confundiste obligación con amor, deber con valor. Pero tu esencia no necesita justificarse en lo que haces. Hoy puedes preguntarte: ¿qué de lo que hago nace de mi corazón y qué del deber impuesto?"],
+    ["La Máscara del Logro","No necesito demostrar para merecer.","El esfuerzo constante te hizo olvidar que ya eras suficiente. La máscara del logro no protege, sino que cansa. Hoy tu valor no depende de medallas, sino de tu ser. Suelta la carrera, vuelve a tu ritmo."],
+    ["El Muro de la Exigencia","Me permito ser sin exigencias.","La exigencia te construyó muros para sobrevivir, pero también te aisló de tu suavidad. Cada muro fue defensa, no esencia. Hoy puedes empezar a derribarlos con compasión y abrirte a tu propio abrazo."],
+    ["El Ruido Mental","Hoy elijo silencio para escucharme.","El exceso de pensamientos y comparaciones te desconectó de tu calma. No necesitas más ruido: necesitas tu propia voz. En el silencio, encontrarás la respuesta."],
+    ["El Espejo Ajeno","Soy más que las miradas externas.","Durante años buscaste validación en otros. Pero el espejo de los demás nunca mostró toda tu luz. Hoy recuerda: eres mucho más de lo que ellos pueden ver."],
+    ["La Herida Antigua","Reconozco mi herida, pero no soy mi herida.","Aquello que dolió en el pasado no define quién eres. Fue parte de tu camino, pero no es tu esencia. Hoy puedes abrazar tu herida y dejar que sea maestra, no cadena."],
+    ["El Camino Prestado","Suelto caminos que no son míos.","Tomaste rutas que otros eligieron por ti. Hoy es tiempo de desaprender mapas ajenos y trazar el tuyo propio. La brújula está en tu interior."],
+    ["El Peso del “Siempre”","Me libero de la idea de que todo debe ser igual.","Las costumbres y mandatos que parecían eternos no son cadenas. Puedes cambiarlos, puedes elegir distinto. El “siempre” es solo una ilusión."],
+    ["El Arte de Soltar","Suelto con amor lo que me pesa.","Desaprender es liberar suavemente aquello que ya no nutre. No es una guerra, es un acto de ternura. Cada vez que sueltas, te acercas más a ti."],
+    ["El Vacío Fértil","Confío en el espacio que deja lo que solté.","Al soltar, aparece un vacío que puede asustar. Pero ese vacío no es pérdida: es terreno fértil para lo nuevo. Permítete habitarlo con calma."],
+    ["La Desprogramación","Reescribo mi historia interior.","Tus creencias no son destino. Son programas aprendidos que puedes desactivar. Hoy recuerda: lo que fue aprendido puede desaprenderse, y tu libertad comienza allí."],
+    ["El Suspiro de Libertad","Respiro y libero lo que oprime mi pecho.","Cada exhalación es un recordatorio de que puedes soltar. El aire lleva consigo viejas exigencias, y te devuelve ligereza."],
+    ["El Desapego Amoroso","Suelto con amor, no con dureza.","Desapegarte no es indiferencia; es libertad amorosa. Cuando sueltas con ternura, haces espacio para lo auténtico."],
+    ["La Caja de Creencias","Abro mi mente a nuevas posibilidades.","Las creencias rígidas encogen tu mundo. Hoy, abre la caja y descubre que hay más caminos de los que imaginabas."],
+    ["La Capa del Miedo","Atravieso el miedo con suavidad.","El miedo es una capa, no tu verdad. Al mirarlo con ternura, se disuelve. Hoy, da un paso suave a través de él."],
+    ["El Perdón Suave","Me libero perdonándome con compasión.","Perdonarte no borra lo vivido, te devuelve a ti. Es un acto de amor propio que abre espacio a lo nuevo."],
+    ["La Renuncia Al Deber","Elijo por amor, no por obligación.","Cuando eliges desde el corazón, lo que haces tiene sentido y ligereza. Hoy, permite que tu sí nazca del amor."],
+    ["El Soltar Profundo","Suelto lo que ya cumplió su ciclo.","Hay procesos, vínculos y hábitos que ya dieron todo. Agradece y déjalos ir. En ese gesto, te encuentras de nuevo."],
+    ["El Abrazo del Alma","Me abrazo y me reconozco como valiosa.","El reconocerte comienza con un abrazo interior. Al sostenerte con ternura, tu alma recuerda que nunca estuvo sola."],
+    ["La Voz Interior","Escucho la sabiduría de mi corazón.","Tu esencia siempre habló en voz baja, pero clara. Al desaprender el ruido, puedes volver a escuchar lo que tu corazón siempre supo."],
+    ["El Faro Interno","Encuentro mi luz dentro de mí.","No necesitas guías externas constantes. Tu alma tiene un faro propio que siempre supo guiarte. Hoy puedes mirarlo y confiar en él."],
+    ["El Santuario Interior","Mi interior es un lugar seguro.","El reconocerte es descubrir que dentro de ti hay un refugio. Un espacio sagrado de calma, siempre disponible. Vuelve ahí cuando lo necesites."],
+    ["El Encuentro Sagrado","Hoy me encuentro conmigo misma.","No necesitas buscar más afuera. El encuentro más importante sucede dentro. En cada pausa, en cada respiro, ahí estás tú."],
+    ["La Raíz del Ser","Me sostengo en lo profundo de mi esencia.","Reconocerte es sentir que tienes raíces profundas que te nutren. No flotas a la deriva: estás anclada a tu propia verdad."],
+    ["El Hogar Interior","Mi hogar verdadero está en mí.","Ya no corres detrás de espejismos. Descubres que siempre estuviste en casa. Hoy puedes descansar en tu propio hogar interior."],
+    ["El Río Interior","Fluyo con mi ritmo natural.","Tu alma tiene un cauce propio, como un río. Reconocerte es dejarte llevar por ese ritmo único, sin compararte con otros."],
+    ["La Luz Encarnada","Honro mi cuerpo como templo de mi alma.","Reconocerte también es habitar tu cuerpo. No eres solo mente o espíritu: eres encarnación viva de tu luz."],
+    ["La Presencia","Elijo estar aquí y ahora.","El reconocerte verdadero no está en el pasado ni en el futuro, sino en este instante. Aquí respiras, aquí existes, aquí vuelves a ti."],
+    ["La Gratitud Viva","Agradezco lo que fui y lo que soy.","La integración comienza con gratitud. Reconoces tu camino, con luces y sombras, y lo bendices. Eso abre paso a lo nuevo."],
+    ["El Compromiso Conmigo","Hoy me elijo con amor.","Encarnar lo nuevo es comprometerte contigo misma. No es egoísmo, es amor propio profundo. Hoy renuevas ese pacto."],
+    ["La Coherencia","Alineo lo que pienso, siento y hago.","La paz nace cuando tu vida entera se vuelve una sola verdad. Hoy, da un paso hacia esa coherencia amorosa."],
+    ["El Sí Profundo","Digo sí a lo que me nutre.","Tu sí tiene fuerza creadora. Cuando eliges desde el corazón, la vida se ordena con suavidad."],
+    ["La Confianza Encarnada","Camino confiando en mí y en la vida.","La confianza deja de ser idea y se vuelve carne en tus pasos. Hoy, anda con fe tranquila."],
+    ["El Ritmo Propio","Honro el tiempo amoroso de mis procesos.","Integrar no se apura. Tu ritmo es sagrado y suficiente. Hoy, avanza a tu compás."],
+    ["La Expansión Suave","Me expando desde la calma.","Crecer no es exigencia, es florecimiento natural. Permite que tu expansión sea dulce y sin prisa."],
+    ["La Semilla Nueva","Planto una intención en tierra fértil.","Cada elección amorosa es semilla. Riega con constancia y paciencia; verás brotar lo nuevo."],
+    ["El Fruto Amoroso","Recojo con gratitud lo que sembré.","Honra los frutos que ya están. Reconocerlos te fortalece y te inspira a seguir creando con amor."],
+    ["La Vida En Ti","Celebro la vida que late dentro de mí.","Encarnar lo nuevo es celebrar que estás viva, aquí y ahora. Hoy, brinda por tu camino con ternura."]
+  ];
+
+  // LÓGICA DE INTERACCIÓN
   const state = { deck: null, lastIdx: -1 };
+  
+  // Referencias al HTML
   const ui = {
-    screens: { welcome: document.getElementById('welcome'), reading: document.getElementById('reading') },
+    screens: { 
+      welcome: document.getElementById('welcome'), 
+      reading: document.getElementById('reading') 
+    },
     card: {
       title: document.getElementById('card-title'),
       phrase: document.getElementById('card-phrase'),
@@ -280,26 +389,25 @@
     header: document.getElementById('main-header')
   };
 
+  // Función para elegir mazo
   function selectDeck(key) {
-    state.deck = decks[key];
-    // Si usas el array completo, reemplaza decks[key] arriba con tus variables deckAuto, deckBusca, etc.
-    // Para simplificar aquí he asumido que decks contiene los datos. 
-    // Si prefieres usar tus variables 'const deckAuto = [...]', cambia la logica aqui.
-    
-    // CASO DE USO: Si copiaste tus arrays deckAuto, deckBusca, deckRecon arriba del script:
-    if(key === 'auto' && typeof deckAuto !== 'undefined') state.deck = {name: "Suavidad", list: deckAuto};
-    if(key === 'busca' && typeof deckBusca !== 'undefined') state.deck = {name: "Claridad", list: deckBusca};
-    if(key === 'recon' && typeof deckRecon !== 'undefined') state.deck = {name: "Soltar", list: deckRecon};
+    if(key === 'auto') state.deck = {name: "Suavidad", list: deckAuto};
+    if(key === 'busca') state.deck = {name: "Claridad", list: deckBusca};
+    if(key === 'recon') state.deck = {name: "Soltar", list: deckRecon};
 
     showReading();
     drawCard();
   }
 
+  // Función para sacar carta al azar
   function drawCard() {
     const list = state.deck.list;
     let idx = Math.floor(Math.random() * list.length);
-    // Evitar repetición inmediata
-    if(idx === state.lastIdx && list.length > 1) idx = (idx + 1) % list.length;
+    
+    // Evitar que salga la misma carta dos veces seguidas
+    if(idx === state.lastIdx && list.length > 1) {
+      idx = (idx + 1) % list.length;
+    }
     state.lastIdx = idx;
 
     const [titulo, frase, mensaje] = list[idx];
@@ -309,16 +417,17 @@
     ui.card.msg.textContent = mensaje;
     ui.card.meta.textContent = `${state.deck.name} · Carta ${idx + 1}`;
 
-    // Reiniciar animación
+    // Reiniciar animación para que se vea bonita cada vez
     ui.card.box.style.animation = 'none';
-    ui.card.box.offsetHeight; /* trigger reflow */
+    ui.card.box.offsetHeight; /* truco para reiniciar el navegador */
     ui.card.box.style.animation = 'slideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)';
   }
 
+  // Cambiar pantallas
   function showReading() {
     ui.screens.welcome.classList.remove('active');
     ui.screens.reading.classList.add('active');
-    ui.header.style.display = 'none'; // Ocultar header en lectura para más foco
+    ui.header.style.display = 'none'; 
     window.scrollTo({top:0, behavior:'smooth'});
   }
 
@@ -328,12 +437,18 @@
     ui.header.style.display = 'block';
   }
 
-  // Event Listeners
+  // Botones
   document.getElementById('backBtn').onclick = showWelcome;
   document.getElementById('againBtn').onclick = drawCard;
 
-  // Cargar mazos completos si tienes el código original a mano
-  // (Pega tus const deckAuto = [...] aquí abajo si no están arriba)
+  // ESTO ACTIVA TU APP (SERVICE WORKER)
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').then(reg => {
+        console.log('App lista para instalar', reg);
+      });
+    });
+  }
 
   </script>
 </body>
