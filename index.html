@@ -4,241 +4,302 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <!-- SEO PARA LA APP -->
-  <title>Oráculo de Luz | Vuelve a Ti - Rosita Ávila</title>
-  <meta name="description" content="Una herramienta de guía suave para la mujer altamente sensible (PAS). Recibe un mensaje de claridad, suavidad o para soltar el control hoy mismo." />
+  <title>Oráculo de Luz | Vuelve a Ti</title>
+  <meta name="description" content="Tu oráculo de luz: una guía suave de tu alma para la mujer altamente sensible." />
   
-  <!-- ESTA LÍNEA CONECTA CON TU APP (PWA) -->
+  <!-- CONEXIÓN APP -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#EFE7DE">
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Oráculo Vuelve a Ti: Tu mensaje de luz para hoy">
-  <meta property="og:description" content="¿Necesitas calma o claridad? Saca una carta y recibe la guía que tu alma necesita.">
-  <meta property="og:type" content="website">
-
-  <!-- Fuentes optimizadas -->
+  <!-- FUENTES ELEGANTES -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
- 
+  
+  <!-- FONT AWESOME (Para el ícono de la casita) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
   <style>
-    /* ESTILOS (No toques nada aquí, ya está optimizado) */
+    /* VARIABLES DE TU DISEÑO ORIGINAL */
     :root{
       --tinta: #3E2833;
       --bg: #EFE7DE;
-      --white: #ffffff;
+      --gold: #D4AF37;
       --shadow: 0 10px 38px rgba(62,40,51,0.08);
       --radius: 28px;
-      --gold: #D4AF37;
-      --purple: #6a1b9a;
-    }
-    
-    * { box-sizing: border-box; }
-    
-    html, body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--tinta);
-      font-family: 'Inter', system-ui, sans-serif;
-      min-height: 100vh;
     }
 
+    * { box-sizing: border-box; }
+
     body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--bg);
+      color: var(--tinta);
+      margin: 0;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 10px;
+      min-height: 100vh;
     }
 
-    .app { 
-      width: min(800px, 100%); 
+    .app {
+      width: min(800px, 100%);
       margin: 0 auto;
     }
 
-    /* BOTÓN HOME */
+    /* BOTÓN DE VOLVER (Estilo Home) */
     .topbar {
       display: flex;
       justify-content: flex-start;
-      padding: 15px 0;
+      margin-bottom: 20px;
     }
-
+    
     .home-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      background: white;
+      padding: 10px 20px;
+      border-radius: 50px;
       text-decoration: none;
       color: var(--tinta);
       font-weight: 600;
+      font-size: 0.9em;
       border: 1px solid #eadfd6;
-      padding: 8px 16px;
-      border-radius: 14px;
-      background: var(--white);
-      box-shadow: 0 4px 12px rgba(62,40,51,0.05);
-      transition: transform 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
     }
+    
+    .home-link:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
 
-    .home-link:active { transform: scale(0.98); }
-    .home-link svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; }
-
-    /* CONTENEDOR PRINCIPAL */
+    /* CONTENEDOR PRINCIPAL BLANCO */
     .card-principal {
-      background: var(--white);
-      padding: 30px 20px;
-      border-radius: 16px;
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 24px;
       box-shadow: var(--shadow);
       text-align: center;
-      margin-top: 10px;
-      min-height: 80vh;
+      min-height: 60vh; /* Altura mínima ajustada para no dejar huecos gigantes */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    /* TYPOGRAPHY */
+    /* TIPOGRAFÍA */
     h1 {
-      color: var(--purple);
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: clamp(24px, 5vw, 32px);
-      margin: 0 0 5px 0;
+      font-family: 'Marcellus', serif;
+      color: #6a1b9a; /* Tu morado */
+      font-size: clamp(24px, 4vw, 36px);
+      margin: 0 0 10px 0;
     }
 
-    .subtitle { font-size: 0.95rem; color: #555; margin-bottom: 25px; }
-    .intro { max-width: 600px; margin: 20px auto; font-size: 0.95rem; line-height: 1.6; opacity: 0.9; }
+    .oraculo-lema {
+      font-size: 1em;
+      color: #777;
+      margin-top: 0;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
 
-    /* MENU DE MAZOS */
-    .screen { display: none; }
-    .screen.active { display: block; animation: fadeIn 0.4s ease-out; }
+    .intro {
+      font-size: 0.95em;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+      color: #555;
+    }
 
+    /* BOTONES DE MAZOS (Estilo elegante) */
     .choices {
       display: grid;
-      gap: 16px;
+      gap: 15px;
       max-width: 500px;
       margin: 0 auto;
+      width: 100%;
     }
 
     .btn-deck {
-      background: var(--white);
+      background: white;
       border: 1px solid #e7d8cc;
       padding: 20px;
       border-radius: 20px;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: transform 0.2s, border-color 0.2s;
-      text-align: center;
-      width: 100%;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
     }
 
-    .btn-deck:hover { transform: translateY(-2px); border-color: var(--gold); }
-    .btn-deck:focus { outline: 2px solid var(--purple); }
+    .btn-deck:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.15);
+    }
 
-    .btn-deck .titulo { display: block; font-weight: 700; font-size: 1.1rem; color: var(--purple); margin-bottom: 4px; }
-    .btn-deck .subtitulo { display: block; font-size: 0.85rem; color: #666; font-weight: 400; }
+    .btn-deck .titulo {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 1.1em;
+      color: #3E2833;
+      margin-bottom: 5px;
+    }
 
-    /* CARTA RESULTADO */
+    .btn-deck .subtitulo {
+      display: block;
+      font-size: 0.85em;
+      color: #888;
+      font-weight: 400;
+    }
+
+    /* TARJETA DE RESULTADO (TU DISEÑO ORIGINAL RECUPERADO) */
     .card-result {
       background: linear-gradient(180deg, #FFFFFF 0%, #FDF9FF 100%);
       border: 2px solid var(--gold);
       border-radius: var(--radius);
-      padding: 30px;
-      box-shadow: 0 14px 34px rgba(212,175,55,0.15);
-      margin: 20px 0;
-      animation: slideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+      padding: 40px 30px;
+      box-shadow: 0 14px 34px rgba(212,175,55,0.22);
+      margin: 20px auto;
+      max-width: 600px;
+      animation: rise 0.5s ease-out;
     }
 
-    .card-title { font-family: 'Marcellus', serif; font-size: clamp(24px, 4vw, 30px); margin: 10px 0; color: var(--tinta); }
-    .card-phrase { font-style: italic; font-weight: 500; margin-bottom: 20px; color: var(--purple); }
-    .card-msg { line-height: 1.7; font-size: 1rem; color: #444; }
-    .card-meta { margin-top: 15px; font-size: 0.75rem; color: #999; text-transform: uppercase; letter-spacing: 1px; }
+    .card-title {
+      font-family: 'Marcellus', serif;
+      font-size: clamp(26px, 4vw, 34px);
+      margin: 10px 0;
+      color: var(--tinta);
+    }
 
-    /* ACCIONES */
-    .actions { display: flex; gap: 10px; justify-content: center; margin-top: 30px; }
-    
-    .btn-action {
-      padding: 12px 20px;
-      border-radius: 50px;
+    .card-phrase {
+      font-family: 'Inter', sans-serif;
       font-weight: 600;
-      border: none;
+      font-style: italic;
+      color: #6a1b9a;
+      margin-bottom: 25px;
+      font-size: 1.1em;
+    }
+
+    .card-msg {
+      font-size: 1em;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .card-meta {
+      margin-top: 25px;
+      font-size: 0.75em;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    /* BOTONES DE ACCIÓN */
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .btn-action {
+      padding: 12px 25px;
+      border-radius: 50px;
       cursor: pointer;
-      font-size: 0.9rem;
+      font-weight: 600;
+      font-size: 0.9em;
+      border: 1px solid;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--tinta);
+      color: white;
+      border-color: var(--tinta);
     }
     
-    .btn-primary { background: var(--tinta); color: white; }
-    .btn-secondary { background: transparent; border: 1px solid #ccc; color: #666; }
+    .btn-primary:hover { background: #5a3b4b; }
 
-    footer { margin-top: 40px; font-size: 0.75rem; opacity: 0.6; }
+    .btn-secondary {
+      background: transparent;
+      color: #777;
+      border-color: #ddd;
+    }
 
-    /* ANIMATIONS */
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
 
+    /* PANTALLAS */
+    .screen { display: none; }
+    .screen.active { display: block; animation: fade 0.4s ease-out; }
+
+    @keyframes fade { from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none} }
+    @keyframes rise { from{opacity:0; transform:translateY(20px) scale(0.98)} to{opacity:1; transform:translateY(0) scale(1)} }
+
+    footer { margin-top: 40px; font-size: 0.75em; color: #aaa; }
   </style>
 </head>
 <body>
 
   <div class="app">
 
-   <!-- Botón Volver al Home (Linktree) -->
-   <nav class="topbar">
-     <a class="home-link" href="home.html" aria-label="Volver al menú principal">
-       <svg viewBox="0 0 24 24"><path d="M3 12l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>
-       <span>Volver al Menú</span>
-     </a>
-   </nav>
+    <div class="topbar">
+      <a href="home.html" class="home-link">
+        <i class="fa-solid fa-house"></i> Volver al Menú
+      </a>
+    </div>
     
-   <main class="card-principal">
+    <main class="card-principal">
     
-    <header id="main-header">
-      <h1>Tu Oráculo de Luz</h1>
-      <p class="subtitle">Un mensaje de tu alma para hoy</p>
-    </header>
-          
-    <!-- PANTALLA 1: SELECCIÓN -->
-    <section id="welcome" class="screen welcome active">
-      <div class="intro">
-        <p><strong>Confía en tu intuición.</strong> Cierra los ojos, respira profundo y elige el oráculo que resuena con lo que necesitas en este momento.</p>
-      </div>
+      <header id="main-header">
+        <h1>Tu Oráculo de Luz</h1>
+        <p class="oraculo-lema">Un mensaje de tu alma para hoy</p>
+      </header>
+            
+      <!-- PANTALLA 1: SELECCIÓN -->
+      <section id="welcome" class="screen welcome active">
+        <div class="intro">
+          <p><strong>Confía en tu intuición.</strong> Cierra los ojos, respira profundo y elige el oráculo que resuena con lo que necesitas en este momento.</p>
+        </div>
 
-      <div class="choices">
-        <button class="btn-deck" onclick="selectDeck('auto')">
-          <span class="titulo">🌸 Oráculo de la Suavidad</span>
-          <span class="subtitulo">Antídoto para la autoexigencia.</span>
-        </button>
+        <div class="choices">
+          <div class="btn-deck" onclick="selectDeck('auto')">
+            <span class="titulo">Oráculo de la Suavidad</span>
+            <span class="subtitulo">Antídoto para la autoexigencia</span>
+          </div>
 
-        <button class="btn-deck" onclick="selectDeck('busca')">
-          <span class="titulo">💡 Oráculo de la Claridad</span>
-          <span class="subtitulo">Sal del bucle mental y decide.</span>
-        </button>
+          <div class="btn-deck" onclick="selectDeck('busca')">
+            <span class="titulo">Oráculo de la Claridad</span>
+            <span class="subtitulo">Sal del bucle mental y decide</span>
+          </div>
 
-        <button class="btn-deck" onclick="selectDeck('recon')">
-          <span class="titulo">🍃 Oráculo del Soltar</span>
-          <span class="subtitulo">Deja de controlar y fluye.</span>
-        </button>
-      </div>
-    </section>
+          <div class="btn-deck" onclick="selectDeck('recon')">
+            <span class="titulo">Oráculo del Soltar</span>
+            <span class="subtitulo">Deja de controlar y fluye</span>
+          </div>
+        </div>
+      </section>
 
-    <!-- PANTALLA 2: LECTURA -->
-    <section id="reading" class="screen">
-      <article class="card-result" id="card-display">
-        <div class="card-title" id="card-title">...</div>
-        <div class="card-phrase" id="card-phrase">...</div>
-        <div class="card-msg" id="card-msg">...</div>
-        <div class="card-meta" id="card-meta">...</div>
-      </article>
-      
-      <div class="actions">
-        <button id="backBtn" class="btn-action btn-secondary">← Elegir otro mazo</button>
-        <button id="againBtn" class="btn-action btn-primary">Sacar otra carta</button>
-      </div>
-    </section>
+      <!-- PANTALLA 2: LECTURA -->
+      <section id="reading" class="screen">
+        <article class="card-result" id="card-display">
+          <div class="card-title" id="card-title">...</div>
+          <div class="card-phrase" id="card-phrase">...</div>
+          <div class="card-msg" id="card-msg">...</div>
+          <div class="card-meta" id="card-meta">...</div>
+        </article>
+        
+        <div class="actions">
+          <button id="backBtn" class="btn-action btn-secondary">← Elegir otro mazo</button>
+          <button id="againBtn" class="btn-action btn-primary">Sacar otra carta</button>
+        </div>
+      </section>
 
-    <footer>© Vuelve a Ti · Rosita Ávila</footer>
-   </main>
+      <footer>© Vuelve a Ti · Rosita Ávila</footer>
+    </main>
   </div>
 
-  <!-- LÓGICA DE LA APP (AQUÍ ESTÁN TUS CARTAS) -->
   <script>
-  
-  // === MAZO 1: SUIVIDAD (40 cartas) ===
+  // === TUS MAZOS COMPLETOS (120 CARTAS) ===
   const deckAuto = [
     ["Carga Pesada","Reconozco que he llevado más de lo que me corresponde.","No eres débil por admitir tu cansancio. Ver la carga es el primer paso para soltarla. Hoy, date el permiso de sentir y soltar lo que pesa."],
     ["La Voz Dura","Observo la dureza con la que me hablo.","Tus palabras pueden ser cuchillos o caricias. Al reconocer la exigencia de tu voz interna, se abre el espacio para suavizarla. Escucha con compasión."],
@@ -282,7 +343,6 @@
     ["Vida Suave","Construyo mi vida desde la calma y el amor.","Vivir en suavidad es una elección diaria. No es renuncia, es liberación. Hoy, haz de tu vida un refugio amoroso."]
   ];
 
-  // === MAZO 2: CLARIDAD (40 cartas) ===
   const deckBusca = [
     ["Camino Inquieto","Reconozco mi anhelo de encontrar afuera lo que ya soy.","La búsqueda comenzó con movimiento externo. Corrías tras respuestas en otros lugares, sin saber que tu hogar estaba dentro. Hoy, observa ese impulso con ternura."],
     ["Espejos Ajenos","Me doy cuenta de cuánto me pierdo en los demás.","Los espejos de afuera pueden inspirar, pero no definirte. Cuando buscas demasiado en otros, olvidas tu luz propia. Hoy, recuerda que tu reflejo más fiel está en tu interior."],
@@ -326,7 +386,6 @@
     ["Encuentro Encarnado","Soy hogar, soy raíz, soy totalidad.","La búsqueda terminó: estás en ti. El encuentro no es futuro, es ahora. Hoy, vive tu plenitud encarnada."]
   ];
 
-  // === MAZO 3: SOLTAR (40 cartas) ===
   const deckRecon = [
     ["El Peso Heredado","Elijo soltar lo que no me pertenece.","Creciste cargando historias, creencias y exigencias que no eran tuyas. Reconócelas con gratitud, pero recuerda: no necesitas sostenerlas más. Hoy puedes empezar a caminar más ligera."],
     ["La Voz Externa","Hoy me escucho a mí, no a los ecos del afuera.","Durante años seguiste mandatos, consejos o críticas que apagaron tu propia voz. Ha llegado el momento de distinguir: ¿qué viene de ti y qué viene de otros? Tu verdad interior siempre fue más sabia."],
@@ -370,10 +429,9 @@
     ["La Vida En Ti","Celebro la vida que late dentro de mí.","Encarnar lo nuevo es celebrar que estás viva, aquí y ahora. Hoy, brinda por tu camino con ternura."]
   ];
 
-  // LÓGICA DE INTERACCIÓN
+  // LOGICA DE INTERACCIÓN
   const state = { deck: null, lastIdx: -1 };
   
-  // Referencias al HTML
   const ui = {
     screens: { 
       welcome: document.getElementById('welcome'), 
@@ -389,7 +447,6 @@
     header: document.getElementById('main-header')
   };
 
-  // Función para elegir mazo
   function selectDeck(key) {
     if(key === 'auto') state.deck = {name: "Suavidad", list: deckAuto};
     if(key === 'busca') state.deck = {name: "Claridad", list: deckBusca};
@@ -399,12 +456,10 @@
     drawCard();
   }
 
-  // Función para sacar carta al azar
   function drawCard() {
     const list = state.deck.list;
     let idx = Math.floor(Math.random() * list.length);
     
-    // Evitar que salga la misma carta dos veces seguidas
     if(idx === state.lastIdx && list.length > 1) {
       idx = (idx + 1) % list.length;
     }
@@ -415,15 +470,14 @@
     ui.card.title.textContent = titulo;
     ui.card.phrase.textContent = `“${frase}”`;
     ui.card.msg.textContent = mensaje;
-    ui.card.meta.textContent = `${state.deck.name} · Carta ${idx + 1}`;
+    ui.card.meta.textContent = `${state.deck.name} · CARTA ${idx + 1}`;
 
-    // Reiniciar animación para que se vea bonita cada vez
+    // Reiniciar animación
     ui.card.box.style.animation = 'none';
-    ui.card.box.offsetHeight; /* truco para reiniciar el navegador */
-    ui.card.box.style.animation = 'slideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1)';
+    ui.card.box.offsetHeight;
+    ui.card.box.style.animation = 'rise 0.5s ease-out';
   }
 
-  // Cambiar pantallas
   function showReading() {
     ui.screens.welcome.classList.remove('active');
     ui.screens.reading.classList.add('active');
@@ -437,19 +491,17 @@
     ui.header.style.display = 'block';
   }
 
-  // Botones
   document.getElementById('backBtn').onclick = showWelcome;
   document.getElementById('againBtn').onclick = drawCard;
 
-  // ESTO ACTIVA TU APP (SERVICE WORKER)
+  // REGISTRO APP (PWA)
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./sw.js').then(reg => {
-        console.log('App lista para instalar', reg);
+        console.log('App lista:', reg);
       });
     });
   }
-
   </script>
 </body>
 </html>
