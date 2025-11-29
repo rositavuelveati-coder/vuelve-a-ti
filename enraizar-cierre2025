@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trilogía Enraizar | Vuelve a Ti</title>
+  <title>Trilogía Enraizar · Cierre de Año | Vuelve a Ti</title>
 
   <style>
     * {
-      box-sizing: border-box; /* evita scroll horizontal raro */
+      box-sizing: border-box;
     }
 
-    /* ===== BOTÓN INICIO (igual que en "Sobre Mí") ===== */
+    /* ===== BOTÓN INICIO (igual que en las otras páginas) ===== */
     .topbar { 
       display: flex; 
       justify-content: flex-start; 
@@ -74,9 +74,20 @@
       text-align: center;
       color: #6a1b9a;
       margin-top: 0;
-      margin-bottom: 28px; /* más espacio antes de la pregunta */
+      margin-bottom: 12px;
       font-size: 1.6em;
       line-height: 1.2;
+    }
+
+    .subtitulo-gancho {
+      text-align: center;
+      font-size: 0.98em;
+      font-weight: 600;
+      margin: 0 0 24px 0;
+    }
+
+    .subtitulo-gancho span {
+      display: block;
     }
 
     p {
@@ -89,6 +100,13 @@
       color: #000;
     }
 
+    h2 {
+      font-size: 1.05em;
+      margin-top: 22px;
+      margin-bottom: 12px;
+      color: #3E2833;
+    }
+
     ul {
       margin: 0 0 16px 20px;
       padding: 0;
@@ -96,14 +114,24 @@
       font-size: 0.96em;
     }
 
+    .texto-valor {
+      margin-top: 18px;
+      font-size: 1em;
+    }
+
+    .texto-valor strong {
+      color: #6a1b9a;
+    }
+
     .texto-final {
       text-align: center;
-      margin-top: 26px;
+      margin-top: 20px;
+      font-weight: bold;
     }
 
     .cta-container {
       text-align: center;
-      margin-top: 38px;  /* más espacio entre texto final y botón */
+      margin-top: 34px;
     }
 
     .cta-button {
@@ -147,7 +175,12 @@
 
       h1 {
         font-size: 1.9em;
-        margin-bottom: 30px;
+        margin-bottom: 14px;
+      }
+
+      .subtitulo-gancho {
+        font-size: 1.05em;
+        margin-bottom: 28px;
       }
 
       p, ul {
@@ -156,7 +189,7 @@
 
       .cta-button {
         width: auto;
-        min-width: 260px;
+        min-width: 280px;
         padding: 14px 26px;
       }
 
@@ -182,46 +215,58 @@
 
       <h1>Trilogía Enraizar:<br>Edición Cierre de Año</h1>
 
-      <p>
-        <strong>¿Sientes que tienes un motor de alta potencia (tu sensibilidad) pero te falta el volante (estructura)?</strong>
+      <p class="subtitulo-gancho">
+        <span>No arrastres el caos del 2025 al 2026.</span>
+        <span>Limpia la fuga energética de este año y construye la estructura para el próximo.</span>
       </p>
 
       <p>
-        Pasas los días haciendo mucho, pero terminas con la sensación de no haber avanzado nada. Eso no es falta de capacidad,
-        <strong>es una fuga energética.</strong>
+        Diciembre es el mes más desafiante para la mujer autoexigente. Miras atrás y sientes que
+        “no hiciste suficiente”, mientras tu mente ya te está llenando de metas imposibles para enero.
+      </p>
+
+      <p><strong>Detente.</strong></p>
+
+      <p>
+        No puedes construir un 2026 sólido sobre los cimientos agotados de este año. Si no cierras la fuga energética ahora,
+        el próximo año repetirás los mismos patrones de cansancio y dispersión.
       </p>
 
       <p>
-        He diseñado esta intervención estratégica de <strong>3 sesiones</strong> para detectar y cerrar esa fuga,
-        permitiéndote construir una base sólida para tu vida.
+        He adaptado mi metodología para crear esta <strong>Intervención de 3 Sesiones</strong> enfocada exclusivamente en
+        cerrar ciclos y ordenar tu futuro.
       </p>
 
-      <p><strong>¿Qué lograremos juntas?</strong></p>
+      <h2>Tu Hoja de Ruta en 3 Pasos:</h2>
 
       <ul>
-        <li><strong>Diagnóstico:</strong> Encontraremos el bloqueo raíz que te impide concretar.</li>
-        <li><strong>Limpieza Profunda:</strong> Reprogramaremos ese bloqueo con la guía de tu Yo Superior.</li>
-        <li><strong>Estructura Sensible:</strong> Diseñaremos una rutina real (no ideal) que proteja tu energía mientras avanzas.</li>
+        <li><strong>1. El Balance Energético (Diagnóstico):</strong> Detectaremos qué bloqueos te impidieron concretar tus metas este 2025.</li>
+        <li><strong>2. La Limpieza (Reprogramación):</strong> Soltaremos las lealtades y cargas del año viejo con la guía de tu Yo Superior.</li>
+        <li><strong>3. La Estructura 2026 (Enraizamiento):</strong> Diseñaremos un plan realista y sensible para que el próximo año no sobrevivas, sino que vivas.</li>
       </ul>
 
-      <p><strong>Incluye:</strong></p>
-
+      <h2>Incluye:</h2>
       <ul>
-        <li>3 Sesiones 1 a 1 Online (60 min).</li>
-        <li>Diagnóstico Energético.</li>
-        <li>Herramientas de soporte entre sesiones.</li>
+        <li>3 Sesiones Online 1 a 1 (60 min).</li>
+        <li>Grabación y soporte.</li>
+        <li><strong>Bonus:</strong> Guía de Planificación Sensible.</li>
       </ul>
+
+      <p class="texto-valor">
+        🎁 <strong>Valor Especial Diciembre:</strong> <strong>$55.000 CLP</strong><br>
+        <span style="font-size:0.9em;opacity:0.85;">(Valor normal de referencia: $120.000)</span>
+      </p>
 
       <p class="texto-final">
-        <strong>Actualmente estoy abriendo solo 5 cupos a precio especial de lanzamiento.</strong>
+        Solo 5 cupos disponibles para iniciar ahora.
       </p>
 
       <div class="cta-container">
         <a 
           class="cta-button"
-          href="https://wa.me/56977337913?text=Hola%20Rosita,%20le%C3%AD%20sobre%20la%20Trilog%C3%ADa%20Enraizar.%20Siento%20que%20necesito%20estructura%20y%20quiero%20saber%20si%20este%20programa%20es%20para%20m%C3%AD%20y%20el%20valor."
+          href="https://wa.me/56977337913?text=Hola%20Rosita,%20le%C3%AD%20sobre%20la%20Trilog%C3%ADa%20Enraizar%20Edici%C3%B3n%20Cierre%20de%20A%C3%B1o.%20Siento%20que%20necesito%20cerrar%20bien%20este%202025%20y%20quiero%20saber%20si%20este%20programa%20es%20para%20m%C3%AD%20y%20el%20valor."
           target="_blank">
-          Solicitar información y valor 👇
+          Quiero cerrar mi año con Estructura ⚡
         </a>
       </div>
 
