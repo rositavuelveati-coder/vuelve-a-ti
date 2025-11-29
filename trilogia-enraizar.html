@@ -19,21 +19,27 @@
       max-width: 800px;
       margin: 20px auto 0 auto;
       padding: 0 20px; /* igual que en "Sobre Mí": alinea con la tarjeta */
-    }
-    .home {
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      text-decoration: none;
-      color: #3E2833;
-      font-weight: 800;
-      border: 1px solid #eadfd6;
-      padding: 8px 12px;
-      border-radius: 14px;
-      background: white;
-      box-shadow: 0 10px 38px rgba(62,40,51,.08);
-      transition: transform .15s ease;
-    }
+
+      /*Botón INICIO */
+.home {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  text-decoration: none;
+  color: #3E2833;
+  font-weight: 800;
+  border: 1px solid #eadfd6;
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 10px 38px rgba(62,40,51,.08);
+  transition: transform .15s ease;
+
+  width: auto;          /* 🔥 evita que se estire horizontalmente */
+  max-width: fit-content; /* 🔥 se ajusta al tamaño del texto */
+}
+
+      
     .home:hover {
       transform: translateY(-1px);
     }
