@@ -113,7 +113,14 @@ header p{margin:8px 0 0;opacity:.85}
 .meta{margin-top:10px;text-align:center;opacity:.7;font-size:13px}
 .actions{display:flex;justify-content:space-between;gap:12px;margin-top:18px}
 .actions .btn{min-width:44%;}
-footer{margin-top:40px;font-size:12px;opacity:.7;text-align:center}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #3E2833;
+}
 
 /* Ocultar cabecera y bienvenida cuando se está en modo carta */
 body.mode-reading header, body.mode-reading #welcome{display:none !important;}
@@ -145,13 +152,6 @@ body.mode-reading header, body.mode-reading #welcome{display:none !important;}
 }
 .home svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
 
-footer {
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-size: 12px;
-  color: #7a7a7a;
-}
 footer a {
   color: inherit;
   text-decoration: underline;
@@ -497,16 +497,16 @@ footer a {
   })();
   </script>
 
- <div style="width: 100%; clear: both; display: flex; justify-content: center; margin-top: 50px; padding-bottom: 40px;">
-  <footer style="text-align: center; width: 100%; max-width: 600px;">
-    <p style="font-size: 13px; margin: 0 0 8px 0;">
-      <a href="terminos.html" style="color: #6a1b9a; text-decoration: underline; font-weight: 600;">Términos, Condiciones y Política de Privacidad</a>
-    </p>
-    <p style="font-size: 13px; color: #3E2833; margin: 0; opacity: 0.8;">
-      © Vuelve a Ti · Rosita Ávila
-    </p>
-  </footer>
-</div>
+  <footer>
+  <p style="font-size: 13px; margin: 0 0 8px 0;">
+    <a href="terminos.html" style="color: #6a1b9a; text-decoration: underline; font-weight: 600;">
+      Términos, Condiciones y Política de Privacidad
+    </a>
+  </p>
+  <p style="font-size: 13px; color: #3E2833; margin: 0; opacity: 0.8;">
+    © Vuelve a Ti · Rosita Ávila
+  </p>
+</footer>
   
 </body>
 </html>
