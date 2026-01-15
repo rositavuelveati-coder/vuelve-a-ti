@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
  
   <style>
-    
 /* === ESTRUCTURA DE PÁGINA UNIFICADA === */
 .page {
   max-width: 800px;
@@ -37,7 +36,7 @@
   margin: 0;
 }
 
-/* ===== CÓDIGO DE ESTILOS PARA EL BOTÓN DE INICIO ===== */
+/* ===== Botón de inicio ===== */
 .topbar{
   display:flex;
   justify-content:flex-start;
@@ -61,7 +60,6 @@
 }
 .home svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
 
-    
 :root{
   --tinta:#3E2833;
   --bg:#EFE7DE;
@@ -71,7 +69,10 @@
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;background:var(--bg);color:var(--tinta);}
 body{
-  display:flex;align-items:center;justify-content:center;padding:24px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
 }
 .app{width:min(940px,100%);}
@@ -86,9 +87,15 @@ header p{margin:8px 0 0;opacity:.85}
 .welcome{display:grid;gap:22px;justify-items:center;margin-top:18px}
 .choices{display:grid;gap:14px;max-width:640px;width:100%;margin-top:6px}
 .btn{
-  border:1px solid #e7d8cc;background:white;color:var(--tinta);
-  padding:16px 20px;border-radius:20px;font-weight:800;cursor:pointer;
-  box-shadow: var(--shadow); font-size:clamp(15px,2.5vw,18px);
+  border:1px solid #e7d8cc;
+  background:white;
+  color:var(--tinta);
+  padding:16px 20px;
+  border-radius:20px;
+  font-weight:800;
+  cursor:pointer;
+  box-shadow: var(--shadow);
+  font-size:clamp(15px,2.5vw,18px);
 }
 .btn.big{padding:18px 22px;border-radius:24px}
 .btn.ghost{background:transparent;border-color:#e0d2c7;box-shadow:none}
@@ -114,6 +121,7 @@ header p{margin:8px 0 0;opacity:.85}
 .actions{display:flex;justify-content:space-between;gap:12px;margin-top:18px}
 .actions .btn{min-width:44%;}
 
+/* Footer global centrado y alineado con la columna */
 footer {
   text-align: center;
   margin-top: 40px;
@@ -121,46 +129,20 @@ footer {
   font-size: 12px;
   color: #3E2833;
 }
+footer a {
+  color: #6a1b9a;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  font-weight: 600;
+}
 
 /* Ocultar cabecera y bienvenida cuando se está en modo carta */
-body.mode-reading header, body.mode-reading #welcome{display:none !important;}
+body.mode-reading header,
+body.mode-reading #welcome{display:none !important;}
 
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 @keyframes rise{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}
-
-/* Botón Inicio (como en otras páginas) – misma definición para asegurar alineación */
-.topbar{
-  display:flex;
-  justify-content:flex-start;
-  align-items:center;
-  max-width:800px;
-  margin:20px auto 0 auto;
-  padding:0 20px;
-}
-.home{
-  display:inline-flex;
-  gap:8px;
-  align-items:center;
-  text-decoration:none;
-  color:#3E2833;
-  font-weight:800;
-  border:1px solid #eadfd6;
-  padding:8px 12px;
-  border-radius:14px;
-  background:white;
-  box-shadow:0 10px 38px rgba(62,40,51,.08);
-}
-.home svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
-
-footer a {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-}
-    
   </style>
-
-
 </head>
 <body>
   <div class="app">
@@ -220,7 +202,6 @@ footer a {
      margin-top: 40px;
   }
   
-  /* Estilos para la página del Oráculo */
   .oraculo-subtitulo {
     margin-bottom: 35px;
   }
@@ -254,7 +235,6 @@ footer a {
   }
 </style>
     
-
     <!-- Pantalla de carta -->
     <section id="reading" class="screen">
       <article class="card" id="card">
@@ -269,7 +249,18 @@ footer a {
       </div>
     </section>
 
-    <footer>© Vuelve a Ti · Rosita Ávila</footer>
+    <!-- Footer centrado dentro de la columna -->
+    <footer>
+      <p style="font-size: 13px; margin: 40px 0 8px 0;">
+        <a href="terminos.html">
+          Términos, Condiciones y Política de Privacidad
+        </a>
+      </p>
+      <p style="font-size: 13px; margin: 0; opacity: 0.8;">
+        © Vuelve a Ti · Rosita Ávila
+      </p>
+    </footer>
+
   </article>
   </main>
   </div>
@@ -496,17 +487,6 @@ footer a {
     }
   })();
   </script>
-
-  <footer>
-  <p style="font-size: 13px; margin: 0 0 8px 0;">
-    <a href="terminos.html" style="color: #6a1b9a; text-decoration: underline; font-weight: 600;">
-      Términos, Condiciones y Política de Privacidad
-    </a>
-  </p>
-  <p style="font-size: 13px; color: #3E2833; margin: 0; opacity: 0.8;">
-    © Vuelve a Ti · Rosita Ávila
-  </p>
-</footer>
   
 </body>
 </html>
