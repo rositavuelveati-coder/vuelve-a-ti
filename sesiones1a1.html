@@ -15,31 +15,36 @@
     .topbar { max-width: 800px; margin: 20px auto 0 auto; padding: 0 20px; }
     .home { display: inline-flex; gap: 8px; align-items: center; text-decoration: none; color: #3E2833; font-weight: 800; border: 1px solid #eadfd6; padding: 8px 12px; border-radius: 14px; background: white; box-shadow: 0 10px 38px rgba(62,40,51,.08); }
     .home svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; }
-    
-  /* Footer global centrado y alineado */
+
+    /* Footer global centrado y alineado */
 footer {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 20px;
-  font-size: 12px;
   color: #3e2833;
-  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  width: 100%;
 }
 
-/* Esta es la parte nueva que debes agregar justo debajo de footer */
-footer p {
+/* Control total de los párrafos y enlaces del footer */
+footer p, footer a {
   max-width: 100% !important; 
   margin-left: 0 !important;
   margin-right: 0 !important;
+  font-size: 12px !important; /* Fuerza el tamaño pequeño */
+  opacity: 0.8;               /* Le da el tono suave */
+}
+
+footer p {
+  margin-top: 10px;
 }
 
 footer a {
-  color: #3e2833;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   font-weight: 600;
+  display: inline-block; /* Ayuda a que los márgenes se respeten mejor */
 }
-
+    
     /* Estilos Generales de la Página */
     body { font-family: 'Inter', sans-serif; background-color: #f5ebe1; margin: 0; padding: 0; line-height: 1.6; color: #333; }
     .page { max-width: 800px; margin: 20px auto 40px auto; padding: 0 20px; }
