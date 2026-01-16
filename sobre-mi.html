@@ -75,47 +75,78 @@ footer {
         font-size: 10px !important;
     }
     
-/* Estilos Generales - Inspirados en Index */
-    body {
-      font-family: 'Inter', sans-serif;
-      font-weight: 300; /* Peso ligero para mayor suavidad */
-      background-color: #f5ebe1;
-      color: #3E2833;
-      line-height: 1.65;
+  /* === Estilos Generales Unificados (Estilo Oráculo) === */
+    body { 
+      font-family: 'Inter', sans-serif; 
+      font-weight: 300; 
+      background-color: #f5ebe1; 
+      margin: 0; 
+      padding: 0; 
+      line-height: 1.6; 
+      color: #3E2833; 
     }
 
-    .header h1 {
-      font-family: 'Marcellus', serif; /* Cambiamos a la fuente del Oráculo */
-      text-align: center;
-      color: #6a1b9a;
-      font-weight: 400;
-      font-size: clamp(26px, 5vw, 36px);
-      margin-bottom: 30px;
+    .page { 
+      max-width: 800px; 
+      margin: 20px auto 40px auto; 
+      padding: 0 20px; 
     }
 
-    .hero img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      margin: 0 auto 40px auto; /* Espacio extra que pediste */
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    /* ESTA ES LA CAJA BLANCA QUE RECUPERAMOS */
+    .card { 
+      background: #ffffff !important; 
+      padding: 40px; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08); 
+      text-align: center; 
     }
 
-    p {
-      text-align: center;
-      margin-bottom: 22px;
-      font-size: 16px;
-      max-width: 640px;
-      margin-left: auto;
+    .header h1 { 
+      color: #6a1b9a; 
+      font-family: 'Marcellus', serif; 
+      font-weight: 400; 
+      font-size: 32px; 
+      margin-bottom: 25px;
+    }
+
+    .hero img { 
+      display: block; 
+      max-width: 100%; 
+      height: auto; 
+      margin: 0 auto 40px auto; /* El espacio que pediste */
+      border-radius: 8px; 
+    }
+
+    /* Párrafos suaves estilo Oráculo */
+    p { 
+      margin-bottom: 22px; 
+      font-size: 16px; 
+      color: #3E2833; 
+      max-width: 650px; 
+      margin-left: auto; 
       margin-right: auto;
-      opacity: 0.85; /* La suavidad que viste en el Index */
+      opacity: 0.85; 
+      text-align: center; /* Para que sea igual a Sesiones e Index */
     }
 
-    strong {
+    strong { 
+      opacity: 1 !important; 
+      font-weight: 600; 
       color: #3E2833;
-      font-weight: 600;
-      opacity: 1 !important; /* Resalta las palabras clave */
+    }
+
+    /* Estilos para el pie de página (footer) */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    footer p, footer a {
+      font-size: 11px !important;
+      color: #3e2833 !important;
+      opacity: 0.7;
     }
     
   </style>
