@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   
   <style>
     
@@ -55,80 +55,67 @@ footer {
   width: 100%;
 }
 
-/* Forzamos el color gris suave y el tamaño 12px */
-footer p, footer a {
-  max-width: 100% !important; 
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  font-size: 12px !important;
-  color: #3e2833 !important; /* Color de tu marca */
-  opacity: 0.7;               /* Crea el efecto gris visual del Home */
-  text-align: center !important;
-}
+footer {
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 30px;
+      font-size: 10px; /* Tamaño exacto del index */
+      color: #3e2833;
+    }
 
-footer p {
-  margin-top: 10px;
-}
+    footer a {
+      color: #3e2833;
+      opacity: 0.9;
+      text-decoration: underline;
+      font-weight: 600;
+    }
 
-footer a {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  font-weight: 600;
-}
+    footer p {
+        opacity: 0.8; /* Suavidad extra en el copyright */
+        font-size: 10px !important;
+    }
     
-/* Estilos Generales de la Página */
-
+/* Estilos Generales - Inspirados en Index */
     body {
-      font-family: 'Inter', sans-serif; 
+      font-family: 'Inter', sans-serif;
+      font-weight: 300; /* Peso ligero para mayor suavidad */
       background-color: #f5ebe1;
       color: #3E2833;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-
-    .page {
-      max-width: 800px;
-      margin: 20px auto 40px auto;
-      padding: 20px;
-    }
-
-    .card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Corregido el 'S10px' que tenías antes */
+      line-height: 1.65;
     }
 
     .header h1 {
+      font-family: 'Marcellus', serif; /* Cambiamos a la fuente del Oráculo */
       text-align: center;
       color: #6a1b9a;
-      font-weight: 800; /* Para que el título sea imponente como en Sesiones */
+      font-weight: 400;
+      font-size: clamp(26px, 5vw, 36px);
+      margin-bottom: 30px;
     }
 
     .hero img {
       display: block;
       max-width: 100%;
       height: auto;
-      margin: 0 auto 40px auto; /* espacio entre mi foto y el texto */
-      border-radius: 8px;
+      margin: 0 auto 40px auto; /* Espacio extra que pediste */
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
 
-    /* Aquí unificamos el estilo de los párrafos para que sean iguales a Sesiones */
     p {
-      text-align: center; 
-      margin-bottom: 20px;
+      text-align: center;
+      margin-bottom: 22px;
       font-size: 16px;
-      max-width: 650px; 
+      max-width: 640px;
       margin-left: auto;
       margin-right: auto;
-      color: #3E2833;
+      opacity: 0.85; /* La suavidad que viste en el Index */
     }
 
-    /* Suavizamos las negritas para que no sean negro puro */
     strong {
       color: #3E2833;
-      font-weight: 700;
+      font-weight: 600;
+      opacity: 1 !important; /* Resalta las palabras clave */
     }
     
   </style>
